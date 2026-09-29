@@ -104,8 +104,28 @@ function switchTab(tabId) {
     }
   });
 
+  // อัปเดตป้ายแสดงแท็บปัจจุบันบนแถบหัวเว็บมือถือ
+  const tabTitles = {
+    'dashboard': '1. แดชบอร์ดและกราฟ',
+    'products': '2. คลังสินค้า 100 รายการ',
+    'sales': '3. สมุดรายวันขาย (รายรับ)',
+    'purchases': '4. สมุดรายวันซื้อสินค้า',
+    'expenses': '5. ทะเบียนค่าใช้จ่าย (รายจ่าย)',
+    'customers': '6. ทะเบียนลูกค้าและลูกหนี้',
+    'suppliers': '7. ทะเบียนผู้ผลิต/เจ้าหนี้',
+    'financial': '8. รายงานงบการเงินฉบับสมบูรณ์',
+    'project-info': '9. ข้อมูลโครงงาน/ผังบัญชี'
+  };
+  const badge = document.getElementById('current-tab-badge');
+  if (badge && tabTitles[tabId]) {
+    badge.textContent = '[ ' + tabTitles[tabId] + ' ]';
+  }
+
   // ปิดไซด์บาร์บนมือถือเมื่อเลือกเมนูแล้ว
   closeSidebar();
+
+  // เลื่อนหน้าจอกลับขึ้นด้านบนเพื่อความสะดวกในการอ่านเนื้อหา
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   // วาดกราฟใหม่หากอยู่หน้าแดชบอร์ด
   if (tabId === 'dashboard') {

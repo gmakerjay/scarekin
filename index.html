@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <title>บริษัท โบวี่สแคร์กิน จำกัด - ระบบสารสนเทศทางการบัญชีและคลังสินค้า (24 ส.ค. - 30 ต.ค. 2569)</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,18 +11,22 @@
   <!-- หน้าต่างระบบบัญชี บริษัท โบวี่สแคร์กิน จำกัด -->
   <div class="xp-window">
 
-    <!-- แถบชื่อกิจการและระบบบัญชี -->
-    <div class="company-header-bar">
+    <!-- แถบชื่อกิจการและระบบบัญชี (ตรึงไว้ด้านบนบนมือถือ) -->
+    <header class="company-header-bar">
+      <div class="company-header-top">
+        <button class="xp-btn mobile-menu-btn" id="btn-toggle-sidebar" title="เปิดแถบเมนูไซด์บาร์">[ เมนูระบบบัญชี (Sidebar) ]</button>
+        <span class="active-tab-badge" id="current-tab-badge">[ 1. แดชบอร์ดและกราฟ ]</span>
+      </div>
       <div class="company-title-text">
         <strong>บริษัท โบวี่สแคร์กิน จำกัด</strong> | ระบบบริหารบัญชีและการเงิน (จำลองแบบ PEAK / FlowAccount)
       </div>
       <div class="company-period-text">
         รอบบัญชี: 24 ส.ค. 2569 - 30 ต.ค. 2569
       </div>
-    </div>
+    </header>
 
-    <!-- 2. แถบเมนูหลัก (Classic Menu Bar) -->
-    <div class="xp-menu-bar">
+    <!-- 2. แถบเมนูหลัก (Classic Menu Bar สำหรับหน้าจอคอมพิวเตอร์) -->
+    <div class="xp-menu-bar desktop-only-menu">
       <div class="xp-menu-item" onclick="switchTab('dashboard')">แฟ้ม(F)</div>
       <div class="xp-menu-item" onclick="switchTab('products')">คลังสินค้า 100 รายการ(I)</div>
       <div class="xp-menu-item" onclick="switchTab('sales')">สมุดรายวันขาย(S)</div>
@@ -33,10 +37,9 @@
       <div class="xp-menu-item" onclick="switchTab('project-info')">ข้อมูลโครงงาน/ผังบัญชี(H)</div>
     </div>
 
-    <!-- 3. แถบเครื่องมือและปุ่มเปิดเมนูด้านข้าง -->
+    <!-- 3. แถบเครื่องมือ -->
     <div class="xp-toolbar">
       <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
-        <button class="xp-btn mobile-menu-btn" id="btn-toggle-sidebar">[ เมนูระบบบัญชี (Sidebar) ]</button>
         <button class="xp-btn" id="btn-print-report" title="พิมพ์รายงานหน้านี้">[ สั่งพิมพ์รายงาน (Print) ]</button>
         <button class="xp-btn" id="btn-export-csv" title="ดาวน์โหลดเป็นไฟล์ Excel CSV">[ ส่งออกไฟล์ CSV ]</button>
       </div>
@@ -190,42 +193,44 @@
         <fieldset class="xp-group">
           <legend class="xp-legend">สถานะบัญชีการเงิน กระแสเงินสด และภาษีมูลค่าเพิ่ม (PEAK / FlowAccount Style)</legend>
           
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px;">
+          <div class="dashboard-finance-grid">
             <!-- บัญชีธนาคารและเงินสด -->
             <div>
               <div style="font-weight: bold; font-size: 11px; margin-bottom: 4px; padding: 2px 4px; background: #D4D0C8; border: 1px solid #808080;">
                 [+] ยอดเงินสดและบัญชีเงินฝากธนาคาร (Cash & Bank Liquidity)
               </div>
-              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>บัญชีการเงิน</th>
-                    <th>เลขที่บัญชี</th>
-                    <th width="110">ยอดเงินคงเหลือ (บ.)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>ธ.กสิกรไทย (กระแสรายวัน)</td>
-                    <td class="text-center font-mono">024-1-88992-0</td>
-                    <td class="text-right font-mono font-bold">1,187,020.26</td>
-                  </tr>
-                  <tr>
-                    <td>ธ.ไทยพาณิชย์ (ออมทรัพย์)</td>
-                    <td class="text-center font-mono">115-2-44558-9</td>
-                    <td class="text-right font-mono font-bold">600,000.00</td>
-                  </tr>
-                  <tr>
-                    <td>เงินสดในมือ / เงินสดย่อย</td>
-                    <td class="text-center font-mono">-</td>
-                    <td class="text-right font-mono font-bold">150,000.00</td>
-                  </tr>
-                  <tr style="background: #E2DFD6; font-weight: bold;">
-                    <td colspan="2" class="text-right">รวมเงินสดและสภาพคล่องทั้งหมด:</td>
-                    <td class="text-right font-mono tag-paid">1,937,020.26</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-container">
+                <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>บัญชีการเงิน</th>
+                      <th>เลขที่บัญชี</th>
+                      <th width="110">ยอดเงินคงเหลือ (บ.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ธ.กสิกรไทย (กระแสรายวัน)</td>
+                      <td class="text-center font-mono">024-1-88992-0</td>
+                      <td class="text-right font-mono font-bold">1,187,020.26</td>
+                    </tr>
+                    <tr>
+                      <td>ธ.ไทยพาณิชย์ (ออมทรัพย์)</td>
+                      <td class="text-center font-mono">115-2-44558-9</td>
+                      <td class="text-right font-mono font-bold">600,000.00</td>
+                    </tr>
+                    <tr>
+                      <td>เงินสดในมือ / เงินสดย่อย</td>
+                      <td class="text-center font-mono">-</td>
+                      <td class="text-right font-mono font-bold">150,000.00</td>
+                    </tr>
+                    <tr style="background: #E2DFD6; font-weight: bold;">
+                      <td colspan="2" class="text-right">รวมเงินสดและสภาพคล่องทั้งหมด:</td>
+                      <td class="text-right font-mono tag-paid">1,937,020.26</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <!-- สรุปภาษีมูลค่าเพิ่ม ภ.พ.30 -->
@@ -233,32 +238,34 @@
               <div style="font-weight: bold; font-size: 11px; margin-bottom: 4px; padding: 2px 4px; background: #D4D0C8; border: 1px solid #808080;">
                 [+] สรุปภาษีมูลค่าเพิ่ม ภ.พ.30 ประจำงวด (VAT Summary)
               </div>
-              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>รายการภาษี</th>
-                    <th width="110">ฐานภาษี (บ.)</th>
-                    <th width="105">ภาษี 7% (บ.)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>ภาษีขาย (จากการขาย 187 บิล)</td>
-                    <td class="text-right font-mono">1,938,389.50</td>
-                    <td class="text-right font-mono font-bold tag-paid">135,687.27</td>
-                  </tr>
-                  <tr>
-                    <td>ภาษีซื้อ (จากการซื้อและค่าใช้จ่าย)</td>
-                    <td class="text-right font-mono">1,430,797.29</td>
-                    <td class="text-right font-mono font-bold">100,155.81</td>
-                  </tr>
-                  <tr style="background: #E2DFD6; font-weight: bold;">
-                    <td>ภาษีมูลค่าเพิ่มที่ต้องนำส่ง (ภ.พ.30):</td>
-                    <td class="text-center font-mono">-</td>
-                    <td class="text-right font-mono tag-unpaid">35,531.46</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-container">
+                <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>รายการภาษี</th>
+                      <th width="110">ฐานภาษี (บ.)</th>
+                      <th width="105">ภาษี 7% (บ.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ภาษีขาย (จากการขาย 187 บิล)</td>
+                      <td class="text-right font-mono">1,938,389.50</td>
+                      <td class="text-right font-mono font-bold tag-paid">135,687.27</td>
+                    </tr>
+                    <tr>
+                      <td>ภาษีซื้อ (จากการซื้อและค่าใช้จ่าย)</td>
+                      <td class="text-right font-mono">1,430,797.29</td>
+                      <td class="text-right font-mono font-bold">100,155.81</td>
+                    </tr>
+                    <tr style="background: #E2DFD6; font-weight: bold;">
+                      <td>ภาษีมูลค่าเพิ่มที่ต้องนำส่ง (ภ.พ.30):</td>
+                      <td class="text-center font-mono">-</td>
+                      <td class="text-right font-mono tag-unpaid">35,531.46</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <!-- สรุปลูกหนี้และเจ้าหนี้ -->
@@ -266,32 +273,34 @@
               <div style="font-weight: bold; font-size: 11px; margin-bottom: 4px; padding: 2px 4px; background: #D4D0C8; border: 1px solid #808080;">
                 [+] สรุปหนี้สินและลูกหนี้การค้า (AR & AP Summary)
               </div>
-              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>รายการ</th>
-                    <th>จำนวนราย</th>
-                    <th width="110">ยอดเงินคงค้าง (บ.)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>ลูกหนี้การค้ารอเรียกเก็บ (AR)</td>
-                    <td class="text-center font-mono">14 ราย</td>
-                    <td class="text-right font-mono font-bold tag-warn">677,579.70</td>
-                  </tr>
-                  <tr>
-                    <td>เจ้าหนี้การค้ารอชำระ (AP)</td>
-                    <td class="text-center font-mono">5 ราย</td>
-                    <td class="text-right font-mono font-bold tag-unpaid">306,929.00</td>
-                  </tr>
-                  <tr style="background: #E2DFD6; font-weight: bold;">
-                    <td>ประมาณการเงินได้หลังหักหนี้สิน:</td>
-                    <td class="text-center font-mono">-</td>
-                    <td class="text-right font-mono tag-paid">+370,650.70</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-container">
+                <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>รายการ</th>
+                      <th>จำนวนราย</th>
+                      <th width="110">ยอดเงินคงค้าง (บ.)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ลูกหนี้การค้ารอเรียกเก็บ (AR)</td>
+                      <td class="text-center font-mono">14 ราย</td>
+                      <td class="text-right font-mono font-bold tag-warn">677,579.70</td>
+                    </tr>
+                    <tr>
+                      <td>เจ้าหนี้การค้ารอชำระ (AP)</td>
+                      <td class="text-center font-mono">5 ราย</td>
+                      <td class="text-right font-mono font-bold tag-unpaid">306,929.00</td>
+                    </tr>
+                    <tr style="background: #E2DFD6; font-weight: bold;">
+                      <td>ประมาณการเงินได้หลังหักหนี้สิน:</td>
+                      <td class="text-center font-mono">-</td>
+                      <td class="text-right font-mono tag-paid">+370,650.70</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -330,7 +339,7 @@
 
             <div class="filter-group">
               <label>ค้นหารหัส/ชื่อสินค้า:</label>
-              <input type="text" id="search-prod" class="xp-input" placeholder="พิมพ์ SK- หรือชื่อสินค้า..." style="width: 170px;">
+              <input type="text" id="search-prod" class="xp-input filter-input-search" placeholder="พิมพ์ SK- หรือชื่อสินค้า...">
             </div>
 
             <div class="filter-group">
@@ -394,7 +403,7 @@
             </div>
             <div class="filter-group">
               <label>ค้นหาเลขที่บิล/ชื่อลูกค้า:</label>
-              <input type="text" id="search-sales" class="xp-input" placeholder="พิมพ์ INV- หรือชื่อลูกค้า..." style="width: 200px;">
+              <input type="text" id="search-sales" class="xp-input filter-input-search" placeholder="พิมพ์ INV- หรือชื่อลูกค้า...">
             </div>
           </div>
         </fieldset>
@@ -439,7 +448,7 @@
           <div class="filter-bar">
             <div class="filter-group">
               <label>ค้นหาเลขที่ใบสั่งซื้อ / ผู้ผลิต:</label>
-              <input type="text" id="search-purchases" class="xp-input" placeholder="พิมพ์ PO- หรือชื่อผู้จัดจำหน่าย..." style="width: 220px;">
+              <input type="text" id="search-purchases" class="xp-input filter-input-search" placeholder="พิมพ์ PO- หรือชื่อผู้จัดจำหน่าย...">
             </div>
           </div>
         </fieldset>
@@ -500,7 +509,7 @@
             </div>
             <div class="filter-group">
               <label>ค้นหาคำอธิบาย / ผู้รับเงิน:</label>
-              <input type="text" id="search-expenses" class="xp-input" placeholder="พิมพ์ PV- หรือผู้รับเงิน..." style="width: 200px;">
+              <input type="text" id="search-expenses" class="xp-input filter-input-search" placeholder="พิมพ์ PV- หรือผู้รับเงิน...">
             </div>
           </div>
         </fieldset>
@@ -542,7 +551,7 @@
           <div class="filter-bar">
             <div class="filter-group">
               <label>ค้นหาชื่อลูกค้า / รหัส:</label>
-              <input type="text" id="search-customers" class="xp-input" placeholder="พิมพ์ชื่อ หรือ รหัสลูกค้า..." style="width: 200px;">
+              <input type="text" id="search-customers" class="xp-input filter-input-search" placeholder="พิมพ์ชื่อ หรือ รหัสลูกค้า...">
             </div>
           </div>
         </fieldset>
@@ -602,7 +611,7 @@
 
       <!-- ==================== TAB 8: รายงานงบการเงินฉบับสมบูรณ์ ==================== -->
       <div class="tab-pane" id="tab-financial">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="financial-statements-grid">
           
           <!-- งบกำไรขาดทุน -->
           <fieldset class="xp-group">
@@ -611,15 +620,17 @@
               บริษัท โบวี่สแคร์กิน จำกัด<br>
               งบกำไรขาดทุน (สำหรับงวดตั้งแต่วันที่ 24 สิงหาคม 2569 ถึงวันที่ 30 ตุลาคม 2569)
             </div>
-            <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>รายการทางบัญชี</th>
-                  <th width="130">จำนวนเงิน (บาท)</th>
-                </tr>
-              </thead>
-              <tbody id="income-statement-body"></tbody>
-            </table>
+            <div class="table-container">
+              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>รายการทางบัญชี</th>
+                    <th width="130">จำนวนเงิน (บาท)</th>
+                  </tr>
+                </thead>
+                <tbody id="income-statement-body"></tbody>
+              </table>
+            </div>
           </fieldset>
 
           <!-- งบแสดงฐานะการเงิน -->
@@ -629,15 +640,17 @@
               บริษัท โบวี่สแคร์กิน จำกัด<br>
               งบแสดงฐานะการเงิน ณ วันที่ 30 ตุลาคม 2569
             </div>
-            <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>รายการทางบัญชี</th>
-                  <th width="130">จำนวนเงิน (บาท)</th>
-                </tr>
-              </thead>
-              <tbody id="balance-sheet-body"></tbody>
-            </table>
+            <div class="table-container">
+              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>รายการทางบัญชี</th>
+                    <th width="130">จำนวนเงิน (บาท)</th>
+                  </tr>
+                </thead>
+                <tbody id="balance-sheet-body"></tbody>
+              </table>
+            </div>
           </fieldset>
         </div>
 
@@ -667,99 +680,105 @@
       <div class="tab-pane" id="tab-project-info">
         <fieldset class="xp-group">
           <legend class="xp-legend">ข้อมูลโครงงานจำลองระบบบัญชี (Project Information)</legend>
-          <table class="xp-table" border="1" cellpadding="4" cellspacing="0">
-            <tr>
-              <td width="200" class="font-bold">ข้อความชี้แจง:</td>
-              <td class="font-bold" style="color: #990000; background-color: #FFFFE1;">
-                โปรเจคนี้เป็นโปรเจคเพื่อนำส่ง / พรีเซ้นต์ในภาควิชาการบัญชีเท่านั้น ข้อมูลทุกอย่างคือการสมมติขึ้นมา
-              </td>
-            </tr>
-            <tr>
-              <td class="font-bold">ชื่อสถานประกอบการสมมุติ:</td>
-              <td><strong>บริษัท โบวี่สแคร์กิน จำกัด (BOWIE SCARESKIN CO., LTD.)</strong></td>
-            </tr>
-            <tr>
-              <td class="font-bold">ประเภทธุรกิจ:</td>
-              <td>จัดจำหน่ายเวชสำอาง ผลิตภัณฑ์บำรุงผิวหน้าและสกินแคร์ (จดทะเบียนภาษีมูลค่าเพิ่ม 7%)</td>
-            </tr>
-            <tr>
-              <td class="font-bold">ช่วงเวลาในการบันทึกบัญชี:</td>
-              <td>ระหว่างวันที่ <strong>24 สิงหาคม 2569 ถึง วันที่ 30 ตุลาคม 2569</strong> (รวมระยะเวลา 68 วัน)</td>
-            </tr>
-            <tr>
-              <td class="font-bold">รูปแบบการจำลองระบบ:</td>
-              <td>ระบบบริหารบัญชีและการเงินแบบ PEAK / FlowAccount ในรูปแบบสไตล์เว็บวินโดวส์คลาสสิก (HTML Table 90s)</td>
-            </tr>
-          </table>
+          <div class="table-container">
+            <table class="xp-table" border="1" cellpadding="4" cellspacing="0">
+              <tr>
+                <td width="200" class="font-bold">ข้อความชี้แจง:</td>
+                <td class="font-bold" style="color: #990000; background-color: #FFFFE1;">
+                  โปรเจคนี้เป็นโปรเจคเพื่อนำส่ง / พรีเซ้นต์ในภาควิชาการบัญชีเท่านั้น ข้อมูลทุกอย่างคือการสมมติขึ้นมา
+                </td>
+              </tr>
+              <tr>
+                <td class="font-bold">ชื่อสถานประกอบการสมมุติ:</td>
+                <td><strong>บริษัท โบวี่สแคร์กิน จำกัด (BOWIE SCARESKIN CO., LTD.)</strong></td>
+              </tr>
+              <tr>
+                <td class="font-bold">ประเภทธุรกิจ:</td>
+                <td>จัดจำหน่ายเวชสำอาง ผลิตภัณฑ์บำรุงผิวหน้าและสกินแคร์ (จดทะเบียนภาษีมูลค่าเพิ่ม 7%)</td>
+              </tr>
+              <tr>
+                <td class="font-bold">ช่วงเวลาในการบันทึกบัญชี:</td>
+                <td>ระหว่างวันที่ <strong>24 สิงหาคม 2569 ถึง วันที่ 30 ตุลาคม 2569</strong> (รวมระยะเวลา 68 วัน)</td>
+              </tr>
+              <tr>
+                <td class="font-bold">รูปแบบการจำลองระบบ:</td>
+                <td>ระบบบริหารบัญชีและการเงินแบบ PEAK / FlowAccount ในรูปแบบสไตล์เว็บวินโดวส์คลาสสิก (HTML Table 90s)</td>
+              </tr>
+            </table>
+          </div>
         </fieldset>
 
         <fieldset class="xp-group">
           <legend class="xp-legend">นโยบายการบัญชีที่ใช้ในโครงงาน (Accounting Policies)</legend>
-          <table class="xp-table" border="1" cellpadding="4" cellspacing="0">
-            <tr>
-              <td width="180" class="font-bold">1. เกณฑ์การบันทึกบัญชี:</td>
-              <td>ใช้เกณฑ์คงค้าง (Accrual Basis) ตามมาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียต่อสาธารณะ (TFRS for NPAEs)</td>
-            </tr>
-            <tr>
-              <td class="font-bold">2. การตีราคาสินค้าคงเหลือ:</td>
-              <td>บันทึกบัญชีสินค้าคงเหลือแบบต่อเนื่อง (Perpetual Inventory System) โดยใช้วิธีเข้าก่อน-ออกก่อน (First-In, First-Out: FIFO)</td>
-            </tr>
-            <tr>
-              <td class="font-bold">3. การรับรู้รายได้:</td>
-              <td>รับรู้รายได้จากการขายสินค้าเมื่อได้ส่งมอบสินค้าและโอนความเสี่ยงและผลตอบแทนในสินค้าให้แก่ลูกค้าแล้ว</td>
-            </tr>
-            <tr>
-              <td class="font-bold">4. ภาษีมูลค่าเพิ่ม:</td>
-              <td>กิจการจดทะเบียนภาษีมูลค่าเพิ่ม อัตราร้อยละ 7 โดยยื่นแบบ ภ.พ.30 ภายในวันที่ 15 ของเดือนถัดไป</td>
-            </tr>
-            <tr>
-              <td class="font-bold">5. ภาษีเงินได้นิติบุคคล:</td>
-              <td>คำนวณตามอัตราภาษีเงินได้นิติบุคคลสำหรับวิสาหกิจขนาดกลางและขนาดย่อม (SME) อัตราร้อยละ 15 ของกำไรสุทธิ</td>
-            </tr>
-          </table>
+          <div class="table-container">
+            <table class="xp-table" border="1" cellpadding="4" cellspacing="0">
+              <tr>
+                <td width="180" class="font-bold">1. เกณฑ์การบันทึกบัญชี:</td>
+                <td>ใช้เกณฑ์คงค้าง (Accrual Basis) ตามมาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียต่อสาธารณะ (TFRS for NPAEs)</td>
+              </tr>
+              <tr>
+                <td class="font-bold">2. การตีราคาสินค้าคงเหลือ:</td>
+                <td>บันทึกบัญชีสินค้าคงเหลือแบบต่อเนื่อง (Perpetual Inventory System) โดยใช้วิธีเข้าก่อน-ออกก่อน (First-In, First-Out: FIFO)</td>
+              </tr>
+              <tr>
+                <td class="font-bold">3. การรับรู้รายได้:</td>
+                <td>รับรู้รายได้จากการขายสินค้าเมื่อได้ส่งมอบสินค้าและโอนความเสี่ยงและผลตอบแทนในสินค้าให้แก่ลูกค้าแล้ว</td>
+              </tr>
+              <tr>
+                <td class="font-bold">4. ภาษีมูลค่าเพิ่ม:</td>
+                <td>กิจการจดทะเบียนภาษีมูลค่าเพิ่ม อัตราร้อยละ 7 โดยยื่นแบบ ภ.พ.30 ภายในวันที่ 15 ของเดือนถัดไป</td>
+              </tr>
+              <tr>
+                <td class="font-bold">5. ภาษีเงินได้นิติบุคคล:</td>
+                <td>คำนวณตามอัตราภาษีเงินได้นิติบุคคลสำหรับวิสาหกิจขนาดกลางและขนาดย่อม (SME) อัตราร้อยละ 15 ของกำไรสุทธิ</td>
+              </tr>
+            </table>
+          </div>
         </fieldset>
 
         <fieldset class="xp-group">
           <legend class="xp-legend">ผังบัญชีมาตรฐานของกิจการ (Chart of Accounts)</legend>
-          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
-            <thead>
-              <tr style="background-color: #D4D0C8;">
-                <th width="100">รหัสบัญชี</th>
-                <th>ชื่อบัญชีภาษาไทย</th>
-                <th>ชื่อบัญชีภาษาอังกฤษ</th>
-                <th width="120">หมวดบัญชี</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td class="text-center font-mono">11101</td><td>เงินสดในมือ</td><td>Cash on Hand</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">11102</td><td>เงินฝากกระแสรายวัน ธ.กสิกรไทย</td><td>Cash at Bank - KBank</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">11103</td><td>เงินฝากออมทรัพย์ ธ.ไทยพาณิชย์</td><td>Savings Account - SCB</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">11201</td><td>ลูกหนี้การค้า</td><td>Accounts Receivable</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">11301</td><td>สินค้าคงเหลือสำเร็จรูป</td><td>Finished Goods Inventory</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">11401</td><td>ภาษีซื้อ</td><td>Input Tax (VAT)</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">12101</td><td>อุปกรณ์สำนักงานและคลังสินค้า</td><td>Office & Warehouse Equipment</td><td>1. สินทรัพย์ไม่หมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">21101</td><td>เจ้าหนี้การค้า</td><td>Accounts Payable</td><td>2. หนี้สินหมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">21201</td><td>ภาษีขาย</td><td>Output Tax (VAT)</td><td>2. หนี้สินหมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">21301</td><td>ภาษีเงินได้นิติบุคคลค้างจ่าย</td><td>Accrued Corporate Tax</td><td>2. หนี้สินหมุนเวียน</td></tr>
-              <tr><td class="text-center font-mono">31101</td><td>ทุนเรือนหุ้น</td><td>Share Capital</td><td>3. ส่วนของเจ้าของ</td></tr>
-              <tr><td class="text-center font-mono">32101</td><td>กำไรสะสมยังไม่ได้จัดสรร</td><td>Retained Earnings</td><td>3. ส่วนของเจ้าของ</td></tr>
-              <tr><td class="text-center font-mono">41101</td><td>รายได้จากการขายสินค้า</td><td>Sales Revenue</td><td>4. รายได้</td></tr>
-              <tr><td class="text-center font-mono">51101</td><td>ต้นทุนขาย</td><td>Cost of Goods Sold (COGS)</td><td>5. ต้นทุนขาย</td></tr>
-              <tr><td class="text-center font-mono">52101</td><td>ค่าเช่าอาคารสำนักงานและคลัง</td><td>Rent Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52102</td><td>ค่าไฟฟ้า</td><td>Electricity Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52103</td><td>ค่าน้ำประปา</td><td>Water Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52104</td><td>ค่าโทรศัพท์และอินเทอร์เน็ต</td><td>Telephone & Internet</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52105</td><td>เงินเดือนพนักงานฝ่ายคลัง</td><td>Warehouse Salaries</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52106</td><td>เงินเดือนพนักงานฝ่ายบัญชี</td><td>Accounting Salaries</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52107</td><td>ค่าโฆษณาและการตลาด</td><td>Advertising Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52108</td><td>ค่าบรรจุภัณฑ์และกล่องพัสดุ</td><td>Packaging Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52109</td><td>ค่าบริการจัดส่งสินค้า</td><td>Delivery & Shipping</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52110</td><td>ค่าธรรมเนียมธนาคาร</td><td>Bank Fees</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52111</td><td>ค่าวัสดุสำนักงานสิ้นเปลือง</td><td>Office Supplies Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">52112</td><td>ค่าเบี้ยประกันภัยคลังสินค้า</td><td>Insurance Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
-              <tr><td class="text-center font-mono">53101</td><td>ภาษีเงินได้นิติบุคคล</td><td>Corporate Income Tax</td><td>5. ภาษีเงินได้</td></tr>
-            </tbody>
-          </table>
+          <div class="table-container">
+            <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+              <thead>
+                <tr style="background-color: #D4D0C8;">
+                  <th width="100">รหัสบัญชี</th>
+                  <th>ชื่อบัญชีภาษาไทย</th>
+                  <th>ชื่อบัญชีภาษาอังกฤษ</th>
+                  <th width="120">หมวดบัญชี</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="text-center font-mono">11101</td><td>เงินสดในมือ</td><td>Cash on Hand</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">11102</td><td>เงินฝากกระแสรายวัน ธ.กสิกรไทย</td><td>Cash at Bank - KBank</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">11103</td><td>เงินฝากออมทรัพย์ ธ.ไทยพาณิชย์</td><td>Savings Account - SCB</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">11201</td><td>ลูกหนี้การค้า</td><td>Accounts Receivable</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">11301</td><td>สินค้าคงเหลือสำเร็จรูป</td><td>Finished Goods Inventory</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">11401</td><td>ภาษีซื้อ</td><td>Input Tax (VAT)</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">12101</td><td>อุปกรณ์สำนักงานและคลังสินค้า</td><td>Office & Warehouse Equipment</td><td>1. สินทรัพย์ไม่หมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">21101</td><td>เจ้าหนี้การค้า</td><td>Accounts Payable</td><td>2. หนี้สินหมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">21201</td><td>ภาษีขาย</td><td>Output Tax (VAT)</td><td>2. หนี้สินหมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">21301</td><td>ภาษีเงินได้นิติบุคคลค้างจ่าย</td><td>Accrued Corporate Tax</td><td>2. หนี้สินหมุนเวียน</td></tr>
+                <tr><td class="text-center font-mono">31101</td><td>ทุนเรือนหุ้น</td><td>Share Capital</td><td>3. ส่วนของเจ้าของ</td></tr>
+                <tr><td class="text-center font-mono">32101</td><td>กำไรสะสมยังไม่ได้จัดสรร</td><td>Retained Earnings</td><td>3. ส่วนของเจ้าของ</td></tr>
+                <tr><td class="text-center font-mono">41101</td><td>รายได้จากการขายสินค้า</td><td>Sales Revenue</td><td>4. รายได้</td></tr>
+                <tr><td class="text-center font-mono">51101</td><td>ต้นทุนขาย</td><td>Cost of Goods Sold (COGS)</td><td>5. ต้นทุนขาย</td></tr>
+                <tr><td class="text-center font-mono">52101</td><td>ค่าเช่าอาคารสำนักงานและคลัง</td><td>Rent Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52102</td><td>ค่าไฟฟ้า</td><td>Electricity Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52103</td><td>ค่าน้ำประปา</td><td>Water Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52104</td><td>ค่าโทรศัพท์และอินเทอร์เน็ต</td><td>Telephone & Internet</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52105</td><td>เงินเดือนพนักงานฝ่ายคลัง</td><td>Warehouse Salaries</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52106</td><td>เงินเดือนพนักงานฝ่ายบัญชี</td><td>Accounting Salaries</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52107</td><td>ค่าโฆษณาและการตลาด</td><td>Advertising Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52108</td><td>ค่าบรรจุภัณฑ์และกล่องพัสดุ</td><td>Packaging Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52109</td><td>ค่าบริการจัดส่งสินค้า</td><td>Delivery & Shipping</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52110</td><td>ค่าธรรมเนียมธนาคาร</td><td>Bank Fees</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52111</td><td>ค่าวัสดุสำนักงานสิ้นเปลือง</td><td>Office Supplies Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">52112</td><td>ค่าเบี้ยประกันภัยคลังสินค้า</td><td>Insurance Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+                <tr><td class="text-center font-mono">53101</td><td>ภาษีเงินได้นิติบุคคล</td><td>Corporate Income Tax</td><td>5. ภาษีเงินได้</td></tr>
+              </tbody>
+            </table>
+          </div>
         </fieldset>
       </div><!-- สิ้นสุด tab-project-info -->
     </main><!-- สิ้นสุด app-main-content -->
