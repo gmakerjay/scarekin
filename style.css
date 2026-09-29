@@ -1,0 +1,636 @@
+/* ==========================================================================
+   ระบบบัญชีและสารสนเทศทางการเงิน บริษัท โบวี่สแคร์กิน จำกัด
+   รูปแบบ: จำลองระบบบัญชีทั่วไปแบบ PEAK / FlowAccount
+   สไตล์: HTML Table คลาสสิก ยุค Windows XP / Intranet 90s (รองรับมือถือ)
+   กฏเหล็ก: ปราศจากอิโมจิ 100% (No Emojis)
+   ========================================================================== */
+
+:root {
+  --win-bg: #3A6EA5; /* Classic Blue */
+  --dlg-bg: #ECE9D8; /* Classic Dialog Grey */
+  --btn-face: #ECE9D8;
+  --btn-highlight: #FFFFFF;
+  --btn-shadow: #808080;
+  --btn-dark-shadow: #404040;
+  --menu-bg: #ECE9D8;
+  --menu-border: #999999;
+  --text-main: #000000;
+  --text-dim: #555555;
+  --table-border: #808080;
+  --table-th-bg: #D4D0C8;
+  --table-th-text: #000000;
+  --table-row-even: #F4F3EE;
+  --table-row-hover: #FFFFCC;
+  --input-bg: #FFFFFF;
+  --input-border: #7F9DB9;
+  --status-bg: #ECE9D8;
+  --status-border: #808080;
+  --highlight-profit: #006600;
+  --highlight-loss: #990000;
+  --highlight-warn: #CC6600;
+  --font-family: Tahoma, 'MS Sans Serif', Arial, 'Segoe UI', sans-serif;
+  --font-family-mono: 'Courier New', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  background-color: var(--win-bg);
+  font-family: var(--font-family);
+  font-size: 13px; /* เพิ่มขนาดฟอนต์ 1px ตามคำขอ */
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+/* กรอบหน้าต่างโปรแกรม */
+.xp-window {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--dlg-bg);
+  border: 2px solid #0055EA;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* แถบหัวเรื่องกิจการ (Company Header Bar) */
+.company-header-bar {
+  background-color: #1F497D;
+  color: #FFFFFF;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #808080;
+}
+
+.company-title-text {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.company-period-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #E2ECF8;
+  white-space: nowrap;
+}
+
+/* แถบเมนูหลัก (Classic Menu Bar) */
+.xp-menu-bar {
+  background-color: var(--menu-bg);
+  border-bottom: 1px solid var(--menu-border);
+  padding: 3px 6px;
+  display: flex;
+  gap: 2px;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  user-select: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.xp-menu-item {
+  padding: 3px 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+.xp-menu-item:hover {
+  background-color: #316AC5;
+  color: #FFFFFF;
+  border: 1px solid #1E468A;
+}
+
+/* แถบเครื่องมือทางลัด (Toolbar) */
+.xp-toolbar {
+  background-color: var(--dlg-bg);
+  border-bottom: 1px solid #999999;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.xp-btn {
+  background-color: var(--btn-face);
+  border-top: 2px solid var(--btn-highlight);
+  border-left: 2px solid var(--btn-highlight);
+  border-right: 2px solid var(--btn-shadow);
+  border-bottom: 2px solid var(--btn-shadow);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  font-weight: bold;
+  padding: 4px 10px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+
+.xp-btn:hover {
+  filter: brightness(1.05);
+}
+
+.xp-btn:active {
+  border-top: 2px solid var(--btn-shadow);
+  border-left: 2px solid var(--btn-shadow);
+  border-right: 2px solid var(--btn-highlight);
+  border-bottom: 2px solid var(--btn-highlight);
+  padding: 5px 9px 3px 11px;
+}
+
+.toolbar-status-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* ป้ายข้อความชี้แจงโปรเจค (Project Notice Banner) */
+.student-banner {
+  background-color: #FFFFE1;
+  border: 1px solid #D4D0C8;
+  border-left: 5px solid #1F497D;
+  padding: 7px 12px;
+  margin: 6px 8px 4px 8px;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  color: #333333;
+  line-height: 1.4;
+}
+
+/* แถบแท็บสไตล์ Property Sheets */
+.xp-tabs-container {
+  padding: 6px 8px 0 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.xp-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid var(--btn-highlight);
+  gap: 2px;
+  margin-bottom: 0;
+  padding-left: 2px;
+  white-space: nowrap;
+}
+
+.xp-tab {
+  background-color: #D4D0C8;
+  border-top: 2px solid #FFFFFF;
+  border-left: 2px solid #FFFFFF;
+  border-right: 2px solid #808080;
+  border-bottom: none;
+  padding: 6px 12px;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  font-weight: bold;
+  cursor: pointer;
+  color: #444444;
+  margin-bottom: -2px;
+  user-select: none;
+  flex-shrink: 0;
+  touch-action: manipulation;
+}
+
+.xp-tab:hover {
+  background-color: #E2DFD6;
+  color: #000000;
+}
+
+.xp-tab.active {
+  background-color: var(--dlg-bg);
+  border-top: 2px solid var(--btn-highlight);
+  border-left: 2px solid var(--btn-highlight);
+  border-right: 2px solid var(--btn-shadow);
+  border-bottom: 2px solid var(--dlg-bg);
+  color: var(--text-main);
+  padding-top: 7px;
+  padding-bottom: 7px;
+  position: relative;
+  z-index: 5;
+}
+
+/* กล่องเนื้อหาแท็บ */
+.xp-tab-content-panel {
+  border-left: 2px solid var(--btn-highlight);
+  border-right: 2px solid var(--btn-shadow);
+  border-bottom: 2px solid var(--btn-shadow);
+  background-color: var(--dlg-bg);
+  padding: 10px;
+  margin: 0 8px 8px 8px;
+  min-height: 520px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* กรอบกลุ่ม Fieldset */
+fieldset.xp-group {
+  border-top: 2px solid #FFFFFF;
+  border-left: 2px solid #FFFFFF;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  background-color: var(--dlg-bg);
+}
+
+legend.xp-legend {
+  font-weight: bold;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  padding: 0 5px;
+  color: var(--text-main);
+}
+
+/* กล่องสรุปตัวเลขทางการเงิน (KPI Summary Cards) */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.kpi-box {
+  background-color: #FFFFFF;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  padding: 7px 9px;
+}
+
+.kpi-title {
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  color: var(--text-dim);
+  margin-bottom: 3px;
+}
+
+.kpi-value {
+  font-size: 17px; /* เพิ่มฟอนต์ 1px */
+  font-weight: bold;
+  font-family: var(--font-family-mono);
+  color: #000000;
+}
+
+.kpi-value.profit {
+  color: var(--highlight-profit);
+}
+
+.kpi-value.loss {
+  color: var(--highlight-loss);
+}
+
+.kpi-sub {
+  font-size: 11px; /* เพิ่มฟอนต์ 1px */
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+
+/* โครงสร้างตารางข้อมูล HTML */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+table.xp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  font-family: var(--font-family);
+  background-color: #FFFFFF;
+  border: 1px solid var(--table-border);
+}
+
+table.xp-table th {
+  background-color: var(--table-th-bg);
+  color: var(--table-th-text);
+  border: 1px solid var(--table-border);
+  padding: 6px 7px;
+  text-align: center;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+table.xp-table td {
+  border: 1px solid var(--table-border);
+  padding: 5px 7px;
+  white-space: nowrap;
+}
+
+table.xp-table tr:nth-child(even) td {
+  background-color: var(--table-row-even);
+}
+
+table.xp-table tr:hover td {
+  background-color: var(--table-row-hover);
+}
+
+/* จัดแนวข้อความ */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.font-bold { font-weight: bold; }
+.font-mono { font-family: var(--font-family-mono); }
+.tag-paid { color: #006600; font-weight: bold; }
+.tag-unpaid { color: #990000; font-weight: bold; }
+.tag-warn { color: #CC6600; font-weight: bold; }
+
+/* แถบตัวกรอง (Filter Bar) */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+  background-color: var(--dlg-bg);
+  padding: 4px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+}
+
+.xp-input, .xp-select {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  padding: 4px 6px;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  font-family: var(--font-family);
+}
+
+.xp-input:focus, .xp-select:focus {
+  outline: none;
+  background-color: #FFFFF0;
+}
+
+/* แถบแบ่งหน้า (Pagination) */
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding: 4px;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* กราฟแคนวาส */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.chart-card {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  background-color: #FFFFFF;
+  padding: 8px;
+}
+
+.chart-header {
+  font-weight: bold;
+  font-size: 12px;
+  border-bottom: 1px solid var(--table-border);
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+canvas.retro-canvas {
+  width: 100%;
+  height: 240px;
+  display: block;
+  background-color: #FFFFFF;
+  border: 1px inset #808080;
+}
+
+/* แถบสถานะด้านล่างสุด (Status Bar) */
+.xp-status-bar {
+  background-color: var(--status-bg);
+  border-top: 1px solid var(--status-border);
+  padding: 4px 8px;
+  display: flex;
+  gap: 4px;
+  font-size: 12px; /* เพิ่มฟอนต์ 1px */
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+.status-panel {
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 2px 7px;
+  white-space: nowrap;
+  color: var(--text-dim);
+}
+
+.status-panel.grow {
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   รองรับการแสดงผลบนอุปกรณ์มือถือและแท็บเล็ต (Mobile Responsive)
+   ========================================================================== */
+@media (max-width: 768px) {
+  body {
+    padding: 3px;
+  }
+
+  .xp-window {
+    border: 1px solid #0055EA;
+    box-shadow: none;
+  }
+
+  .company-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 6px 8px;
+  }
+
+  .company-title-text {
+    font-size: 13px;
+  }
+
+  .company-period-text {
+    font-size: 11px;
+  }
+
+  .xp-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .toolbar-status-text {
+    font-size: 11px;
+  }
+
+  .xp-tabs-container {
+    padding: 4px 4px 0 4px;
+  }
+
+  .xp-tab {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .xp-tab-content-panel {
+    padding: 6px;
+    margin: 0 4px 4px 4px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .kpi-value {
+    font-size: 15px;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .chart-card {
+    padding: 6px;
+  }
+
+  canvas.retro-canvas {
+    height: 210px;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .filter-group input, .filter-group select {
+    flex-grow: 1;
+    max-width: 65%;
+  }
+
+  .table-container {
+    max-height: 420px;
+  }
+
+  /* จัดเรียงงบการเงินบนมือถือให้เป็นคอลัมน์เดียว */
+  #tab-financial > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .xp-status-bar {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pagination-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .pagination-bar > div:last-child {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .xp-btn {
+    padding: 6px 10px;
+  }
+}
+
+/* โหมดพิมพ์เอกสาร (Print Preview) */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    padding: 0 !important;
+    font-family: 'TH Sarabun New', 'Angsana New', Tahoma, sans-serif !important;
+    font-size: 12pt !important;
+    color: #000000 !important;
+  }
+  .xp-window {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+  }
+  .company-header-bar, .xp-menu-bar, .xp-toolbar, .xp-tabs-container, .filter-bar, .pagination-bar, .xp-status-bar {
+    display: none !important;
+  }
+  .xp-tab-content-panel {
+    border: none !important;
+    padding: 0 !important;
+  }
+  .tab-pane {
+    display: none !important;
+  }
+  .tab-pane.active {
+    display: block !important;
+  }
+  table.xp-table {
+    border: 1px solid #000000 !important;
+    font-size: 10pt !important;
+  }
+  table.xp-table th, table.xp-table td {
+    border: 1px solid #000000 !important;
+  }
+  .table-container {
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+  }
+}

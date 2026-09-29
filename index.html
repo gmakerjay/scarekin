@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>บริษัท โบวี่สแคร์กิน จำกัด - ระบบสารสนเทศทางการบัญชีและคลังสินค้า (24 ส.ค. - 30 ต.ค. 2569)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- หน้าต่างระบบบัญชี บริษัท โบวี่สแคร์กิน จำกัด -->
+  <div class="xp-window">
+
+    <!-- แถบชื่อกิจการและระบบบัญชี -->
+    <div class="company-header-bar">
+      <div class="company-title-text">
+        <strong>บริษัท โบวี่สแคร์กิน จำกัด</strong> | ระบบบริหารบัญชีและการเงิน (จำลองแบบ PEAK / FlowAccount)
+      </div>
+      <div class="company-period-text">
+        รอบบัญชี: 24 ส.ค. 2569 - 30 ต.ค. 2569
+      </div>
+    </div>
+
+    <!-- 2. แถบเมนูหลัก (Classic Menu Bar) -->
+    <div class="xp-menu-bar">
+      <div class="xp-menu-item" onclick="switchTab('dashboard')">แฟ้ม(F)</div>
+      <div class="xp-menu-item" onclick="switchTab('products')">คลังสินค้า 100 รายการ(I)</div>
+      <div class="xp-menu-item" onclick="switchTab('sales')">สมุดรายวันขาย(S)</div>
+      <div class="xp-menu-item" onclick="switchTab('purchases')">สมุดรายวันซื้อ(P)</div>
+      <div class="xp-menu-item" onclick="switchTab('expenses')">ทะเบียนรายจ่าย(E)</div>
+      <div class="xp-menu-item" onclick="switchTab('customers')">ทะเบียนลูกค้า(C)</div>
+      <div class="xp-menu-item" onclick="switchTab('financial')">รายงานงบการเงิน(R)</div>
+      <div class="xp-menu-item" onclick="switchTab('project-info')">ข้อมูลโครงงาน/ผังบัญชี(H)</div>
+    </div>
+
+    <!-- 3. แถบเครื่องมือทางลัด (Toolbar) -->
+    <div class="xp-toolbar">
+      <div style="display: flex; gap: 4px; align-items: center; flex-wrap: wrap;">
+        <button class="xp-btn" id="btn-print-report" title="พิมพ์รายงานหน้านี้">[ สั่งพิมพ์รายงาน (Print) ]</button>
+        <button class="xp-btn" id="btn-export-csv" title="ดาวน์โหลดเป็นไฟล์ Excel CSV">[ ส่งออกไฟล์ CSV สำหรับ Excel ]</button>
+      </div>
+      <div class="toolbar-status-text">
+        สถานะ: ฐานข้อมูลสมบูรณ์ | 24 ส.ค. 2569 - 30 ต.ค. 2569
+      </div>
+    </div>
+
+    <!-- 4. ข้อความชี้แจงโปรเจค (Project Notice) -->
+    <div class="student-banner">
+      <strong>[ ข้อความชี้แจง ]</strong> โปรเจคนี้เป็นโปรเจคเพื่อนำส่ง / พรีเซ้นต์ในภาควิชาการบัญชีเท่านั้น ข้อมูลทุกอย่างคือการสมมติขึ้นมา (จำลองข้อมูล บริษัท โบวี่สแคร์กิน จำกัด ระหว่างวันที่ 24 สิงหาคม 2569 ถึง 30 ตุลาคม 2569)
+    </div>
+
+    <!-- 5. แถบแท็บควบคุม (Property Sheet Tabs) -->
+    <div class="xp-tabs-container">
+      <div class="xp-tabs">
+        <button class="xp-tab active" data-tab="dashboard">[1. แดชบอร์ดและกราฟ]</button>
+        <button class="xp-tab" data-tab="products">[2. ทะเบียนสินค้า (100 รายการ)]</button>
+        <button class="xp-tab" data-tab="sales">[3. สมุดรายวันขาย (รายรับ)]</button>
+        <button class="xp-tab" data-tab="purchases">[4. สมุดรายวันซื้อสินค้า]</button>
+        <button class="xp-tab" data-tab="expenses">[5. ทะเบียนค่าใช้จ่าย (รายจ่าย)]</button>
+        <button class="xp-tab" data-tab="customers">[6. ทะเบียนลูกค้าและลูกหนี้]</button>
+        <button class="xp-tab" data-tab="suppliers">[7. ทะเบียนผู้ผลิต/เจ้าหนี้]</button>
+        <button class="xp-tab" data-tab="financial">[8. รายงานงบการเงินฉบับสมบูรณ์]</button>
+        <button class="xp-tab" data-tab="project-info">[9. ข้อมูลโครงงาน/ผังบัญชี]</button>
+      </div>
+    </div>
+
+    <!-- 6. กล่องเนื้อหาของแต่ละแท็บ -->
+    <div class="xp-tab-content-panel">
+
+      <!-- ==================== TAB 1: แดชบอร์ดและกราฟ ==================== -->
+      <div class="tab-pane active" id="tab-dashboard">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">สรุปภาพรวมฐานะการเงินและผลการดำเนินงาน (24 ส.ค. - 30 ต.ค. 2569)</legend>
+          
+          <div class="summary-grid">
+            <div class="kpi-box">
+              <div class="kpi-title">รายได้จากการขายสุทธิ (Net Sales)</div>
+              <div class="kpi-value profit" id="kpi-sales">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-sales-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">ต้นทุนขาย (Cost of Goods Sold)</div>
+              <div class="kpi-value" id="kpi-cogs">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-cogs-sub">วิธีเข้าก่อน-ออกก่อน (FIFO)</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">กำไรขั้นต้น (Gross Profit)</div>
+              <div class="kpi-value profit" id="kpi-gp">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-gp-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">ค่าใช้จ่ายดำเนินงาน (Operating Exp.)</div>
+              <div class="kpi-value loss" id="kpi-exp">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-exp-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">กำไรก่อนภาษี (EBIT)</div>
+              <div class="kpi-value profit" id="kpi-ebit">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-ebit-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">ภาษีเงินได้นิติบุคคล (Tax 15%)</div>
+              <div class="kpi-value loss" id="kpi-tax">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-tax-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">กำไรสุทธิประจำงวด (Net Profit)</div>
+              <div class="kpi-value profit" id="kpi-net">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-net-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">มูลค่าสินค้าคงคลัง (100 รายการ)</div>
+              <div class="kpi-value" id="kpi-stock-val">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-stock-val-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">ลูกหนี้การค้าคงค้าง (AR)</div>
+              <div class="kpi-value loss" id="kpi-ar">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-ar-sub">-</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-title">เจ้าหนี้การค้าคงค้าง (AP)</div>
+              <div class="kpi-value loss" id="kpi-ap">กำลังโหลด...</div>
+              <div class="kpi-sub" id="kpi-ap-sub">-</div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="xp-group">
+          <legend class="xp-legend">กราฟวิเคราะห์สารสนเทศทางการเงิน (Financial Analytics)</legend>
+          <div class="charts-grid">
+            <div class="chart-card">
+              <div class="chart-header">
+                <span>[กราฟ 1] เปรียบเทียบยอดขาย ต้นทุน ค่าใช้จ่าย กำไรสุทธิ รายเดือน</span>
+                <span class="font-mono" style="font-size: 10px;">(ส.ค. - ต.ค. 2569)</span>
+              </div>
+              <canvas id="chart-monthly" class="retro-canvas"></canvas>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <span>[กราฟ 2] สัดส่วนค่าใช้จ่ายดำเนินงานตามหมวดบัญชี</span>
+                <span class="font-mono" style="font-size: 10px;">(12 หมวดค่าใช้จ่าย)</span>
+              </div>
+              <canvas id="chart-expenses" class="retro-canvas"></canvas>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <span>[กราฟ 3] สินค้าสกินแคร์ที่มียอดขายสูงสุด 7 อันดับแรก</span>
+                <span class="font-mono" style="font-size: 10px;">(เรียงตามรายรับรวม)</span>
+              </div>
+              <canvas id="chart-top-products" class="retro-canvas"></canvas>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <span>[กราฟ 4] ช่องทางการชำระเงินและสัดส่วนลูกหนี้การค้า</span>
+                <span class="font-mono" style="font-size: 10px;">(เงินสด / โอนเงิน / เครดิต)</span>
+              </div>
+              <canvas id="chart-payments" class="retro-canvas"></canvas>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- สรุปสถานะการเงิน บัญชีธนาคาร และภาษีมูลค่าเพิ่ม สไตล์ระบบบัญชี PEAK / FlowAccount -->
+        <fieldset class="xp-group">
+          <legend class="xp-legend">สถานะบัญชีการเงิน กระแสเงินสด และภาษีมูลค่าเพิ่ม (PEAK / FlowAccount Style)</legend>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px;">
+            <!-- บัญชีธนาคารและเงินสด -->
+            <div>
+              <div style="font-weight: bold; font-size: 11px; margin-bottom: 4px; padding: 2px 4px; background: #D4D0C8; border: 1px solid #808080;">
+                [+] ยอดเงินสดและบัญชีเงินฝากธนาคาร (Cash & Bank Liquidity)
+              </div>
+              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>บัญชีการเงิน</th>
+                    <th>เลขที่บัญชี</th>
+                    <th width="110">ยอดเงินคงเหลือ (บ.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ธ.กสิกรไทย (กระแสรายวัน)</td>
+                    <td class="text-center font-mono">024-1-88992-0</td>
+                    <td class="text-right font-mono font-bold">1,187,020.26</td>
+                  </tr>
+                  <tr>
+                    <td>ธ.ไทยพาณิชย์ (ออมทรัพย์)</td>
+                    <td class="text-center font-mono">115-2-44558-9</td>
+                    <td class="text-right font-mono font-bold">600,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>เงินสดในมือ / เงินสดย่อย</td>
+                    <td class="text-center font-mono">-</td>
+                    <td class="text-right font-mono font-bold">150,000.00</td>
+                  </tr>
+                  <tr style="background: #E2DFD6; font-weight: bold;">
+                    <td colspan="2" class="text-right">รวมเงินสดและสภาพคล่องทั้งหมด:</td>
+                    <td class="text-right font-mono tag-paid">1,937,020.26</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- สรุปภาษีมูลค่าเพิ่ม ภ.พ.30 -->
+            <div>
+              <div style="font-weight: bold; font-size: 11px; margin-bottom: 4px; padding: 2px 4px; background: #D4D0C8; border: 1px solid #808080;">
+                [+] สรุปภาษีมูลค่าเพิ่ม ภ.พ.30 ประจำงวด (VAT Summary)
+              </div>
+              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>รายการภาษี</th>
+                    <th width="110">ฐานภาษี (บ.)</th>
+                    <th width="105">ภาษี 7% (บ.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ภาษีขาย (จากการขาย 187 บิล)</td>
+                    <td class="text-right font-mono">1,938,389.50</td>
+                    <td class="text-right font-mono font-bold tag-paid">135,687.27</td>
+                  </tr>
+                  <tr>
+                    <td>ภาษีซื้อ (จากการซื้อและค่าใช้จ่าย)</td>
+                    <td class="text-right font-mono">1,430,797.29</td>
+                    <td class="text-right font-mono font-bold">100,155.81</td>
+                  </tr>
+                  <tr style="background: #E2DFD6; font-weight: bold;">
+                    <td>ภาษีมูลค่าเพิ่มที่ต้องนำส่ง (ภ.พ.30):</td>
+                    <td class="text-center font-mono">-</td>
+                    <td class="text-right font-mono tag-unpaid">35,531.46</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- สรุปลูกหนี้และเจ้าหนี้ -->
+            <div>
+              <div style="font-weight: bold; font-size: 11px; margin-bottom: 4px; padding: 2px 4px; background: #D4D0C8; border: 1px solid #808080;">
+                [+] สรุปหนี้สินและลูกหนี้การค้า (AR & AP Summary)
+              </div>
+              <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>รายการ</th>
+                    <th>จำนวนราย</th>
+                    <th width="110">ยอดเงินคงค้าง (บ.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ลูกหนี้การค้ารอเรียกเก็บ (AR)</td>
+                    <td class="text-center font-mono">14 ราย</td>
+                    <td class="text-right font-mono font-bold tag-warn">677,579.70</td>
+                  </tr>
+                  <tr>
+                    <td>เจ้าหนี้การค้ารอชำระ (AP)</td>
+                    <td class="text-center font-mono">5 ราย</td>
+                    <td class="text-right font-mono font-bold tag-unpaid">306,929.00</td>
+                  </tr>
+                  <tr style="background: #E2DFD6; font-weight: bold;">
+                    <td>ประมาณการเงินได้หลังหักหนี้สิน:</td>
+                    <td class="text-center font-mono">-</td>
+                    <td class="text-right font-mono tag-paid">+370,650.70</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- ==================== TAB 2: ทะเบียนสินค้า (100 รายการ) ==================== -->
+      <div class="tab-pane" id="tab-products">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ตัวกรองและค้นหาทะเบียนสินค้าเครื่องสำอาง (100 รายการครบถ้วน)</legend>
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label>หมวดหมู่:</label>
+              <select id="filter-prod-cat" class="xp-select">
+                <option value="ALL">-- แสดงทุกหมวดหมู่ --</option>
+                <option value="ครีมบำรุงผิวหน้า">ครีมบำรุงผิวหน้า</option>
+                <option value="เซรั่มบำรุงผิว">เซรั่มบำรุงผิว</option>
+                <option value="โทนเนอร์ปรับสภาพผิว">โทนเนอร์ปรับสภาพผิว</option>
+                <option value="โฟมและเจลล้างหน้า">โฟมและเจลล้างหน้า</option>
+                <option value="คลีนซิ่งเช็ดเครื่องสำอาง">คลีนซิ่งเช็ดเครื่องสำอาง</option>
+                <option value="ครีมกันแดด">ครีมกันแดด</option>
+                <option value="มาส์กหน้าและสครับ">มาส์กหน้าและสครับ</option>
+                <option value="อายครีมบำรุงรอบดวงตา">อายครีมบำรุงรอบดวงตา</option>
+                <option value="โลชั่นบำรุงผิวกาย">โลชั่นบำรุงผิวกาย</option>
+                <option value="สเปรย์น้ำแร่และมิสต์">สเปรย์น้ำแร่และมิสต์</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>สถานะสต็อก:</label>
+              <select id="filter-prod-stock" class="xp-select">
+                <option value="ALL">-- ทั้งหมด --</option>
+                <option value="LOW">[!] ถึงจุดสั่งซื้อเพิ่ม (Stock Alert)</option>
+                <option value="OK">[OK] สต็อกปกติ</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label>ค้นหารหัส/ชื่อสินค้า:</label>
+              <input type="text" id="search-prod" class="xp-input" placeholder="พิมพ์ SK- หรือชื่อสินค้า..." style="width: 170px;">
+            </div>
+
+            <div class="filter-group">
+              <label>แสดงต่อหน้า:</label>
+              <select id="select-prod-pagesize" class="xp-select">
+                <option value="25">25 รายการ</option>
+                <option value="50">50 รายการ</option>
+                <option value="0">แสดงครบ 100 รายการ</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="table-container">
+          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+            <thead>
+              <tr>
+                <th width="40">ลำดับ</th>
+                <th width="75">รหัสสินค้า</th>
+                <th>ชื่อสินค้าเครื่องสำอาง</th>
+                <th>หมวดหมู่</th>
+                <th width="85">ราคาทุน (บ.)</th>
+                <th width="85">ราคาขาย (บ.)</th>
+                <th width="70">กำไรขั้นต้น</th>
+                <th width="65">ยกมา (24 ส.ค.)</th>
+                <th width="65">รับเข้า (ซื้อ)</th>
+                <th width="65">จ่ายออก (ขาย)</th>
+                <th width="70">คงเหลือ (30 ต.ค.)</th>
+                <th width="105">มูลค่าคงเหลือ (บ.)</th>
+                <th width="110">สถานะสต็อก</th>
+              </tr>
+            </thead>
+            <tbody id="products-table-body">
+              <tr><td colspan="13" class="text-center">กำลังประมวลผลข้อมูลสินค้า...</td></tr>
+            </tbody>
+            <tfoot id="products-table-footer" style="background-color: #D4D0C8;"></tfoot>
+          </table>
+        </div>
+
+        <div class="pagination-bar">
+          <div id="products-page-info">กำลังโหลด...</div>
+          <div style="display: flex; gap: 4px;">
+            <button class="xp-btn" id="btn-prod-prev">[ &lt; หน้าก่อนหน้า ]</button>
+            <button class="xp-btn" id="btn-prod-next">[ หน้าถัดไป &gt; ]</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 3: สมุดรายวันขายและรายรับ ==================== -->
+      <div class="tab-pane" id="tab-sales">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ค้นหาและกรองรายการขายสินค้า (Sales Ledger 187 รายการ)</legend>
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label>สถานะการชำระ:</label>
+              <select id="filter-sales-status" class="xp-select">
+                <option value="ALL">-- แสดงทั้งหมด --</option>
+                <option value="PAID">ชำระเงินแล้ว</option>
+                <option value="UNPAID">ยังไม่ชำระ (ลูกหนี้การค้า)</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>ค้นหาเลขที่บิล/ชื่อลูกค้า:</label>
+              <input type="text" id="search-sales" class="xp-input" placeholder="พิมพ์ INV- หรือชื่อลูกค้า..." style="width: 200px;">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="table-container">
+          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+            <thead>
+              <tr>
+                <th width="85">วันที่</th>
+                <th width="110">เลขที่ใบกำกับ (INV)</th>
+                <th>ชื่อลูกค้า</th>
+                <th>รายการสินค้าและจำนวน</th>
+                <th width="90">มูลค่าสินค้า</th>
+                <th width="75">ส่วนลด (บ.)</th>
+                <th width="95">มูลค่าก่อนภาษี</th>
+                <th width="75">VAT 7%</th>
+                <th width="100">ยอดรวมสุทธิ (บ.)</th>
+                <th width="140">ช่องทางชำระเงิน</th>
+                <th width="110">สถานะ</th>
+              </tr>
+            </thead>
+            <tbody id="sales-table-body">
+              <tr><td colspan="11" class="text-center">กำลังโหลดรายการขาย...</td></tr>
+            </tbody>
+            <tfoot id="sales-table-footer" style="background-color: #D4D0C8;"></tfoot>
+          </table>
+        </div>
+
+        <div class="pagination-bar">
+          <div id="sales-page-info">กำลังโหลด...</div>
+          <div style="display: flex; gap: 4px;">
+            <button class="xp-btn" id="btn-sales-prev">[ &lt; ก่อนหน้า ]</button>
+            <button class="xp-btn" id="btn-sales-next">[ ถัดไป &gt; ]</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 4: สมุดรายวันซื้อสินค้า ==================== -->
+      <div class="tab-pane" id="tab-purchases">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ค้นหาและกรองบันทึกสั่งซื้อสินค้าเข้าคลัง (Purchases Ledger 32 รายการ)</legend>
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label>ค้นหาเลขที่ใบสั่งซื้อ / ผู้ผลิต:</label>
+              <input type="text" id="search-purchases" class="xp-input" placeholder="พิมพ์ PO- หรือชื่อผู้จัดจำหน่าย..." style="width: 220px;">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="table-container">
+          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+            <thead>
+              <tr>
+                <th width="85">วันที่</th>
+                <th width="110">เลขที่ใบสั่งซื้อ (PO)</th>
+                <th>ชื่อบริษัทผู้จัดจำหน่าย / โรงงานผลิต</th>
+                <th>รายการสินค้าที่สั่งซื้อเข้าคลัง</th>
+                <th width="95">มูลค่าก่อนภาษี</th>
+                <th width="80">ภาษีซื้อ 7%</th>
+                <th width="105">ยอดรวมสุทธิ (บ.)</th>
+                <th width="110">สถานะการชำระ</th>
+                <th width="150">เงื่อนไขการชำระเงิน</th>
+              </tr>
+            </thead>
+            <tbody id="purchases-table-body">
+              <tr><td colspan="9" class="text-center">กำลังโหลดรายการซื้อ...</td></tr>
+            </tbody>
+            <tfoot id="purchases-table-footer" style="background-color: #D4D0C8;"></tfoot>
+          </table>
+        </div>
+
+        <div class="pagination-bar">
+          <div id="purchases-page-info">กำลังโหลด...</div>
+          <div style="display: flex; gap: 4px;">
+            <button class="xp-btn" id="btn-pur-prev">[ &lt; ก่อนหน้า ]</button>
+            <button class="xp-btn" id="btn-pur-next">[ ถัดไป &gt; ]</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 5: ทะเบียนรายจ่ายและค่าใช้จ่ายดำเนินงาน ==================== -->
+      <div class="tab-pane" id="tab-expenses">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ค้นหาและกรองค่าใช้จ่ายดำเนินงาน (Expense Vouchers 38 รายการ)</legend>
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label>หมวดค่าใช้จ่าย:</label>
+              <select id="filter-exp-cat" class="xp-select">
+                <option value="ALL">-- แสดงทุกหมวดค่าใช้จ่าย --</option>
+                <option value="52101">52101 ค่าเช่าอาคารสำนักงานและคลังสินค้า</option>
+                <option value="52102">52102 ค่าไฟฟ้า</option>
+                <option value="52103">52103 ค่าน้ำประปา</option>
+                <option value="52104">52104 ค่าโทรศัพท์และอินเทอร์เน็ต</option>
+                <option value="52105">52105 เงินเดือนพนักงานฝ่ายคลังและจัดส่ง</option>
+                <option value="52106">52106 เงินเดือนพนักงานฝ่ายบัญชี</option>
+                <option value="52107">52107 ค่าโฆษณาและการตลาดออนไลน์</option>
+                <option value="52108">52108 ค่ากล่องพัสดุและบรรจุภัณฑ์</option>
+                <option value="52109">52109 ค่าขนส่งพัสดุ</option>
+                <option value="52110">52110 ค่าธรรมเนียมธนาคาร</option>
+                <option value="52111">52111 ค่าเครื่องเขียนและวัสดุสิ้นเปลือง</option>
+                <option value="52112">52112 ค่าเบี้ยประกันภัยคลังสินค้า</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>ค้นหาคำอธิบาย / ผู้รับเงิน:</label>
+              <input type="text" id="search-expenses" class="xp-input" placeholder="พิมพ์ PV- หรือผู้รับเงิน..." style="width: 200px;">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="table-container">
+          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+            <thead>
+              <tr>
+                <th width="85">วันที่</th>
+                <th width="105">ใบสำคัญจ่าย (PV)</th>
+                <th width="75">รหัสบัญชี</th>
+                <th width="190">หมวดค่าใช้จ่าย</th>
+                <th>รายละเอียดรายการที่จ่าย</th>
+                <th width="180">ผู้รับเงิน</th>
+                <th width="95">จำนวนเงิน (บ.)</th>
+                <th width="140">ช่องทางจ่ายเงิน</th>
+              </tr>
+            </thead>
+            <tbody id="expenses-table-body">
+              <tr><td colspan="8" class="text-center">กำลังโหลดรายการรายจ่าย...</td></tr>
+            </tbody>
+            <tfoot id="expenses-table-footer" style="background-color: #D4D0C8;"></tfoot>
+          </table>
+        </div>
+
+        <div class="pagination-bar">
+          <div id="expenses-page-info">กำลังโหลด...</div>
+          <div style="display: flex; gap: 4px;">
+            <button class="xp-btn" id="btn-exp-prev">[ &lt; ก่อนหน้า ]</button>
+            <button class="xp-btn" id="btn-exp-next">[ ถัดไป &gt; ]</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 6: ทะเบียนลูกค้าและลูกหนี้การค้า ==================== -->
+      <div class="tab-pane" id="tab-customers">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ทะเบียนลูกค้าและบัญชีลูกหนี้การค้า (30 ราย: คุณ A - Z และนิติบุคคล)</legend>
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label>ค้นหาชื่อลูกค้า / รหัส:</label>
+              <input type="text" id="search-customers" class="xp-input" placeholder="พิมพ์ชื่อ หรือ รหัสลูกค้า..." style="width: 200px;">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="table-container">
+          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+            <thead>
+              <tr>
+                <th width="75">รหัสลูกค้า</th>
+                <th>ชื่อลูกค้า / องค์กร</th>
+                <th width="100">ประเภทลูกค้า</th>
+                <th width="115">เลขประจำตัวผู้เสียภาษี</th>
+                <th width="95">เบอร์โทรศัพท์</th>
+                <th>ที่อยู่จัดส่งสินค้า</th>
+                <th width="80">เงื่อนไขเครดิต</th>
+                <th width="100">ยอดซื้อสะสม (บ.)</th>
+                <th width="105">ลูกหนี้คงค้าง (บ.)</th>
+                <th width="95">สถานะลูกหนี้</th>
+              </tr>
+            </thead>
+            <tbody id="customers-table-body">
+              <tr><td colspan="10" class="text-center">กำลังโหลดข้อมูลลูกค้า...</td></tr>
+            </tbody>
+            <tfoot id="customers-table-footer" style="background-color: #D4D0C8;"></tfoot>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 7: ทะเบียนผู้ผลิตและเจ้าหนี้ ==================== -->
+      <div class="tab-pane" id="tab-suppliers">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ทะเบียนคู่ค้าผู้จัดจำหน่ายวัตถุดิบและโรงงานผลิต (Suppliers & AP)</legend>
+          <p style="margin: 2px 0 6px 0; font-size: 11px;">
+            บริษัท โบวี่สแคร์กิน จำกัด ทำสัญญาสั่งซื้อวัตถุดิบและจ้างผลิต OEM กับบริษัทคู่ค้าชั้นนำ 6 แห่ง
+          </p>
+        </fieldset>
+
+        <div class="table-container">
+          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+            <thead>
+              <tr>
+                <th width="80">รหัสคู่ค้า</th>
+                <th>ชื่อบริษัทผู้จัดจำหน่าย / โรงงานผลิต</th>
+                <th>ประเภทสินค้า/บริการที่สั่งซื้อ</th>
+                <th width="100">เบอร์โทรศัพท์ติดต่อ</th>
+                <th width="120">ยอดสั่งซื้อสะสม (บ.)</th>
+                <th width="120">เจ้าหนี้คงค้าง (บ.)</th>
+                <th width="110">สถานะการชำระ</th>
+              </tr>
+            </thead>
+            <tbody id="suppliers-table-body">
+              <tr><td colspan="7" class="text-center">กำลังโหลดข้อมูลคู่ค้า...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 8: รายงานงบการเงินฉบับสมบูรณ์ ==================== -->
+      <div class="tab-pane" id="tab-financial">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          
+          <!-- งบกำไรขาดทุน -->
+          <fieldset class="xp-group">
+            <legend class="xp-legend">งบกำไรขาดทุนเบ็ดเสร็จ (Income Statement)</legend>
+            <div style="text-align: center; font-weight: bold; margin-bottom: 4px;">
+              บริษัท โบวี่สแคร์กิน จำกัด<br>
+              งบกำไรขาดทุน (สำหรับงวดตั้งแต่วันที่ 24 สิงหาคม 2569 ถึงวันที่ 30 ตุลาคม 2569)
+            </div>
+            <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>รายการทางบัญชี</th>
+                  <th width="130">จำนวนเงิน (บาท)</th>
+                </tr>
+              </thead>
+              <tbody id="income-statement-body"></tbody>
+            </table>
+          </fieldset>
+
+          <!-- งบแสดงฐานะการเงิน -->
+          <fieldset class="xp-group">
+            <legend class="xp-legend">งบแสดงฐานะการเงิน (Balance Sheet)</legend>
+            <div style="text-align: center; font-weight: bold; margin-bottom: 4px;">
+              บริษัท โบวี่สแคร์กิน จำกัด<br>
+              งบแสดงฐานะการเงิน ณ วันที่ 30 ตุลาคม 2569
+            </div>
+            <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>รายการทางบัญชี</th>
+                  <th width="130">จำนวนเงิน (บาท)</th>
+                </tr>
+              </thead>
+              <tbody id="balance-sheet-body"></tbody>
+            </table>
+          </fieldset>
+        </div>
+
+        <!-- งบทดลอง -->
+        <fieldset class="xp-group" style="margin-top: 10px;">
+          <legend class="xp-legend">งบทดลอง (Trial Balance) ณ วันที่ 30 ตุลาคม 2569</legend>
+          <div style="text-align: center; font-weight: bold; margin-bottom: 4px;">
+            บริษัท โบวี่สแคร์กิน จำกัด - งบทดลองก่อนปิดบัญชีประจำงวด 24 ส.ค. - 30 ต.ค. 2569
+          </div>
+          <div class="table-container">
+            <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+              <thead>
+                <tr>
+                  <th width="80">รหัสบัญชี</th>
+                  <th>ชื่อบัญชีแยกประเภท</th>
+                  <th width="140">เดบิต (Dr.) บาท</th>
+                  <th width="140">เครดิต (Cr.) บาท</th>
+                </tr>
+              </thead>
+              <tbody id="trial-balance-body"></tbody>
+            </table>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- ==================== TAB 9: ข้อมูลโครงงานและผังบัญชี ==================== -->
+      <div class="tab-pane" id="tab-project-info">
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ข้อมูลโครงงานจำลองระบบบัญชี (Project Information)</legend>
+          <table class="xp-table" border="1" cellpadding="4" cellspacing="0">
+            <tr>
+              <td width="200" class="font-bold">ข้อความชี้แจง:</td>
+              <td class="font-bold" style="color: #990000; background-color: #FFFFE1;">
+                โปรเจคนี้เป็นโปรเจคเพื่อนำส่ง / พรีเซ้นต์ในภาควิชาการบัญชีเท่านั้น ข้อมูลทุกอย่างคือการสมมติขึ้นมา
+              </td>
+            </tr>
+            <tr>
+              <td class="font-bold">ชื่อสถานประกอบการสมมุติ:</td>
+              <td><strong>บริษัท โบวี่สแคร์กิน จำกัด (BOWIE SCARESKIN CO., LTD.)</strong></td>
+            </tr>
+            <tr>
+              <td class="font-bold">ประเภทธุรกิจ:</td>
+              <td>จัดจำหน่ายเวชสำอาง ผลิตภัณฑ์บำรุงผิวหน้าและสกินแคร์ (จดทะเบียนภาษีมูลค่าเพิ่ม 7%)</td>
+            </tr>
+            <tr>
+              <td class="font-bold">ช่วงเวลาในการบันทึกบัญชี:</td>
+              <td>ระหว่างวันที่ <strong>24 สิงหาคม 2569 ถึง วันที่ 30 ตุลาคม 2569</strong> (รวมระยะเวลา 68 วัน)</td>
+            </tr>
+            <tr>
+              <td class="font-bold">รูปแบบการจำลองระบบ:</td>
+              <td>ระบบบริหารบัญชีและการเงินแบบ PEAK / FlowAccount ในรูปแบบสไตล์เว็บวินโดวส์คลาสสิก (HTML Table 90s)</td>
+            </tr>
+          </table>
+        </fieldset>
+
+        <fieldset class="xp-group">
+          <legend class="xp-legend">นโยบายการบัญชีที่ใช้ในโครงงาน (Accounting Policies)</legend>
+          <table class="xp-table" border="1" cellpadding="4" cellspacing="0">
+            <tr>
+              <td width="180" class="font-bold">1. เกณฑ์การบันทึกบัญชี:</td>
+              <td>ใช้เกณฑ์คงค้าง (Accrual Basis) ตามมาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียต่อสาธารณะ (TFRS for NPAEs)</td>
+            </tr>
+            <tr>
+              <td class="font-bold">2. การตีราคาสินค้าคงเหลือ:</td>
+              <td>บันทึกบัญชีสินค้าคงเหลือแบบต่อเนื่อง (Perpetual Inventory System) โดยใช้วิธีเข้าก่อน-ออกก่อน (First-In, First-Out: FIFO)</td>
+            </tr>
+            <tr>
+              <td class="font-bold">3. การรับรู้รายได้:</td>
+              <td>รับรู้รายได้จากการขายสินค้าเมื่อได้ส่งมอบสินค้าและโอนความเสี่ยงและผลตอบแทนในสินค้าให้แก่ลูกค้าแล้ว</td>
+            </tr>
+            <tr>
+              <td class="font-bold">4. ภาษีมูลค่าเพิ่ม:</td>
+              <td>กิจการจดทะเบียนภาษีมูลค่าเพิ่ม อัตราร้อยละ 7 โดยยื่นแบบ ภ.พ.30 ภายในวันที่ 15 ของเดือนถัดไป</td>
+            </tr>
+            <tr>
+              <td class="font-bold">5. ภาษีเงินได้นิติบุคคล:</td>
+              <td>คำนวณตามอัตราภาษีเงินได้นิติบุคคลสำหรับวิสาหกิจขนาดกลางและขนาดย่อม (SME) อัตราร้อยละ 15 ของกำไรสุทธิ</td>
+            </tr>
+          </table>
+        </fieldset>
+
+        <fieldset class="xp-group">
+          <legend class="xp-legend">ผังบัญชีมาตรฐานของกิจการ (Chart of Accounts)</legend>
+          <table class="xp-table" border="1" cellpadding="3" cellspacing="0">
+            <thead>
+              <tr style="background-color: #D4D0C8;">
+                <th width="100">รหัสบัญชี</th>
+                <th>ชื่อบัญชีภาษาไทย</th>
+                <th>ชื่อบัญชีภาษาอังกฤษ</th>
+                <th width="120">หมวดบัญชี</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="text-center font-mono">11101</td><td>เงินสดในมือ</td><td>Cash on Hand</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">11102</td><td>เงินฝากกระแสรายวัน ธ.กสิกรไทย</td><td>Cash at Bank - KBank</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">11103</td><td>เงินฝากออมทรัพย์ ธ.ไทยพาณิชย์</td><td>Savings Account - SCB</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">11201</td><td>ลูกหนี้การค้า</td><td>Accounts Receivable</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">11301</td><td>สินค้าคงเหลือสำเร็จรูป</td><td>Finished Goods Inventory</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">11401</td><td>ภาษีซื้อ</td><td>Input Tax (VAT)</td><td>1. สินทรัพย์หมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">12101</td><td>อุปกรณ์สำนักงานและคลังสินค้า</td><td>Office & Warehouse Equipment</td><td>1. สินทรัพย์ไม่หมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">21101</td><td>เจ้าหนี้การค้า</td><td>Accounts Payable</td><td>2. หนี้สินหมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">21201</td><td>ภาษีขาย</td><td>Output Tax (VAT)</td><td>2. หนี้สินหมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">21301</td><td>ภาษีเงินได้นิติบุคคลค้างจ่าย</td><td>Accrued Corporate Tax</td><td>2. หนี้สินหมุนเวียน</td></tr>
+              <tr><td class="text-center font-mono">31101</td><td>ทุนเรือนหุ้น</td><td>Share Capital</td><td>3. ส่วนของเจ้าของ</td></tr>
+              <tr><td class="text-center font-mono">32101</td><td>กำไรสะสมยังไม่ได้จัดสรร</td><td>Retained Earnings</td><td>3. ส่วนของเจ้าของ</td></tr>
+              <tr><td class="text-center font-mono">41101</td><td>รายได้จากการขายสินค้า</td><td>Sales Revenue</td><td>4. รายได้</td></tr>
+              <tr><td class="text-center font-mono">51101</td><td>ต้นทุนขาย</td><td>Cost of Goods Sold (COGS)</td><td>5. ต้นทุนขาย</td></tr>
+              <tr><td class="text-center font-mono">52101</td><td>ค่าเช่าอาคารสำนักงานและคลัง</td><td>Rent Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52102</td><td>ค่าไฟฟ้า</td><td>Electricity Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52103</td><td>ค่าน้ำประปา</td><td>Water Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52104</td><td>ค่าโทรศัพท์และอินเทอร์เน็ต</td><td>Telephone & Internet</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52105</td><td>เงินเดือนพนักงานฝ่ายคลัง</td><td>Warehouse Salaries</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52106</td><td>เงินเดือนพนักงานฝ่ายบัญชี</td><td>Accounting Salaries</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52107</td><td>ค่าโฆษณาและการตลาด</td><td>Advertising Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52108</td><td>ค่าบรรจุภัณฑ์และกล่องพัสดุ</td><td>Packaging Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52109</td><td>ค่าบริการจัดส่งสินค้า</td><td>Delivery & Shipping</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52110</td><td>ค่าธรรมเนียมธนาคาร</td><td>Bank Fees</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52111</td><td>ค่าวัสดุสำนักงานสิ้นเปลือง</td><td>Office Supplies Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">52112</td><td>ค่าเบี้ยประกันภัยคลังสินค้า</td><td>Insurance Expense</td><td>5. ค่าใช้จ่ายดำเนินงาน</td></tr>
+              <tr><td class="text-center font-mono">53101</td><td>ภาษีเงินได้นิติบุคคล</td><td>Corporate Income Tax</td><td>5. ภาษีเงินได้</td></tr>
+            </tbody>
+          </table>
+        </fieldset>
+      </div>
+
+    </div><!-- สิ้นสุด xp-tab-content-panel -->
+
+    <!-- 7. แถบสถานะด้านล่างสุด (Status Bar) -->
+    <div class="xp-status-bar">
+      <div class="status-panel grow">
+        สถานะ: ฐานข้อมูลเชื่อมต่อสำเร็จ [MS Access/MDB Emulation] | ช่วงเวลา: 24/08/2569 ถึง 30/10/2569 | บริษัท โบวี่สแคร์กิน จำกัด
+      </div>
+      <div class="status-panel">สินค้า: 100 รายการ</div>
+      <div class="status-panel">บิลขาย: 187 รายการ</div>
+      <div class="status-panel">ใบสั่งซื้อ: 32 รายการ</div>
+      <div class="status-panel">ดุลบัญชี: 0.00 บ.</div>
+      <div class="status-panel">CAPS</div>
+      <div class="status-panel">NUM</div>
+    </div>
+
+  </div><!-- สิ้นสุด xp-window -->
+
+  <!-- โหลดสคริปต์ฐานข้อมูลและระบบควบคุม -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10247 @@
+// ข้อมูลระบบบัญชี บริษัท โบวี่สแคร์กิน จำกัด
+// ช่วงเวลาบันทึกรายการ: 24 สิงหาคม 2569 ถึง 30 ตุลาคม 2569
+// ข้อความชี้แจง: โปรเจคนี้เป็นโปรเจคเพื่อนำส่ง / พรีเซ้นต์ในภาควิชาการบัญชีเท่านั้น ข้อมูลทุกอย่างคือการสมมติขึ้นมา
+const ACCOUNTING_DATA = {
+  "company": {
+    "name_th": "บริษัท โบวี่สแคร์กิน จำกัด",
+    "name_en": "BOWIE SCARESKIN CO., LTD.",
+    "tax_id": "0105569082401",
+    "address": "เลขที่ 124/8 ชั้น 3 อาคารบิวตี้ทาวเวอร์ ถนนรัชดาภิเษก แขวงจอมพล เขตจตุจักร กรุงเทพฯ 10900",
+    "tel": "02-987-6543, 081-234-5678",
+    "period_start": "24/08/2569",
+    "period_end": "30/10/2569",
+    "fiscal_year": "2569",
+    "project_notice": "โปรเจคนี้เป็นโปรเจคเพื่อนำส่ง / พรีเซ้นต์ในภาควิชาการบัญชีเท่านั้น ข้อมูลทุกอย่างคือการสมมติขึ้นมา"
+  },
+  "summary": {
+    "total_sales_net": 1938389.5,
+    "total_sales_grand": 2074076.96,
+    "total_sales_vat": 135687.46,
+    "total_cogs": 897620,
+    "gross_profit": 1040769.5,
+    "total_operating_expenses": 465450,
+    "net_profit_before_tax": 575319.5,
+    "corporate_tax": 86297.93,
+    "net_profit_after_tax": 489021.57,
+    "total_beg_inventory_value": 1192330,
+    "total_end_inventory_value": 1725510,
+    "total_ar": 677579.7,
+    "total_ap": 186929.0
+  },
+  "products": [
+    {
+      "sku": "SK-01",
+      "name": "สกินแคร์ A1 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 700,
+      "beg_stock": 75,
+      "purchased_qty": 0,
+      "sold_qty": 63,
+      "end_stock": 12,
+      "reorder_point": 15,
+      "end_stock_value": 3840
+    },
+    {
+      "sku": "SK-02",
+      "name": "ครีมบำรุง B1 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 420,
+      "sell_price": 760,
+      "beg_stock": 54,
+      "purchased_qty": 200,
+      "sold_qty": 50,
+      "end_stock": 204,
+      "reorder_point": 15,
+      "end_stock_value": 85680
+    },
+    {
+      "sku": "SK-03",
+      "name": "เซรั่มเข้มข้น C1 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 240,
+      "sell_price": 430,
+      "beg_stock": 75,
+      "purchased_qty": 0,
+      "sold_qty": 28,
+      "end_stock": 47,
+      "reorder_point": 15,
+      "end_stock_value": 11280
+    },
+    {
+      "sku": "SK-04",
+      "name": "โทนเนอร์ D1 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 70,
+      "sell_price": 140,
+      "beg_stock": 40,
+      "purchased_qty": 0,
+      "sold_qty": 39,
+      "end_stock": 1,
+      "reorder_point": 15,
+      "end_stock_value": 70
+    },
+    {
+      "sku": "SK-05",
+      "name": "คลีนซิ่ง E1 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 800,
+      "beg_stock": 60,
+      "purchased_qty": 60,
+      "sold_qty": 33,
+      "end_stock": 87,
+      "reorder_point": 15,
+      "end_stock_value": 27840
+    },
+    {
+      "sku": "SK-06",
+      "name": "กันแดด F1 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 130,
+      "sell_price": 360,
+      "beg_stock": 59,
+      "purchased_qty": 130,
+      "sold_qty": 47,
+      "end_stock": 142,
+      "reorder_point": 15,
+      "end_stock_value": 18460
+    },
+    {
+      "sku": "SK-07",
+      "name": "มาส์กหน้า G1 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 90,
+      "sell_price": 250,
+      "beg_stock": 77,
+      "purchased_qty": 50,
+      "sold_qty": 37,
+      "end_stock": 90,
+      "reorder_point": 15,
+      "end_stock_value": 8100
+    },
+    {
+      "sku": "SK-08",
+      "name": "อายครีม H1 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 100,
+      "sell_price": 200,
+      "beg_stock": 78,
+      "purchased_qty": 80,
+      "sold_qty": 35,
+      "end_stock": 123,
+      "reorder_point": 15,
+      "end_stock_value": 12300
+    },
+    {
+      "sku": "SK-09",
+      "name": "โลชั่นผิว I1 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 370,
+      "sell_price": 740,
+      "beg_stock": 50,
+      "purchased_qty": 0,
+      "sold_qty": 47,
+      "end_stock": 3,
+      "reorder_point": 15,
+      "end_stock_value": 1110
+    },
+    {
+      "sku": "SK-10",
+      "name": "เจลแต้มสิว J1 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 70,
+      "sell_price": 200,
+      "beg_stock": 40,
+      "purchased_qty": 0,
+      "sold_qty": 39,
+      "end_stock": 1,
+      "reorder_point": 15,
+      "end_stock_value": 70
+    },
+    {
+      "sku": "SK-11",
+      "name": "เอสเซนส์ K1 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 200,
+      "sell_price": 560,
+      "beg_stock": 77,
+      "purchased_qty": 130,
+      "sold_qty": 25,
+      "end_stock": 182,
+      "reorder_point": 15,
+      "end_stock_value": 36400
+    },
+    {
+      "sku": "SK-12",
+      "name": "สครับผิว L1 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 800,
+      "beg_stock": 37,
+      "purchased_qty": 50,
+      "sold_qty": 38,
+      "end_stock": 49,
+      "reorder_point": 15,
+      "end_stock_value": 15680
+    },
+    {
+      "sku": "SK-13",
+      "name": "บาล์มบำรุง M1 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 200,
+      "sell_price": 560,
+      "beg_stock": 47,
+      "purchased_qty": 120,
+      "sold_qty": 61,
+      "end_stock": 106,
+      "reorder_point": 15,
+      "end_stock_value": 21200
+    },
+    {
+      "sku": "SK-14",
+      "name": "สเปรย์แร่ N1 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 100,
+      "sell_price": 250,
+      "beg_stock": 79,
+      "purchased_qty": 100,
+      "sold_qty": 34,
+      "end_stock": 145,
+      "reorder_point": 15,
+      "end_stock_value": 14500
+    },
+    {
+      "sku": "SK-15",
+      "name": "ออยล์บำรุง O1 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 450,
+      "sell_price": 1120,
+      "beg_stock": 74,
+      "purchased_qty": 100,
+      "sold_qty": 26,
+      "end_stock": 148,
+      "reorder_point": 15,
+      "end_stock_value": 66600
+    },
+    {
+      "sku": "SK-16",
+      "name": "สกินแคร์ P1 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 200,
+      "sell_price": 360,
+      "beg_stock": 65,
+      "purchased_qty": 210,
+      "sold_qty": 56,
+      "end_stock": 219,
+      "reorder_point": 15,
+      "end_stock_value": 43800
+    },
+    {
+      "sku": "SK-17",
+      "name": "ครีมบำรุง Q1 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 120,
+      "sell_price": 220,
+      "beg_stock": 59,
+      "purchased_qty": 100,
+      "sold_qty": 44,
+      "end_stock": 115,
+      "reorder_point": 15,
+      "end_stock_value": 13800
+    },
+    {
+      "sku": "SK-18",
+      "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 150,
+      "sell_price": 270,
+      "beg_stock": 35,
+      "purchased_qty": 150,
+      "sold_qty": 43,
+      "end_stock": 142,
+      "reorder_point": 15,
+      "end_stock_value": 21300
+    },
+    {
+      "sku": "SK-19",
+      "name": "โทนเนอร์ S1 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 150,
+      "sell_price": 270,
+      "beg_stock": 68,
+      "purchased_qty": 20,
+      "sold_qty": 26,
+      "end_stock": 62,
+      "reorder_point": 15,
+      "end_stock_value": 9300
+    },
+    {
+      "sku": "SK-20",
+      "name": "คลีนซิ่ง T1 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 80,
+      "sell_price": 200,
+      "beg_stock": 33,
+      "purchased_qty": 120,
+      "sold_qty": 42,
+      "end_stock": 111,
+      "reorder_point": 15,
+      "end_stock_value": 8880
+    },
+    {
+      "sku": "SK-21",
+      "name": "กันแดด U1 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 310,
+      "sell_price": 780,
+      "beg_stock": 21,
+      "purchased_qty": 0,
+      "sold_qty": 20,
+      "end_stock": 1,
+      "reorder_point": 15,
+      "end_stock_value": 310
+    },
+    {
+      "sku": "SK-22",
+      "name": "มาส์กหน้า V1 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 120,
+      "sell_price": 340,
+      "beg_stock": 47,
+      "purchased_qty": 0,
+      "sold_qty": 26,
+      "end_stock": 21,
+      "reorder_point": 15,
+      "end_stock_value": 2520
+    },
+    {
+      "sku": "SK-23",
+      "name": "อายครีม W1 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 370,
+      "sell_price": 740,
+      "beg_stock": 45,
+      "purchased_qty": 50,
+      "sold_qty": 42,
+      "end_stock": 53,
+      "reorder_point": 15,
+      "end_stock_value": 19610
+    },
+    {
+      "sku": "SK-24",
+      "name": "โลชั่นผิว X1 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 80,
+      "sell_price": 220,
+      "beg_stock": 57,
+      "purchased_qty": 110,
+      "sold_qty": 31,
+      "end_stock": 136,
+      "reorder_point": 15,
+      "end_stock_value": 10880
+    },
+    {
+      "sku": "SK-25",
+      "name": "เจลแต้มสิว Y1 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 390,
+      "sell_price": 980,
+      "beg_stock": 68,
+      "purchased_qty": 180,
+      "sold_qty": 21,
+      "end_stock": 227,
+      "reorder_point": 15,
+      "end_stock_value": 88530
+    },
+    {
+      "sku": "SK-26",
+      "name": "เอสเซนส์ Z1 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 260,
+      "sell_price": 470,
+      "beg_stock": 43,
+      "purchased_qty": 150,
+      "sold_qty": 88,
+      "end_stock": 105,
+      "reorder_point": 15,
+      "end_stock_value": 27300
+    },
+    {
+      "sku": "SK-27",
+      "name": "สครับผิว A2 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 300,
+      "sell_price": 600,
+      "beg_stock": 61,
+      "purchased_qty": 0,
+      "sold_qty": 19,
+      "end_stock": 42,
+      "reorder_point": 15,
+      "end_stock_value": 12600
+    },
+    {
+      "sku": "SK-28",
+      "name": "บาล์มบำรุง B2 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 420,
+      "sell_price": 1180,
+      "beg_stock": 42,
+      "purchased_qty": 0,
+      "sold_qty": 40,
+      "end_stock": 2,
+      "reorder_point": 15,
+      "end_stock_value": 840
+    },
+    {
+      "sku": "SK-29",
+      "name": "สเปรย์แร่ C2 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 350,
+      "sell_price": 630,
+      "beg_stock": 63,
+      "purchased_qty": 20,
+      "sold_qty": 28,
+      "end_stock": 55,
+      "reorder_point": 15,
+      "end_stock_value": 19250
+    },
+    {
+      "sku": "SK-30",
+      "name": "ออยล์บำรุง D2 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 350,
+      "sell_price": 770,
+      "beg_stock": 30,
+      "purchased_qty": 0,
+      "sold_qty": 0,
+      "end_stock": 30,
+      "reorder_point": 15,
+      "end_stock_value": 10500
+    },
+    {
+      "sku": "SK-31",
+      "name": "สกินแคร์ E2 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 330,
+      "sell_price": 820,
+      "beg_stock": 53,
+      "purchased_qty": 0,
+      "sold_qty": 52,
+      "end_stock": 1,
+      "reorder_point": 15,
+      "end_stock_value": 330
+    },
+    {
+      "sku": "SK-32",
+      "name": "ครีมบำรุง F2 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 90,
+      "sell_price": 200,
+      "beg_stock": 72,
+      "purchased_qty": 30,
+      "sold_qty": 43,
+      "end_stock": 59,
+      "reorder_point": 15,
+      "end_stock_value": 5310
+    },
+    {
+      "sku": "SK-33",
+      "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 130,
+      "sell_price": 230,
+      "beg_stock": 56,
+      "purchased_qty": 80,
+      "sold_qty": 81,
+      "end_stock": 55,
+      "reorder_point": 15,
+      "end_stock_value": 7150
+    },
+    {
+      "sku": "SK-34",
+      "name": "โทนเนอร์ H2 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 350,
+      "sell_price": 980,
+      "beg_stock": 46,
+      "purchased_qty": 110,
+      "sold_qty": 39,
+      "end_stock": 117,
+      "reorder_point": 15,
+      "end_stock_value": 40950
+    },
+    {
+      "sku": "SK-35",
+      "name": "คลีนซิ่ง I2 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 180,
+      "sell_price": 360,
+      "beg_stock": 72,
+      "purchased_qty": 100,
+      "sold_qty": 18,
+      "end_stock": 154,
+      "reorder_point": 15,
+      "end_stock_value": 27720
+    },
+    {
+      "sku": "SK-36",
+      "name": "กันแดด J2 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 80,
+      "sell_price": 160,
+      "beg_stock": 76,
+      "purchased_qty": 0,
+      "sold_qty": 32,
+      "end_stock": 44,
+      "reorder_point": 15,
+      "end_stock_value": 3520
+    },
+    {
+      "sku": "SK-37",
+      "name": "มาส์กหน้า K2 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 160,
+      "sell_price": 450,
+      "beg_stock": 51,
+      "purchased_qty": 20,
+      "sold_qty": 31,
+      "end_stock": 40,
+      "reorder_point": 15,
+      "end_stock_value": 6400
+    },
+    {
+      "sku": "SK-38",
+      "name": "อายครีม L2 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 70,
+      "sell_price": 150,
+      "beg_stock": 28,
+      "purchased_qty": 300,
+      "sold_qty": 85,
+      "end_stock": 243,
+      "reorder_point": 15,
+      "end_stock_value": 17010
+    },
+    {
+      "sku": "SK-39",
+      "name": "โลชั่นผิว M2 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 360,
+      "sell_price": 790,
+      "beg_stock": 36,
+      "purchased_qty": 130,
+      "sold_qty": 41,
+      "end_stock": 125,
+      "reorder_point": 15,
+      "end_stock_value": 45000
+    },
+    {
+      "sku": "SK-40",
+      "name": "เจลแต้มสิว N2 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 150,
+      "sell_price": 380,
+      "beg_stock": 52,
+      "purchased_qty": 0,
+      "sold_qty": 13,
+      "end_stock": 39,
+      "reorder_point": 15,
+      "end_stock_value": 5850
+    },
+    {
+      "sku": "SK-41",
+      "name": "เอสเซนส์ O2 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 340,
+      "sell_price": 950,
+      "beg_stock": 26,
+      "purchased_qty": 30,
+      "sold_qty": 13,
+      "end_stock": 43,
+      "reorder_point": 15,
+      "end_stock_value": 14620
+    },
+    {
+      "sku": "SK-42",
+      "name": "สครับผิว P2 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 260,
+      "sell_price": 570,
+      "beg_stock": 26,
+      "purchased_qty": 160,
+      "sold_qty": 46,
+      "end_stock": 140,
+      "reorder_point": 15,
+      "end_stock_value": 36400
+    },
+    {
+      "sku": "SK-43",
+      "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 370,
+      "sell_price": 810,
+      "beg_stock": 40,
+      "purchased_qty": 80,
+      "sold_qty": 77,
+      "end_stock": 43,
+      "reorder_point": 15,
+      "end_stock_value": 15910
+    },
+    {
+      "sku": "SK-44",
+      "name": "สเปรย์แร่ R2 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 160,
+      "sell_price": 320,
+      "beg_stock": 49,
+      "purchased_qty": 0,
+      "sold_qty": 46,
+      "end_stock": 3,
+      "reorder_point": 15,
+      "end_stock_value": 480
+    },
+    {
+      "sku": "SK-45",
+      "name": "ออยล์บำรุง S2 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 380,
+      "sell_price": 760,
+      "beg_stock": 21,
+      "purchased_qty": 150,
+      "sold_qty": 16,
+      "end_stock": 155,
+      "reorder_point": 15,
+      "end_stock_value": 58900
+    },
+    {
+      "sku": "SK-46",
+      "name": "สกินแคร์ T2 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 800,
+      "beg_stock": 59,
+      "purchased_qty": 20,
+      "sold_qty": 54,
+      "end_stock": 25,
+      "reorder_point": 15,
+      "end_stock_value": 8000
+    },
+    {
+      "sku": "SK-47",
+      "name": "ครีมบำรุง U2 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 360,
+      "sell_price": 900,
+      "beg_stock": 31,
+      "purchased_qty": 0,
+      "sold_qty": 27,
+      "end_stock": 4,
+      "reorder_point": 15,
+      "end_stock_value": 1440
+    },
+    {
+      "sku": "SK-48",
+      "name": "เซรั่มเข้มข้น V2 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 800,
+      "beg_stock": 53,
+      "purchased_qty": 80,
+      "sold_qty": 28,
+      "end_stock": 105,
+      "reorder_point": 15,
+      "end_stock_value": 33600
+    },
+    {
+      "sku": "SK-49",
+      "name": "โทนเนอร์ W2 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 280,
+      "sell_price": 700,
+      "beg_stock": 74,
+      "purchased_qty": 50,
+      "sold_qty": 31,
+      "end_stock": 93,
+      "reorder_point": 15,
+      "end_stock_value": 26040
+    },
+    {
+      "sku": "SK-50",
+      "name": "คลีนซิ่ง X2 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 210,
+      "sell_price": 380,
+      "beg_stock": 32,
+      "purchased_qty": 0,
+      "sold_qty": 30,
+      "end_stock": 2,
+      "reorder_point": 15,
+      "end_stock_value": 420
+    },
+    {
+      "sku": "SK-51",
+      "name": "กันแดด Y2 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 290,
+      "sell_price": 720,
+      "beg_stock": 73,
+      "purchased_qty": 0,
+      "sold_qty": 53,
+      "end_stock": 20,
+      "reorder_point": 15,
+      "end_stock_value": 5800
+    },
+    {
+      "sku": "SK-52",
+      "name": "มาส์กหน้า Z2 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 350,
+      "sell_price": 700,
+      "beg_stock": 29,
+      "purchased_qty": 50,
+      "sold_qty": 31,
+      "end_stock": 48,
+      "reorder_point": 15,
+      "end_stock_value": 16800
+    },
+    {
+      "sku": "SK-53",
+      "name": "อายครีม A3 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 240,
+      "sell_price": 480,
+      "beg_stock": 57,
+      "purchased_qty": 0,
+      "sold_qty": 47,
+      "end_stock": 10,
+      "reorder_point": 15,
+      "end_stock_value": 2400
+    },
+    {
+      "sku": "SK-54",
+      "name": "โลชั่นผิว B3 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 360,
+      "sell_price": 1010,
+      "beg_stock": 64,
+      "purchased_qty": 20,
+      "sold_qty": 16,
+      "end_stock": 68,
+      "reorder_point": 15,
+      "end_stock_value": 24480
+    },
+    {
+      "sku": "SK-55",
+      "name": "เจลแต้มสิว C3 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 270,
+      "sell_price": 540,
+      "beg_stock": 64,
+      "purchased_qty": 0,
+      "sold_qty": 57,
+      "end_stock": 7,
+      "reorder_point": 15,
+      "end_stock_value": 1890
+    },
+    {
+      "sku": "SK-56",
+      "name": "เอสเซนส์ D3 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 430,
+      "sell_price": 950,
+      "beg_stock": 44,
+      "purchased_qty": 80,
+      "sold_qty": 30,
+      "end_stock": 94,
+      "reorder_point": 15,
+      "end_stock_value": 40420
+    },
+    {
+      "sku": "SK-57",
+      "name": "สครับผิว E3 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 150,
+      "sell_price": 420,
+      "beg_stock": 67,
+      "purchased_qty": 50,
+      "sold_qty": 17,
+      "end_stock": 100,
+      "reorder_point": 15,
+      "end_stock_value": 15000
+    },
+    {
+      "sku": "SK-58",
+      "name": "บาล์มบำรุง F3 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 120,
+      "sell_price": 260,
+      "beg_stock": 58,
+      "purchased_qty": 120,
+      "sold_qty": 46,
+      "end_stock": 132,
+      "reorder_point": 15,
+      "end_stock_value": 15840
+    },
+    {
+      "sku": "SK-59",
+      "name": "สเปรย์แร่ G3 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 580,
+      "beg_stock": 55,
+      "purchased_qty": 40,
+      "sold_qty": 6,
+      "end_stock": 89,
+      "reorder_point": 15,
+      "end_stock_value": 28480
+    },
+    {
+      "sku": "SK-60",
+      "name": "ออยล์บำรุง H3 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 410,
+      "sell_price": 740,
+      "beg_stock": 35,
+      "purchased_qty": 50,
+      "sold_qty": 65,
+      "end_stock": 20,
+      "reorder_point": 15,
+      "end_stock_value": 8200
+    },
+    {
+      "sku": "SK-61",
+      "name": "สกินแคร์ I3 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 140,
+      "sell_price": 250,
+      "beg_stock": 77,
+      "purchased_qty": 0,
+      "sold_qty": 52,
+      "end_stock": 25,
+      "reorder_point": 15,
+      "end_stock_value": 3500
+    },
+    {
+      "sku": "SK-62",
+      "name": "ครีมบำรุง J3 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 70,
+      "sell_price": 180,
+      "beg_stock": 56,
+      "purchased_qty": 50,
+      "sold_qty": 33,
+      "end_stock": 73,
+      "reorder_point": 15,
+      "end_stock_value": 5110
+    },
+    {
+      "sku": "SK-63",
+      "name": "เซรั่มเข้มข้น K3 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 410,
+      "sell_price": 820,
+      "beg_stock": 23,
+      "purchased_qty": 80,
+      "sold_qty": 26,
+      "end_stock": 77,
+      "reorder_point": 15,
+      "end_stock_value": 31570
+    },
+    {
+      "sku": "SK-64",
+      "name": "โทนเนอร์ L3 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 900,
+      "beg_stock": 46,
+      "purchased_qty": 0,
+      "sold_qty": 44,
+      "end_stock": 2,
+      "reorder_point": 15,
+      "end_stock_value": 640
+    },
+    {
+      "sku": "SK-65",
+      "name": "คลีนซิ่ง M3 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 390,
+      "sell_price": 860,
+      "beg_stock": 31,
+      "purchased_qty": 130,
+      "sold_qty": 29,
+      "end_stock": 132,
+      "reorder_point": 15,
+      "end_stock_value": 51480
+    },
+    {
+      "sku": "SK-66",
+      "name": "กันแดด N3 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 200,
+      "sell_price": 400,
+      "beg_stock": 62,
+      "purchased_qty": 0,
+      "sold_qty": 32,
+      "end_stock": 30,
+      "reorder_point": 15,
+      "end_stock_value": 6000
+    },
+    {
+      "sku": "SK-67",
+      "name": "มาส์กหน้า O3 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 440,
+      "sell_price": 880,
+      "beg_stock": 58,
+      "purchased_qty": 20,
+      "sold_qty": 36,
+      "end_stock": 42,
+      "reorder_point": 15,
+      "end_stock_value": 18480
+    },
+    {
+      "sku": "SK-68",
+      "name": "อายครีม P3 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 80,
+      "sell_price": 180,
+      "beg_stock": 51,
+      "purchased_qty": 100,
+      "sold_qty": 30,
+      "end_stock": 121,
+      "reorder_point": 15,
+      "end_stock_value": 9680
+    },
+    {
+      "sku": "SK-69",
+      "name": "โลชั่นผิว Q3 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 80,
+      "sell_price": 220,
+      "beg_stock": 53,
+      "purchased_qty": 30,
+      "sold_qty": 58,
+      "end_stock": 25,
+      "reorder_point": 15,
+      "end_stock_value": 2000
+    },
+    {
+      "sku": "SK-70",
+      "name": "เจลแต้มสิว R3 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 290,
+      "sell_price": 580,
+      "beg_stock": 35,
+      "purchased_qty": 50,
+      "sold_qty": 82,
+      "end_stock": 3,
+      "reorder_point": 15,
+      "end_stock_value": 870
+    },
+    {
+      "sku": "SK-71",
+      "name": "เอสเซนส์ S3 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 200,
+      "sell_price": 560,
+      "beg_stock": 72,
+      "purchased_qty": 20,
+      "sold_qty": 81,
+      "end_stock": 11,
+      "reorder_point": 15,
+      "end_stock_value": 2200
+    },
+    {
+      "sku": "SK-72",
+      "name": "สครับผิว T3 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 440,
+      "sell_price": 880,
+      "beg_stock": 46,
+      "purchased_qty": 0,
+      "sold_qty": 41,
+      "end_stock": 5,
+      "reorder_point": 15,
+      "end_stock_value": 2200
+    },
+    {
+      "sku": "SK-73",
+      "name": "บาล์มบำรุง U3 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 90,
+      "sell_price": 180,
+      "beg_stock": 66,
+      "purchased_qty": 130,
+      "sold_qty": 30,
+      "end_stock": 166,
+      "reorder_point": 15,
+      "end_stock_value": 14940
+    },
+    {
+      "sku": "SK-74",
+      "name": "สเปรย์แร่ V3 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 80,
+      "sell_price": 140,
+      "beg_stock": 30,
+      "purchased_qty": 160,
+      "sold_qty": 17,
+      "end_stock": 173,
+      "reorder_point": 15,
+      "end_stock_value": 13840
+    },
+    {
+      "sku": "SK-75",
+      "name": "ออยล์บำรุง W3 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 250,
+      "sell_price": 550,
+      "beg_stock": 55,
+      "purchased_qty": 20,
+      "sold_qty": 28,
+      "end_stock": 47,
+      "reorder_point": 15,
+      "end_stock_value": 11750
+    },
+    {
+      "sku": "SK-76",
+      "name": "สกินแคร์ X3 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 420,
+      "sell_price": 920,
+      "beg_stock": 25,
+      "purchased_qty": 150,
+      "sold_qty": 36,
+      "end_stock": 139,
+      "reorder_point": 15,
+      "end_stock_value": 58380
+    },
+    {
+      "sku": "SK-77",
+      "name": "ครีมบำรุง Y3 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 240,
+      "sell_price": 480,
+      "beg_stock": 51,
+      "purchased_qty": 20,
+      "sold_qty": 12,
+      "end_stock": 59,
+      "reorder_point": 15,
+      "end_stock_value": 14160
+    },
+    {
+      "sku": "SK-78",
+      "name": "เซรั่มเข้มข้น Z3 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 380,
+      "sell_price": 680,
+      "beg_stock": 65,
+      "purchased_qty": 0,
+      "sold_qty": 32,
+      "end_stock": 33,
+      "reorder_point": 15,
+      "end_stock_value": 12540
+    },
+    {
+      "sku": "SK-79",
+      "name": "โทนเนอร์ A4 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 350,
+      "sell_price": 980,
+      "beg_stock": 59,
+      "purchased_qty": 100,
+      "sold_qty": 0,
+      "end_stock": 159,
+      "reorder_point": 15,
+      "end_stock_value": 55650
+    },
+    {
+      "sku": "SK-80",
+      "name": "คลีนซิ่ง B4 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 240,
+      "sell_price": 600,
+      "beg_stock": 41,
+      "purchased_qty": 0,
+      "sold_qty": 39,
+      "end_stock": 2,
+      "reorder_point": 15,
+      "end_stock_value": 480
+    },
+    {
+      "sku": "SK-81",
+      "name": "กันแดด C4 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 150,
+      "sell_price": 380,
+      "beg_stock": 27,
+      "purchased_qty": 80,
+      "sold_qty": 17,
+      "end_stock": 90,
+      "reorder_point": 15,
+      "end_stock_value": 13500
+    },
+    {
+      "sku": "SK-82",
+      "name": "มาส์กหน้า D4 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 130,
+      "sell_price": 290,
+      "beg_stock": 37,
+      "purchased_qty": 120,
+      "sold_qty": 58,
+      "end_stock": 99,
+      "reorder_point": 15,
+      "end_stock_value": 12870
+    },
+    {
+      "sku": "SK-83",
+      "name": "อายครีม E4 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 220,
+      "sell_price": 550,
+      "beg_stock": 52,
+      "purchased_qty": 100,
+      "sold_qty": 29,
+      "end_stock": 123,
+      "reorder_point": 15,
+      "end_stock_value": 27060
+    },
+    {
+      "sku": "SK-84",
+      "name": "โลชั่นผิว F4 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 330,
+      "sell_price": 590,
+      "beg_stock": 22,
+      "purchased_qty": 30,
+      "sold_qty": 11,
+      "end_stock": 41,
+      "reorder_point": 15,
+      "end_stock_value": 13530
+    },
+    {
+      "sku": "SK-85",
+      "name": "เจลแต้มสิว G4 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 420,
+      "sell_price": 1180,
+      "beg_stock": 31,
+      "purchased_qty": 100,
+      "sold_qty": 51,
+      "end_stock": 80,
+      "reorder_point": 15,
+      "end_stock_value": 33600
+    },
+    {
+      "sku": "SK-86",
+      "name": "เอสเซนส์ H4 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 220,
+      "sell_price": 620,
+      "beg_stock": 24,
+      "purchased_qty": 50,
+      "sold_qty": 63,
+      "end_stock": 11,
+      "reorder_point": 15,
+      "end_stock_value": 2420
+    },
+    {
+      "sku": "SK-87",
+      "name": "สครับผิว I4 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 300,
+      "sell_price": 600,
+      "beg_stock": 31,
+      "purchased_qty": 30,
+      "sold_qty": 35,
+      "end_stock": 26,
+      "reorder_point": 15,
+      "end_stock_value": 7800
+    },
+    {
+      "sku": "SK-88",
+      "name": "บาล์มบำรุง J4 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 380,
+      "sell_price": 1060,
+      "beg_stock": 20,
+      "purchased_qty": 50,
+      "sold_qty": 38,
+      "end_stock": 32,
+      "reorder_point": 15,
+      "end_stock_value": 12160
+    },
+    {
+      "sku": "SK-89",
+      "name": "สเปรย์แร่ K4 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 290,
+      "sell_price": 810,
+      "beg_stock": 71,
+      "purchased_qty": 20,
+      "sold_qty": 29,
+      "end_stock": 62,
+      "reorder_point": 15,
+      "end_stock_value": 17980
+    },
+    {
+      "sku": "SK-90",
+      "name": "ออยล์บำรุง L4 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 110,
+      "sell_price": 310,
+      "beg_stock": 58,
+      "purchased_qty": 0,
+      "sold_qty": 42,
+      "end_stock": 16,
+      "reorder_point": 15,
+      "end_stock_value": 1760
+    },
+    {
+      "sku": "SK-91",
+      "name": "สกินแคร์ M4 สูตรโบวี่",
+      "category": "ครีมบำรุงผิวหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 70,
+      "sell_price": 140,
+      "beg_stock": 75,
+      "purchased_qty": 80,
+      "sold_qty": 35,
+      "end_stock": 120,
+      "reorder_point": 15,
+      "end_stock_value": 8400
+    },
+    {
+      "sku": "SK-92",
+      "name": "ครีมบำรุง N4 สูตรโบวี่",
+      "category": "เซรั่มบำรุงผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 420,
+      "sell_price": 1050,
+      "beg_stock": 26,
+      "purchased_qty": 100,
+      "sold_qty": 18,
+      "end_stock": 108,
+      "reorder_point": 15,
+      "end_stock_value": 45360
+    },
+    {
+      "sku": "SK-93",
+      "name": "เซรั่มเข้มข้น O4 สูตรโบวี่",
+      "category": "โทนเนอร์ปรับสภาพผิว",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 270,
+      "sell_price": 540,
+      "beg_stock": 64,
+      "purchased_qty": 30,
+      "sold_qty": 5,
+      "end_stock": 89,
+      "reorder_point": 15,
+      "end_stock_value": 24030
+    },
+    {
+      "sku": "SK-94",
+      "name": "โทนเนอร์ P4 สูตรโบวี่",
+      "category": "โฟมและเจลล้างหน้า",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 120,
+      "sell_price": 260,
+      "beg_stock": 36,
+      "purchased_qty": 30,
+      "sold_qty": 31,
+      "end_stock": 35,
+      "reorder_point": 15,
+      "end_stock_value": 4200
+    },
+    {
+      "sku": "SK-95",
+      "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+      "category": "คลีนซิ่งเช็ดเครื่องสำอาง",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 250,
+      "sell_price": 550,
+      "beg_stock": 36,
+      "purchased_qty": 70,
+      "sold_qty": 46,
+      "end_stock": 60,
+      "reorder_point": 15,
+      "end_stock_value": 15000
+    },
+    {
+      "sku": "SK-96",
+      "name": "กันแดด R4 สูตรโบวี่",
+      "category": "ครีมกันแดด",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 80,
+      "sell_price": 180,
+      "beg_stock": 77,
+      "purchased_qty": 0,
+      "sold_qty": 42,
+      "end_stock": 35,
+      "reorder_point": 15,
+      "end_stock_value": 2800
+    },
+    {
+      "sku": "SK-97",
+      "name": "มาส์กหน้า S4 สูตรโบวี่",
+      "category": "มาส์กหน้าและสครับ",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 180,
+      "sell_price": 450,
+      "beg_stock": 64,
+      "purchased_qty": 140,
+      "sold_qty": 58,
+      "end_stock": 146,
+      "reorder_point": 15,
+      "end_stock_value": 26280
+    },
+    {
+      "sku": "SK-98",
+      "name": "อายครีม T4 สูตรโบวี่",
+      "category": "อายครีมบำรุงรอบดวงตา",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 200,
+      "sell_price": 500,
+      "beg_stock": 49,
+      "purchased_qty": 0,
+      "sold_qty": 48,
+      "end_stock": 1,
+      "reorder_point": 15,
+      "end_stock_value": 200
+    },
+    {
+      "sku": "SK-99",
+      "name": "โลชั่นผิว U4 สูตรโบวี่",
+      "category": "โลชั่นบำรุงผิวกาย",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 150,
+      "sell_price": 380,
+      "beg_stock": 63,
+      "purchased_qty": 0,
+      "sold_qty": 41,
+      "end_stock": 22,
+      "reorder_point": 15,
+      "end_stock_value": 3300
+    },
+    {
+      "sku": "SK-100",
+      "name": "เจลแต้มสิว V4 สูตรโบวี่",
+      "category": "สเปรย์น้ำแร่และมิสต์",
+      "unit": "ขวด/กระปุก",
+      "cost_price": 320,
+      "sell_price": 580,
+      "beg_stock": 62,
+      "purchased_qty": 0,
+      "sold_qty": 28,
+      "end_stock": 34,
+      "reorder_point": 15,
+      "end_stock_value": 10880
+    }
+  ],
+  "customers": [
+    {
+      "cust_id": "C-01",
+      "name": "คุณ A",
+      "type": "บุคคลธรรมดา",
+      "phone": "089-645-3540",
+      "address": "725/22 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100018765430",
+      "credit_term": 0,
+      "total_sales": 82211.85,
+      "total_receivable": 0
+    },
+    {
+      "cust_id": "C-02",
+      "name": "คุณ B",
+      "type": "บุคคลธรรมดา",
+      "phone": "089-610-2521",
+      "address": "965/22 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100028765431",
+      "credit_term": 30,
+      "total_sales": 7188.26,
+      "total_receivable": 5326.46
+    },
+    {
+      "cust_id": "C-03",
+      "name": "คุณ C",
+      "type": "บุคคลธรรมดา",
+      "phone": "089-542-4596",
+      "address": "571/7 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100038765432",
+      "credit_term": 0,
+      "total_sales": 80130.17,
+      "total_receivable": 0
+    },
+    {
+      "cust_id": "C-04",
+      "name": "คุณ D",
+      "type": "บุคคลธรรมดา",
+      "phone": "088-837-8095",
+      "address": "527/7 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100048765433",
+      "credit_term": 0,
+      "total_sales": 79854.11,
+      "total_receivable": 0
+    },
+    {
+      "cust_id": "C-05",
+      "name": "คุณ E",
+      "type": "บุคคลธรรมดา",
+      "phone": "082-565-3168",
+      "address": "121/26 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100058765434",
+      "credit_term": 15,
+      "total_sales": 54016.81,
+      "total_receivable": 25209.2
+    },
+    {
+      "cust_id": "C-06",
+      "name": "คุณ F",
+      "type": "บุคคลธรรมดา",
+      "phone": "086-235-4325",
+      "address": "949/25 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100068765435",
+      "credit_term": 15,
+      "total_sales": 88720.12,
+      "total_receivable": 13458.46
+    },
+    {
+      "cust_id": "C-07",
+      "name": "คุณ G",
+      "type": "บุคคลธรรมดา",
+      "phone": "088-609-6152",
+      "address": "457/46 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100078765436",
+      "credit_term": 15,
+      "total_sales": 74635.70999999999,
+      "total_receivable": 50294.28
+    },
+    {
+      "cust_id": "C-08",
+      "name": "คุณ H",
+      "type": "บุคคลธรรมดา",
+      "phone": "087-211-8929",
+      "address": "717/19 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100088765437",
+      "credit_term": 0,
+      "total_sales": 30840.61,
+      "total_receivable": 0
+    },
+    {
+      "cust_id": "C-09",
+      "name": "คุณ I",
+      "type": "บุคคลธรรมดา",
+      "phone": "089-308-6775",
+      "address": "559/9 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100098765438",
+      "credit_term": 30,
+      "total_sales": 106198.59999999999,
+      "total_receivable": 68095.34999999999
+    },
+    {
+      "cust_id": "C-10",
+      "name": "คุณ J",
+      "type": "บุคคลธรรมดา",
+      "phone": "089-284-2797",
+      "address": "631/43 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100108765439",
+      "credit_term": 15,
+      "total_sales": 63943.21,
+      "total_receivable": 9839.72
+    },
+    {
+      "cust_id": "C-11",
+      "name": "คุณ K",
+      "type": "บุคคลธรรมดา",
+      "phone": "085-401-8455",
+      "address": "602/14 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100118765430",
+      "credit_term": 30,
+      "total_sales": 151062.08000000002,
+      "total_receivable": 59068.82000000001
+    },
+    {
+      "cust_id": "C-12",
+      "name": "คุณ L",
+      "type": "บุคคลธรรมดา",
+      "phone": "083-124-1226",
+      "address": "873/38 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100128765431",
+      "credit_term": 15,
+      "total_sales": 100486.91999999998,
+      "total_receivable": 64421.5
+    },
+    {
+      "cust_id": "C-13",
+      "name": "คุณ M",
+      "type": "บุคคลธรรมดา",
+      "phone": "085-821-8185",
+      "address": "633/8 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100138765432",
+      "credit_term": 30,
+      "total_sales": 62277.22,
+      "total_receivable": 7664.41
+    },
+    {
+      "cust_id": "C-14",
+      "name": "คุณ N",
+      "type": "บุคคลธรรมดา",
+      "phone": "087-369-9776",
+      "address": "396/49 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100148765433",
+      "credit_term": 15,
+      "total_sales": 70819.56,
+      "total_receivable": 28620.9
+    },
+    {
+      "cust_id": "C-15",
+      "name": "คุณ O",
+      "type": "บุคคลธรรมดา",
+      "phone": "082-581-8213",
+      "address": "977/46 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "1100158765434",
+      "credit_term": 15,
+      "total_sales": 35048.93,
+      "total_receivable": 28899.1
+    },
+    {
+      "cust_id": "C-16",
+      "name": "บริษัท P บิวตี้เทรดดิ้ง จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "086-490-7935",
+      "address": "310/27 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "0105516987655",
+      "credit_term": 30,
+      "total_sales": 33307.5,
+      "total_receivable": 21194.03
+    },
+    {
+      "cust_id": "C-17",
+      "name": "บริษัท Q บิวตี้เทรดดิ้ง จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "081-991-9870",
+      "address": "775/29 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "0105517987656",
+      "credit_term": 30,
+      "total_sales": 38340.240000000005,
+      "total_receivable": 14190.34
+    },
+    {
+      "cust_id": "C-18",
+      "name": "บริษัท R บิวตี้เทรดดิ้ง จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "082-448-2225",
+      "address": "823/50 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "0105518987657",
+      "credit_term": 0,
+      "total_sales": 34377.5,
+      "total_receivable": 0
+    },
+    {
+      "cust_id": "C-19",
+      "name": "บริษัท S บิวตี้เทรดดิ้ง จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "086-192-5157",
+      "address": "432/20 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "0105519987658",
+      "credit_term": 0,
+      "total_sales": 52075.3,
+      "total_receivable": 0
+    },
+    {
+      "cust_id": "C-20",
+      "name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "082-238-2331",
+      "address": "152/31 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "0105520987659",
+      "credit_term": 15,
+      "total_sales": 66228.2,
+      "total_receivable": 10276.82
+    },
+    {
+      "cust_id": "C-21",
+      "name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "085-545-8403",
+      "address": "866/44 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "0105521987650",
+      "credit_term": 15,
+      "total_sales": 46179.06,
+      "total_receivable": 20730.18
+    },
+    {
+      "cust_id": "C-22",
+      "name": "บริษัท V บิวตี้เทรดดิ้ง จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "089-800-1458",
+      "address": "165/11 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "0105522987651",
+      "credit_term": 15,
+      "total_sales": 15317.05,
+      "total_receivable": 15317.05
+    },
+    {
+      "cust_id": "C-23",
+      "name": "ร้านสกินแคร์ W",
+      "type": "ร้านค้าส่ง/ปลีก",
+      "phone": "084-795-7076",
+      "address": "80/16 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "310023123452",
+      "credit_term": 30,
+      "total_sales": 109971.4,
+      "total_receivable": 30084.66
+    },
+    {
+      "cust_id": "C-24",
+      "name": "ร้านสกินแคร์ X",
+      "type": "ร้านค้าส่ง/ปลีก",
+      "phone": "085-290-2165",
+      "address": "87/13 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "310024123453",
+      "credit_term": 30,
+      "total_sales": 125980.20000000001,
+      "total_receivable": 56166.979999999996
+    },
+    {
+      "cust_id": "C-25",
+      "name": "ร้านสกินแคร์ Y",
+      "type": "ร้านค้าส่ง/ปลีก",
+      "phone": "089-930-1711",
+      "address": "736/30 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "310025123454",
+      "credit_term": 15,
+      "total_sales": 36009.78,
+      "total_receivable": 15801.759999999998
+    },
+    {
+      "cust_id": "C-26",
+      "name": "ร้านสกินแคร์ Z",
+      "type": "ร้านค้าส่ง/ปลีก",
+      "phone": "086-978-4713",
+      "address": "807/23 ถนนมิตรภาพ แขวงลาดยาว เขตจตุจักร กรุงเทพฯ",
+      "tax_id": "310026123455",
+      "credit_term": 0,
+      "total_sales": 48012.509999999995,
+      "total_receivable": 0
+    },
+    {
+      "cust_id": "C-27",
+      "name": "คลินิกความงาม AA",
+      "type": "นิติบุคคล",
+      "phone": "02-541-1122",
+      "address": "128/9 สยามสแควร์วัน ปทุมวัน กทม.",
+      "tax_id": "0105562014521",
+      "credit_term": 30,
+      "total_sales": 92735.3,
+      "total_receivable": 17199.18
+    },
+    {
+      "cust_id": "C-28",
+      "name": "หจก. เครื่องสำอาง BB",
+      "type": "นิติบุคคล",
+      "phone": "053-221-889",
+      "address": "45 ถนนนิมมานเหมินท์ ต.สุเทพ อ.เมือง จ.เชียงใหม่",
+      "tax_id": "0503559001244",
+      "credit_term": 15,
+      "total_sales": 76529.61,
+      "total_receivable": 45241.74
+    },
+    {
+      "cust_id": "C-29",
+      "name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "type": "บุคคลธรรมดา",
+      "phone": "089-771-4455",
+      "address": "88/14 หมู่บ้านปัญญารามอินทรา คันนายาว กทม.",
+      "tax_id": "1103700412891",
+      "credit_term": 30,
+      "total_sales": 107333.84999999999,
+      "total_receivable": 19894.510000000002
+    },
+    {
+      "cust_id": "C-30",
+      "name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "type": "นิติบุคคล",
+      "phone": "02-998-3344",
+      "address": "909 อาคารเอ็กซ์เชนจ์ทาวเวอร์ สุขุมวิท คลองเตย กทม.",
+      "tax_id": "0105558043219",
+      "credit_term": 30,
+      "total_sales": 104245.3,
+      "total_receivable": 50584.25
+    }
+  ],
+  "suppliers": [
+    {
+      "sup_id": "S-01",
+      "name": "บริษัท วัตถุดิบสกินแคร์ A จำกัด",
+      "product_type": "หัวเชื้อสารสกัดและสารออกฤทธิ์",
+      "contact": "02-123-4567"
+    },
+    {
+      "sup_id": "S-02",
+      "name": "โรงงานแล็บเครื่องสำอาง B จำกัด",
+      "product_type": "รับจ้างผลิตครีมและเซรั่ม OEM",
+      "contact": "02-234-5678"
+    },
+    {
+      "sup_id": "S-03",
+      "name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "product_type": "บรรจุภัณฑ์ขวดดรอปเปอร์/กระปุกอะคริลิก",
+      "contact": "02-345-6789"
+    },
+    {
+      "sup_id": "S-04",
+      "name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "product_type": "กล่องบรรจุภัณฑ์และฉลากกันน้ำ",
+      "contact": "02-456-7890"
+    },
+    {
+      "sup_id": "S-05",
+      "name": "บริษัท เคมีคอลไทย E จำกัด",
+      "product_type": "สารกันเสียธรรมชาติและวิตามินอี",
+      "contact": "02-567-8901"
+    },
+    {
+      "sup_id": "S-06",
+      "name": "บริษัท สมุนไพรและสกินแล็บ F จำกัด",
+      "product_type": "สารสกัดสมุนไพรเกรดพรีเมียม",
+      "contact": "02-678-9012"
+    }
+  ],
+  "sales": [
+    {
+      "inv_no": "INV-01",
+      "date": "24/08/2569",
+      "raw_date": "2026-08-24",
+      "customer_id": "C-15",
+      "customer_name": "คุณ O",
+      "items": [
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 2350
+        },
+        {
+          "sku": "SK-23",
+          "name": "อายครีม W1 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 9620
+        }
+      ],
+      "subtotal": 11970,
+      "discount": 598.5,
+      "net_before_vat": 11371.5,
+      "vat": 796.01,
+      "grand_total": 12167.51,
+      "cogs": 6110,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-02",
+      "date": "24/08/2569",
+      "raw_date": "2026-08-24",
+      "customer_id": "C-04",
+      "customer_name": "คุณ D",
+      "items": [
+        {
+          "sku": "SK-80",
+          "name": "คลีนซิ่ง B4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 600,
+          "unit_cost": 240,
+          "total": 7200
+        },
+        {
+          "sku": "SK-72",
+          "name": "สครับผิว T3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 3520
+        }
+      ],
+      "subtotal": 10720,
+      "discount": 536.0,
+      "net_before_vat": 10184.0,
+      "vat": 712.88,
+      "grand_total": 10896.88,
+      "cogs": 4640,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-03",
+      "date": "25/08/2569",
+      "raw_date": "2026-08-25",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-01",
+          "name": "สกินแคร์ A1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 700,
+          "unit_cost": 320,
+          "total": 4200
+        }
+      ],
+      "subtotal": 4200,
+      "discount": 0,
+      "net_before_vat": 4200,
+      "vat": 294.0,
+      "grand_total": 4494.0,
+      "cogs": 1920,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-04",
+      "date": "25/08/2569",
+      "raw_date": "2026-08-25",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-96",
+          "name": "กันแดด R4 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 1440
+        }
+      ],
+      "subtotal": 1440,
+      "discount": 0,
+      "net_before_vat": 1440,
+      "vat": 100.8,
+      "grand_total": 1540.8,
+      "cogs": 640,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-05",
+      "date": "26/08/2569",
+      "raw_date": "2026-08-26",
+      "customer_id": "C-18",
+      "customer_name": "บริษัท R บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-47",
+          "name": "ครีมบำรุง U2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 900,
+          "unit_cost": 360,
+          "total": 3600
+        },
+        {
+          "sku": "SK-09",
+          "name": "โลชั่นผิว I1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 10360
+        }
+      ],
+      "subtotal": 13960,
+      "discount": 698.0,
+      "net_before_vat": 13262.0,
+      "vat": 928.34,
+      "grand_total": 14190.34,
+      "cogs": 6620,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-06",
+      "date": "26/08/2569",
+      "raw_date": "2026-08-26",
+      "customer_id": "C-01",
+      "customer_name": "คุณ A",
+      "items": [
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 9600
+        },
+        {
+          "sku": "SK-36",
+          "name": "กันแดด J2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 160,
+          "unit_cost": 80,
+          "total": 1920
+        },
+        {
+          "sku": "SK-94",
+          "name": "โทนเนอร์ P4 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 260
+        },
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 12150
+        }
+      ],
+      "subtotal": 23930,
+      "discount": 1196.5,
+      "net_before_vat": 22733.5,
+      "vat": 1591.35,
+      "grand_total": 24324.85,
+      "cogs": 10470,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-07",
+      "date": "27/08/2569",
+      "raw_date": "2026-08-27",
+      "customer_id": "C-10",
+      "customer_name": "คุณ J",
+      "items": [
+        {
+          "sku": "SK-10",
+          "name": "เจลแต้มสิว J1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 200,
+          "unit_cost": 70,
+          "total": 2400
+        }
+      ],
+      "subtotal": 2400,
+      "discount": 0,
+      "net_before_vat": 2400,
+      "vat": 168.0,
+      "grand_total": 2568.0,
+      "cogs": 840,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-08",
+      "date": "27/08/2569",
+      "raw_date": "2026-08-27",
+      "customer_id": "C-03",
+      "customer_name": "คุณ C",
+      "items": [
+        {
+          "sku": "SK-65",
+          "name": "คลีนซิ่ง M3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 860,
+          "unit_cost": 390,
+          "total": 12900
+        }
+      ],
+      "subtotal": 12900,
+      "discount": 645.0,
+      "net_before_vat": 12255.0,
+      "vat": 857.85,
+      "grand_total": 13112.85,
+      "cogs": 5850,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-09",
+      "date": "27/08/2569",
+      "raw_date": "2026-08-27",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-96",
+          "name": "กันแดด R4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 2160
+        },
+        {
+          "sku": "SK-64",
+          "name": "โทนเนอร์ L3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 900,
+          "unit_cost": 320,
+          "total": 12600
+        }
+      ],
+      "subtotal": 14760,
+      "discount": 738.0,
+      "net_before_vat": 14022.0,
+      "vat": 981.54,
+      "grand_total": 15003.54,
+      "cogs": 5440,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-10",
+      "date": "27/08/2569",
+      "raw_date": "2026-08-27",
+      "customer_id": "C-19",
+      "customer_name": "บริษัท S บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 2100
+        },
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 2530
+        },
+        {
+          "sku": "SK-34",
+          "name": "โทนเนอร์ H2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 980,
+          "unit_cost": 350,
+          "total": 13720
+        },
+        {
+          "sku": "SK-28",
+          "name": "บาล์มบำรุง B2 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 9440
+        }
+      ],
+      "subtotal": 27790,
+      "discount": 1389.5,
+      "net_before_vat": 26400.5,
+      "vat": 1848.04,
+      "grand_total": 28248.54,
+      "cogs": 10670,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-11",
+      "date": "28/08/2569",
+      "raw_date": "2026-08-28",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-25",
+          "name": "เจลแต้มสิว Y1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 980,
+          "unit_cost": 390,
+          "total": 13720
+        },
+        {
+          "sku": "SK-28",
+          "name": "บาล์มบำรุง B2 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 15340
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 7280
+        }
+      ],
+      "subtotal": 36340,
+      "discount": 1817.0,
+      "net_before_vat": 34523.0,
+      "vat": 2416.61,
+      "grand_total": 36939.61,
+      "cogs": 13520,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-12",
+      "date": "28/08/2569",
+      "raw_date": "2026-08-28",
+      "customer_id": "C-13",
+      "customer_name": "คุณ M",
+      "items": [
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 1600
+        }
+      ],
+      "subtotal": 1600,
+      "discount": 0,
+      "net_before_vat": 1600,
+      "vat": 112.0,
+      "grand_total": 1712.0,
+      "cogs": 640,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-13",
+      "date": "28/08/2569",
+      "raw_date": "2026-08-28",
+      "customer_id": "C-01",
+      "customer_name": "คุณ A",
+      "items": [
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 360,
+          "unit_cost": 200,
+          "total": 4320
+        }
+      ],
+      "subtotal": 4320,
+      "discount": 0,
+      "net_before_vat": 4320,
+      "vat": 302.4,
+      "grand_total": 4622.4,
+      "cogs": 2400,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-14",
+      "date": "29/08/2569",
+      "raw_date": "2026-08-29",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-91",
+          "name": "สกินแคร์ M4 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 1960
+        },
+        {
+          "sku": "SK-55",
+          "name": "เจลแต้มสิว C3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 540,
+          "unit_cost": 270,
+          "total": 6480
+        },
+        {
+          "sku": "SK-94",
+          "name": "โทนเนอร์ P4 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 2860
+        }
+      ],
+      "subtotal": 11300,
+      "discount": 565.0,
+      "net_before_vat": 10735.0,
+      "vat": 751.45,
+      "grand_total": 11486.45,
+      "cogs": 5540,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-15",
+      "date": "29/08/2569",
+      "raw_date": "2026-08-29",
+      "customer_id": "C-16",
+      "customer_name": "บริษัท P บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-15",
+          "name": "ออยล์บำรุง O1 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 1120,
+          "unit_cost": 450,
+          "total": 3360
+        }
+      ],
+      "subtotal": 3360,
+      "discount": 0,
+      "net_before_vat": 3360,
+      "vat": 235.2,
+      "grand_total": 3595.2,
+      "cogs": 1350,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-16",
+      "date": "30/08/2569",
+      "raw_date": "2026-08-30",
+      "customer_id": "C-24",
+      "customer_name": "ร้านสกินแคร์ X",
+      "items": [
+        {
+          "sku": "SK-36",
+          "name": "กันแดด J2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 160,
+          "unit_cost": 80,
+          "total": 320
+        },
+        {
+          "sku": "SK-17",
+          "name": "ครีมบำรุง Q1 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 220,
+          "unit_cost": 120,
+          "total": 1540
+        }
+      ],
+      "subtotal": 1860,
+      "discount": 0,
+      "net_before_vat": 1860,
+      "vat": 130.2,
+      "grand_total": 1990.2,
+      "cogs": 1000,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-17",
+      "date": "30/08/2569",
+      "raw_date": "2026-08-30",
+      "customer_id": "C-04",
+      "customer_name": "คุณ D",
+      "items": [
+        {
+          "sku": "SK-01",
+          "name": "สกินแคร์ A1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 700,
+          "unit_cost": 320,
+          "total": 7000
+        }
+      ],
+      "subtotal": 7000,
+      "discount": 350.0,
+      "net_before_vat": 6650.0,
+      "vat": 465.5,
+      "grand_total": 7115.5,
+      "cogs": 3200,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-18",
+      "date": "31/08/2569",
+      "raw_date": "2026-08-31",
+      "customer_id": "C-28",
+      "customer_name": "หจก. เครื่องสำอาง BB",
+      "items": [
+        {
+          "sku": "SK-63",
+          "name": "เซรั่มเข้มข้น K3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 820,
+          "unit_cost": 410,
+          "total": 3280
+        },
+        {
+          "sku": "SK-22",
+          "name": "มาส์กหน้า V1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 340,
+          "unit_cost": 120,
+          "total": 1360
+        }
+      ],
+      "subtotal": 4640,
+      "discount": 0,
+      "net_before_vat": 4640,
+      "vat": 324.8,
+      "grand_total": 4964.8,
+      "cogs": 2120,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-19",
+      "date": "31/08/2569",
+      "raw_date": "2026-08-31",
+      "customer_id": "C-02",
+      "customer_name": "คุณ B",
+      "items": [
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 290,
+          "unit_cost": 130,
+          "total": 1740
+        }
+      ],
+      "subtotal": 1740,
+      "discount": 0,
+      "net_before_vat": 1740,
+      "vat": 121.8,
+      "grand_total": 1861.8,
+      "cogs": 780,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-20",
+      "date": "01/09/2569",
+      "raw_date": "2026-09-01",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 10400
+        }
+      ],
+      "subtotal": 10400,
+      "discount": 520.0,
+      "net_before_vat": 9880.0,
+      "vat": 691.6,
+      "grand_total": 10571.6,
+      "cogs": 4160,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-21",
+      "date": "02/09/2569",
+      "raw_date": "2026-09-02",
+      "customer_id": "C-05",
+      "customer_name": "คุณ E",
+      "items": [
+        {
+          "sku": "SK-63",
+          "name": "เซรั่มเข้มข้น K3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 820,
+          "unit_cost": 410,
+          "total": 5740
+        }
+      ],
+      "subtotal": 5740,
+      "discount": 287.0,
+      "net_before_vat": 5453.0,
+      "vat": 381.71,
+      "grand_total": 5834.71,
+      "cogs": 2870,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-22",
+      "date": "02/09/2569",
+      "raw_date": "2026-09-02",
+      "customer_id": "C-14",
+      "customer_name": "คุณ N",
+      "items": [
+        {
+          "sku": "SK-01",
+          "name": "สกินแคร์ A1 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 700,
+          "unit_cost": 320,
+          "total": 10500
+        },
+        {
+          "sku": "SK-35",
+          "name": "คลีนซิ่ง I2 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 360,
+          "unit_cost": 180,
+          "total": 4680
+        }
+      ],
+      "subtotal": 15180,
+      "discount": 759.0,
+      "net_before_vat": 14421.0,
+      "vat": 1009.47,
+      "grand_total": 15430.47,
+      "cogs": 7140,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-23",
+      "date": "02/09/2569",
+      "raw_date": "2026-09-02",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-74",
+          "name": "สเปรย์แร่ V3 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 140,
+          "unit_cost": 80,
+          "total": 1120
+        },
+        {
+          "sku": "SK-37",
+          "name": "มาส์กหน้า K2 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 450,
+          "unit_cost": 160,
+          "total": 3600
+        },
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 7280
+        }
+      ],
+      "subtotal": 12000,
+      "discount": 600.0,
+      "net_before_vat": 11400.0,
+      "vat": 798.0,
+      "grand_total": 12198.0,
+      "cogs": 4520,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-24",
+      "date": "03/09/2569",
+      "raw_date": "2026-09-03",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 880
+        },
+        {
+          "sku": "SK-83",
+          "name": "อายครีม E4 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 550,
+          "unit_cost": 220,
+          "total": 3850
+        },
+        {
+          "sku": "SK-94",
+          "name": "โทนเนอร์ P4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 2600
+        }
+      ],
+      "subtotal": 7330,
+      "discount": 366.5,
+      "net_before_vat": 6963.5,
+      "vat": 487.45,
+      "grand_total": 7450.95,
+      "cogs": 3060,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-25",
+      "date": "03/09/2569",
+      "raw_date": "2026-09-03",
+      "customer_id": "C-13",
+      "customer_name": "คุณ M",
+      "items": [
+        {
+          "sku": "SK-14",
+          "name": "สเปรย์แร่ N1 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 250,
+          "unit_cost": 100,
+          "total": 2250
+        },
+        {
+          "sku": "SK-96",
+          "name": "กันแดด R4 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 1980
+        },
+        {
+          "sku": "SK-60",
+          "name": "ออยล์บำรุง H3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 740,
+          "unit_cost": 410,
+          "total": 11100
+        }
+      ],
+      "subtotal": 15330,
+      "discount": 766.5,
+      "net_before_vat": 14563.5,
+      "vat": 1019.45,
+      "grand_total": 15582.95,
+      "cogs": 7930,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-26",
+      "date": "04/09/2569",
+      "raw_date": "2026-09-04",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 1980
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 6580
+        },
+        {
+          "sku": "SK-32",
+          "name": "ครีมบำรุง F2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 200,
+          "unit_cost": 90,
+          "total": 2400
+        }
+      ],
+      "subtotal": 10960,
+      "discount": 548.0,
+      "net_before_vat": 10412.0,
+      "vat": 728.84,
+      "grand_total": 11140.84,
+      "cogs": 5440,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-27",
+      "date": "05/09/2569",
+      "raw_date": "2026-09-05",
+      "customer_id": "C-27",
+      "customer_name": "คลินิกความงาม AA",
+      "items": [
+        {
+          "sku": "SK-72",
+          "name": "สครับผิว T3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 8800
+        },
+        {
+          "sku": "SK-31",
+          "name": "สกินแคร์ E2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 820,
+          "unit_cost": 330,
+          "total": 9020
+        },
+        {
+          "sku": "SK-20",
+          "name": "คลีนซิ่ง T1 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 200,
+          "unit_cost": 80,
+          "total": 1800
+        }
+      ],
+      "subtotal": 19620,
+      "discount": 981.0,
+      "net_before_vat": 18639.0,
+      "vat": 1304.73,
+      "grand_total": 19943.73,
+      "cogs": 8750,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-28",
+      "date": "05/09/2569",
+      "raw_date": "2026-09-05",
+      "customer_id": "C-08",
+      "customer_name": "คุณ H",
+      "items": [
+        {
+          "sku": "SK-50",
+          "name": "คลีนซิ่ง X2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 380,
+          "unit_cost": 210,
+          "total": 3800
+        }
+      ],
+      "subtotal": 3800,
+      "discount": 0,
+      "net_before_vat": 3800,
+      "vat": 266.0,
+      "grand_total": 4066.0,
+      "cogs": 2100,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-29",
+      "date": "05/09/2569",
+      "raw_date": "2026-09-05",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-20",
+          "name": "คลีนซิ่ง T1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 200,
+          "unit_cost": 80,
+          "total": 2800
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 2900
+        }
+      ],
+      "subtotal": 5700,
+      "discount": 285.0,
+      "net_before_vat": 5415.0,
+      "vat": 379.05,
+      "grand_total": 5794.05,
+      "cogs": 2570,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-30",
+      "date": "06/09/2569",
+      "raw_date": "2026-09-06",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-53",
+          "name": "อายครีม A3 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 480,
+          "unit_cost": 240,
+          "total": 3840
+        }
+      ],
+      "subtotal": 3840,
+      "discount": 0,
+      "net_before_vat": 3840,
+      "vat": 268.8,
+      "grand_total": 4108.8,
+      "cogs": 1920,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-31",
+      "date": "06/09/2569",
+      "raw_date": "2026-09-06",
+      "customer_id": "C-24",
+      "customer_name": "ร้านสกินแคร์ X",
+      "items": [
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 4700
+        }
+      ],
+      "subtotal": 4700,
+      "discount": 0,
+      "net_before_vat": 4700,
+      "vat": 329.0,
+      "grand_total": 5029.0,
+      "cogs": 2600,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-32",
+      "date": "06/09/2569",
+      "raw_date": "2026-09-06",
+      "customer_id": "C-19",
+      "customer_name": "บริษัท S บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 3200
+        },
+        {
+          "sku": "SK-37",
+          "name": "มาส์กหน้า K2 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 450,
+          "unit_cost": 160,
+          "total": 3600
+        }
+      ],
+      "subtotal": 6800,
+      "discount": 340.0,
+      "net_before_vat": 6460.0,
+      "vat": 452.2,
+      "grand_total": 6912.2,
+      "cogs": 2560,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-33",
+      "date": "07/09/2569",
+      "raw_date": "2026-09-07",
+      "customer_id": "C-01",
+      "customer_name": "คุณ A",
+      "items": [
+        {
+          "sku": "SK-21",
+          "name": "กันแดด U1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 780,
+          "unit_cost": 310,
+          "total": 7800
+        },
+        {
+          "sku": "SK-24",
+          "name": "โลชั่นผิว X1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 2640
+        }
+      ],
+      "subtotal": 10440,
+      "discount": 522.0,
+      "net_before_vat": 9918.0,
+      "vat": 694.26,
+      "grand_total": 10612.26,
+      "cogs": 4060,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-34",
+      "date": "07/09/2569",
+      "raw_date": "2026-09-07",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-52",
+          "name": "มาส์กหน้า Z2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 700,
+          "unit_cost": 350,
+          "total": 4200
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 4640
+        },
+        {
+          "sku": "SK-98",
+          "name": "อายครีม T4 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 500,
+          "unit_cost": 200,
+          "total": 4500
+        },
+        {
+          "sku": "SK-92",
+          "name": "ครีมบำรุง N4 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 1050,
+          "unit_cost": 420,
+          "total": 6300
+        }
+      ],
+      "subtotal": 19640,
+      "discount": 982.0,
+      "net_before_vat": 18658.0,
+      "vat": 1306.06,
+      "grand_total": 19964.06,
+      "cogs": 8740,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-35",
+      "date": "07/09/2569",
+      "raw_date": "2026-09-07",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-21",
+          "name": "กันแดด U1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 780,
+          "unit_cost": 310,
+          "total": 1560
+        },
+        {
+          "sku": "SK-04",
+          "name": "โทนเนอร์ D1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 1680
+        }
+      ],
+      "subtotal": 3240,
+      "discount": 0,
+      "net_before_vat": 3240,
+      "vat": 226.8,
+      "grand_total": 3466.8,
+      "cogs": 1460,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-36",
+      "date": "07/09/2569",
+      "raw_date": "2026-09-07",
+      "customer_id": "C-13",
+      "customer_name": "คุณ M",
+      "items": [
+        {
+          "sku": "SK-17",
+          "name": "ครีมบำรุง Q1 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 220,
+          "unit_cost": 120,
+          "total": 1540
+        }
+      ],
+      "subtotal": 1540,
+      "discount": 0,
+      "net_before_vat": 1540,
+      "vat": 107.8,
+      "grand_total": 1647.8,
+      "cogs": 840,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-37",
+      "date": "08/09/2569",
+      "raw_date": "2026-09-08",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-47",
+          "name": "ครีมบำรุง U2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 900,
+          "unit_cost": 360,
+          "total": 10800
+        },
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 3220
+        },
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 1650
+        },
+        {
+          "sku": "SK-99",
+          "name": "โลชั่นผิว U4 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 1520
+        }
+      ],
+      "subtotal": 17190,
+      "discount": 859.5,
+      "net_before_vat": 16330.5,
+      "vat": 1143.14,
+      "grand_total": 17473.64,
+      "cogs": 7490,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-38",
+      "date": "08/09/2569",
+      "raw_date": "2026-09-08",
+      "customer_id": "C-24",
+      "customer_name": "ร้านสกินแคร์ X",
+      "items": [
+        {
+          "sku": "SK-49",
+          "name": "โทนเนอร์ W2 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 700,
+          "unit_cost": 280,
+          "total": 5600
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 2820
+        },
+        {
+          "sku": "SK-05",
+          "name": "คลีนซิ่ง E1 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 10400
+        }
+      ],
+      "subtotal": 18820,
+      "discount": 941.0,
+      "net_before_vat": 17879.0,
+      "vat": 1251.53,
+      "grand_total": 19130.53,
+      "cogs": 7960,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-39",
+      "date": "09/09/2569",
+      "raw_date": "2026-09-09",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-83",
+          "name": "อายครีม E4 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 550,
+          "unit_cost": 220,
+          "total": 1650
+        },
+        {
+          "sku": "SK-80",
+          "name": "คลีนซิ่ง B4 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 600,
+          "unit_cost": 240,
+          "total": 1200
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 600
+        }
+      ],
+      "subtotal": 3450,
+      "discount": 0,
+      "net_before_vat": 3450,
+      "vat": 241.5,
+      "grand_total": 3691.5,
+      "cogs": 1420,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-40",
+      "date": "09/09/2569",
+      "raw_date": "2026-09-09",
+      "customer_id": "C-04",
+      "customer_name": "คุณ D",
+      "items": [
+        {
+          "sku": "SK-72",
+          "name": "สครับผิว T3 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 5280
+        },
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 290,
+          "unit_cost": 130,
+          "total": 2030
+        }
+      ],
+      "subtotal": 7310,
+      "discount": 365.5,
+      "net_before_vat": 6944.5,
+      "vat": 486.12,
+      "grand_total": 7430.62,
+      "cogs": 3550,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-41",
+      "date": "09/09/2569",
+      "raw_date": "2026-09-09",
+      "customer_id": "C-28",
+      "customer_name": "หจก. เครื่องสำอาง BB",
+      "items": [
+        {
+          "sku": "SK-62",
+          "name": "ครีมบำรุง J3 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 180,
+          "unit_cost": 70,
+          "total": 900
+        },
+        {
+          "sku": "SK-05",
+          "name": "คลีนซิ่ง E1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 11200
+        },
+        {
+          "sku": "SK-31",
+          "name": "สกินแคร์ E2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 820,
+          "unit_cost": 330,
+          "total": 4100
+        },
+        {
+          "sku": "SK-49",
+          "name": "โทนเนอร์ W2 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 700,
+          "unit_cost": 280,
+          "total": 9100
+        }
+      ],
+      "subtotal": 25300,
+      "discount": 1265.0,
+      "net_before_vat": 24035.0,
+      "vat": 1682.45,
+      "grand_total": 25717.45,
+      "cogs": 10120,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-42",
+      "date": "09/09/2569",
+      "raw_date": "2026-09-09",
+      "customer_id": "C-25",
+      "customer_name": "ร้านสกินแคร์ Y",
+      "items": [
+        {
+          "sku": "SK-77",
+          "name": "ครีมบำรุง Y3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 480,
+          "unit_cost": 240,
+          "total": 4800
+        },
+        {
+          "sku": "SK-51",
+          "name": "กันแดด Y2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 720,
+          "unit_cost": 290,
+          "total": 6480
+        },
+        {
+          "sku": "SK-60",
+          "name": "ออยล์บำรุง H3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 740,
+          "unit_cost": 410,
+          "total": 2960
+        }
+      ],
+      "subtotal": 14240,
+      "discount": 712.0,
+      "net_before_vat": 13528.0,
+      "vat": 946.96,
+      "grand_total": 14474.96,
+      "cogs": 6650,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-43",
+      "date": "10/09/2569",
+      "raw_date": "2026-09-10",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-41",
+          "name": "เอสเซนส์ O2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 950,
+          "unit_cost": 340,
+          "total": 8550
+        }
+      ],
+      "subtotal": 8550,
+      "discount": 427.5,
+      "net_before_vat": 8122.5,
+      "vat": 568.58,
+      "grand_total": 8691.08,
+      "cogs": 3060,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-44",
+      "date": "10/09/2569",
+      "raw_date": "2026-09-10",
+      "customer_id": "C-25",
+      "customer_name": "ร้านสกินแคร์ Y",
+      "items": [
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 360,
+          "unit_cost": 200,
+          "total": 2880
+        },
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 5500
+        },
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 880
+        }
+      ],
+      "subtotal": 9260,
+      "discount": 463.0,
+      "net_before_vat": 8797.0,
+      "vat": 615.79,
+      "grand_total": 9412.79,
+      "cogs": 4420,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-45",
+      "date": "10/09/2569",
+      "raw_date": "2026-09-10",
+      "customer_id": "C-04",
+      "customer_name": "คุณ D",
+      "items": [
+        {
+          "sku": "SK-32",
+          "name": "ครีมบำรุง F2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 200,
+          "unit_cost": 90,
+          "total": 3000
+        }
+      ],
+      "subtotal": 3000,
+      "discount": 0,
+      "net_before_vat": 3000,
+      "vat": 210.0,
+      "grand_total": 3210.0,
+      "cogs": 1350,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-46",
+      "date": "10/09/2569",
+      "raw_date": "2026-09-10",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-10",
+          "name": "เจลแต้มสิว J1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 200,
+          "unit_cost": 70,
+          "total": 2400
+        },
+        {
+          "sku": "SK-40",
+          "name": "เจลแต้มสิว N2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 380
+        },
+        {
+          "sku": "SK-87",
+          "name": "สครับผิว I4 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 600,
+          "unit_cost": 300,
+          "total": 8400
+        }
+      ],
+      "subtotal": 11180,
+      "discount": 559.0,
+      "net_before_vat": 10621.0,
+      "vat": 743.47,
+      "grand_total": 11364.47,
+      "cogs": 5190,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-47",
+      "date": "11/09/2569",
+      "raw_date": "2026-09-11",
+      "customer_id": "C-04",
+      "customer_name": "คุณ D",
+      "items": [
+        {
+          "sku": "SK-65",
+          "name": "คลีนซิ่ง M3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 860,
+          "unit_cost": 390,
+          "total": 3440
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 940
+        },
+        {
+          "sku": "SK-92",
+          "name": "ครีมบำรุง N4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 1050,
+          "unit_cost": 420,
+          "total": 12600
+        },
+        {
+          "sku": "SK-05",
+          "name": "คลีนซิ่ง E1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 800
+        }
+      ],
+      "subtotal": 17780,
+      "discount": 889.0,
+      "net_before_vat": 16891.0,
+      "vat": 1182.37,
+      "grand_total": 18073.37,
+      "cogs": 7440,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-48",
+      "date": "11/09/2569",
+      "raw_date": "2026-09-11",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 4400
+        },
+        {
+          "sku": "SK-91",
+          "name": "สกินแคร์ M4 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 840
+        }
+      ],
+      "subtotal": 5240,
+      "discount": 262.0,
+      "net_before_vat": 4978.0,
+      "vat": 348.46,
+      "grand_total": 5326.46,
+      "cogs": 2420,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-49",
+      "date": "11/09/2569",
+      "raw_date": "2026-09-11",
+      "customer_id": "C-24",
+      "customer_name": "ร้านสกินแคร์ X",
+      "items": [
+        {
+          "sku": "SK-05",
+          "name": "คลีนซิ่ง E1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 4000
+        },
+        {
+          "sku": "SK-85",
+          "name": "เจลแต้มสิว G4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 14160
+        },
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 570,
+          "unit_cost": 260,
+          "total": 7980
+        }
+      ],
+      "subtotal": 26140,
+      "discount": 1307.0,
+      "net_before_vat": 24833.0,
+      "vat": 1738.31,
+      "grand_total": 26571.31,
+      "cogs": 10280,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-50",
+      "date": "12/09/2569",
+      "raw_date": "2026-09-12",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-85",
+          "name": "เจลแต้มสิว G4 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 8260
+        }
+      ],
+      "subtotal": 8260,
+      "discount": 413.0,
+      "net_before_vat": 7847.0,
+      "vat": 549.29,
+      "grand_total": 8396.29,
+      "cogs": 2940,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-51",
+      "date": "12/09/2569",
+      "raw_date": "2026-09-12",
+      "customer_id": "C-10",
+      "customer_name": "คุณ J",
+      "items": [
+        {
+          "sku": "SK-98",
+          "name": "อายครีม T4 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 500,
+          "unit_cost": 200,
+          "total": 6500
+        },
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 570,
+          "unit_cost": 260,
+          "total": 1710
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 8400
+        },
+        {
+          "sku": "SK-53",
+          "name": "อายครีม A3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 480,
+          "unit_cost": 240,
+          "total": 6720
+        }
+      ],
+      "subtotal": 23330,
+      "discount": 1166.5,
+      "net_before_vat": 22163.5,
+      "vat": 1551.45,
+      "grand_total": 23714.95,
+      "cogs": 9740,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-52",
+      "date": "12/09/2569",
+      "raw_date": "2026-09-12",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-10",
+          "name": "เจลแต้มสิว J1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 200,
+          "unit_cost": 70,
+          "total": 800
+        },
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 460
+        }
+      ],
+      "subtotal": 1260,
+      "discount": 0,
+      "net_before_vat": 1260,
+      "vat": 88.2,
+      "grand_total": 1348.2,
+      "cogs": 540,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-53",
+      "date": "13/09/2569",
+      "raw_date": "2026-09-13",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 7200
+        },
+        {
+          "sku": "SK-44",
+          "name": "สเปรย์แร่ R2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 320,
+          "unit_cost": 160,
+          "total": 3840
+        },
+        {
+          "sku": "SK-01",
+          "name": "สกินแคร์ A1 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 700,
+          "unit_cost": 320,
+          "total": 4900
+        }
+      ],
+      "subtotal": 15940,
+      "discount": 797.0,
+      "net_before_vat": 15143.0,
+      "vat": 1060.01,
+      "grand_total": 16203.01,
+      "cogs": 7040,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-54",
+      "date": "13/09/2569",
+      "raw_date": "2026-09-13",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-28",
+          "name": "บาล์มบำรุง B2 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 9440
+        },
+        {
+          "sku": "SK-04",
+          "name": "โทนเนอร์ D1 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 1260
+        },
+        {
+          "sku": "SK-61",
+          "name": "สกินแคร์ I3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 250,
+          "unit_cost": 140,
+          "total": 3750
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 2250
+        }
+      ],
+      "subtotal": 16700,
+      "discount": 835.0,
+      "net_before_vat": 15865.0,
+      "vat": 1110.55,
+      "grand_total": 16975.55,
+      "cogs": 7140,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-55",
+      "date": "13/09/2569",
+      "raw_date": "2026-09-13",
+      "customer_id": "C-28",
+      "customer_name": "หจก. เครื่องสำอาง BB",
+      "items": [
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 7290
+        },
+        {
+          "sku": "SK-89",
+          "name": "สเปรย์แร่ K4 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 810,
+          "unit_cost": 290,
+          "total": 8910
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 4480
+        }
+      ],
+      "subtotal": 20680,
+      "discount": 1034.0,
+      "net_before_vat": 19646.0,
+      "vat": 1375.22,
+      "grand_total": 21021.22,
+      "cogs": 8120,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-56",
+      "date": "13/09/2569",
+      "raw_date": "2026-09-13",
+      "customer_id": "C-26",
+      "customer_name": "ร้านสกินแคร์ Z",
+      "items": [
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 450
+        },
+        {
+          "sku": "SK-31",
+          "name": "สกินแคร์ E2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 820,
+          "unit_cost": 330,
+          "total": 1640
+        }
+      ],
+      "subtotal": 2090,
+      "discount": 0,
+      "net_before_vat": 2090,
+      "vat": 146.3,
+      "grand_total": 2236.3,
+      "cogs": 870,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-57",
+      "date": "14/09/2569",
+      "raw_date": "2026-09-14",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-31",
+          "name": "สกินแคร์ E2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 820,
+          "unit_cost": 330,
+          "total": 9020
+        },
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 360,
+          "unit_cost": 130,
+          "total": 5040
+        }
+      ],
+      "subtotal": 14060,
+      "discount": 703.0,
+      "net_before_vat": 13357.0,
+      "vat": 934.99,
+      "grand_total": 14291.99,
+      "cogs": 5450,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-58",
+      "date": "15/09/2569",
+      "raw_date": "2026-09-15",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-09",
+          "name": "โลชั่นผิว I1 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 8140
+        }
+      ],
+      "subtotal": 8140,
+      "discount": 407.0,
+      "net_before_vat": 7733.0,
+      "vat": 541.31,
+      "grand_total": 8274.31,
+      "cogs": 4070,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-59",
+      "date": "15/09/2569",
+      "raw_date": "2026-09-15",
+      "customer_id": "C-06",
+      "customer_name": "คุณ F",
+      "items": [
+        {
+          "sku": "SK-56",
+          "name": "เอสเซนส์ D3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 950,
+          "unit_cost": 430,
+          "total": 14250
+        },
+        {
+          "sku": "SK-27",
+          "name": "สครับผิว A2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 600,
+          "unit_cost": 300,
+          "total": 5400
+        },
+        {
+          "sku": "SK-74",
+          "name": "สเปรย์แร่ V3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 140,
+          "unit_cost": 80,
+          "total": 980
+        },
+        {
+          "sku": "SK-75",
+          "name": "ออยล์บำรุง W3 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 1650
+        }
+      ],
+      "subtotal": 22280,
+      "discount": 1114.0,
+      "net_before_vat": 21166.0,
+      "vat": 1481.62,
+      "grand_total": 22647.62,
+      "cogs": 10460,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-60",
+      "date": "15/09/2569",
+      "raw_date": "2026-09-15",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 7840
+        }
+      ],
+      "subtotal": 7840,
+      "discount": 392.0,
+      "net_before_vat": 7448.0,
+      "vat": 521.36,
+      "grand_total": 7969.36,
+      "cogs": 2800,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-61",
+      "date": "15/09/2569",
+      "raw_date": "2026-09-15",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 920,
+          "unit_cost": 420,
+          "total": 11040
+        },
+        {
+          "sku": "SK-90",
+          "name": "ออยล์บำรุง L4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 310,
+          "unit_cost": 110,
+          "total": 4650
+        },
+        {
+          "sku": "SK-61",
+          "name": "สกินแคร์ I3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 250,
+          "unit_cost": 140,
+          "total": 2500
+        },
+        {
+          "sku": "SK-75",
+          "name": "ออยล์บำรุง W3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 3850
+        }
+      ],
+      "subtotal": 22040,
+      "discount": 1102.0,
+      "net_before_vat": 20938.0,
+      "vat": 1465.66,
+      "grand_total": 22403.66,
+      "cogs": 9840,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-62",
+      "date": "16/09/2569",
+      "raw_date": "2026-09-16",
+      "customer_id": "C-06",
+      "customer_name": "คุณ F",
+      "items": [
+        {
+          "sku": "SK-85",
+          "name": "เจลแต้มสิว G4 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 15340
+        },
+        {
+          "sku": "SK-52",
+          "name": "มาส์กหน้า Z2 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 700,
+          "unit_cost": 350,
+          "total": 2100
+        },
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 9600
+        },
+        {
+          "sku": "SK-98",
+          "name": "อายครีม T4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 500,
+          "unit_cost": 200,
+          "total": 7500
+        }
+      ],
+      "subtotal": 34540,
+      "discount": 1727.0,
+      "net_before_vat": 32813.0,
+      "vat": 2296.91,
+      "grand_total": 35109.91,
+      "cogs": 13350,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-63",
+      "date": "17/09/2569",
+      "raw_date": "2026-09-17",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 2240
+        },
+        {
+          "sku": "SK-09",
+          "name": "โลชั่นผิว I1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 7400
+        }
+      ],
+      "subtotal": 9640,
+      "discount": 482.0,
+      "net_before_vat": 9158.0,
+      "vat": 641.06,
+      "grand_total": 9799.06,
+      "cogs": 4500,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-64",
+      "date": "18/09/2569",
+      "raw_date": "2026-09-18",
+      "customer_id": "C-10",
+      "customer_name": "คุณ J",
+      "items": [
+        {
+          "sku": "SK-03",
+          "name": "เซรั่มเข้มข้น C1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 430,
+          "unit_cost": 240,
+          "total": 2150
+        },
+        {
+          "sku": "SK-61",
+          "name": "สกินแคร์ I3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 250,
+          "unit_cost": 140,
+          "total": 3000
+        },
+        {
+          "sku": "SK-51",
+          "name": "กันแดด Y2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 720,
+          "unit_cost": 290,
+          "total": 720
+        }
+      ],
+      "subtotal": 5870,
+      "discount": 293.5,
+      "net_before_vat": 5576.5,
+      "vat": 390.36,
+      "grand_total": 5966.86,
+      "cogs": 3170,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-65",
+      "date": "18/09/2569",
+      "raw_date": "2026-09-18",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 570,
+          "unit_cost": 260,
+          "total": 3420
+        },
+        {
+          "sku": "SK-66",
+          "name": "กันแดด N3 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 400,
+          "unit_cost": 200,
+          "total": 2400
+        }
+      ],
+      "subtotal": 5820,
+      "discount": 291.0,
+      "net_before_vat": 5529.0,
+      "vat": 387.03,
+      "grand_total": 5916.03,
+      "cogs": 2760,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-66",
+      "date": "19/09/2569",
+      "raw_date": "2026-09-19",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 760,
+          "unit_cost": 420,
+          "total": 10640
+        },
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 360,
+          "unit_cost": 200,
+          "total": 1440
+        },
+        {
+          "sku": "SK-88",
+          "name": "บาล์มบำรุง J4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 1060,
+          "unit_cost": 380,
+          "total": 10600
+        },
+        {
+          "sku": "SK-29",
+          "name": "สเปรย์แร่ C2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 630,
+          "unit_cost": 350,
+          "total": 630
+        }
+      ],
+      "subtotal": 23310,
+      "discount": 1165.5,
+      "net_before_vat": 22144.5,
+      "vat": 1550.12,
+      "grand_total": 23694.62,
+      "cogs": 10830,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-67",
+      "date": "19/09/2569",
+      "raw_date": "2026-09-19",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 290,
+          "unit_cost": 130,
+          "total": 4350
+        },
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 760,
+          "unit_cost": 420,
+          "total": 11400
+        },
+        {
+          "sku": "SK-50",
+          "name": "คลีนซิ่ง X2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 380,
+          "unit_cost": 210,
+          "total": 4560
+        }
+      ],
+      "subtotal": 20310,
+      "discount": 1015.5,
+      "net_before_vat": 19294.5,
+      "vat": 1350.62,
+      "grand_total": 20645.12,
+      "cogs": 10770,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-68",
+      "date": "19/09/2569",
+      "raw_date": "2026-09-19",
+      "customer_id": "C-28",
+      "customer_name": "หจก. เครื่องสำอาง BB",
+      "items": [
+        {
+          "sku": "SK-88",
+          "name": "บาล์มบำรุง J4 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 1060,
+          "unit_cost": 380,
+          "total": 2120
+        },
+        {
+          "sku": "SK-61",
+          "name": "สกินแคร์ I3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 250,
+          "unit_cost": 140,
+          "total": 3500
+        },
+        {
+          "sku": "SK-81",
+          "name": "กันแดด C4 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 3420
+        },
+        {
+          "sku": "SK-57",
+          "name": "สครับผิว E3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 420,
+          "unit_cost": 150,
+          "total": 5040
+        }
+      ],
+      "subtotal": 14080,
+      "discount": 704.0,
+      "net_before_vat": 13376.0,
+      "vat": 936.32,
+      "grand_total": 14312.32,
+      "cogs": 5870,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-69",
+      "date": "20/09/2569",
+      "raw_date": "2026-09-20",
+      "customer_id": "C-03",
+      "customer_name": "คุณ C",
+      "items": [
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 760,
+          "unit_cost": 420,
+          "total": 760
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 6960
+        }
+      ],
+      "subtotal": 7720,
+      "discount": 386.0,
+      "net_before_vat": 7334.0,
+      "vat": 513.38,
+      "grand_total": 7847.38,
+      "cogs": 3900,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-70",
+      "date": "20/09/2569",
+      "raw_date": "2026-09-20",
+      "customer_id": "C-03",
+      "customer_name": "คุณ C",
+      "items": [
+        {
+          "sku": "SK-98",
+          "name": "อายครีม T4 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 500,
+          "unit_cost": 200,
+          "total": 4500
+        },
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 1600
+        },
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 1600
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 3720
+        }
+      ],
+      "subtotal": 11420,
+      "discount": 571.0,
+      "net_before_vat": 10849.0,
+      "vat": 759.43,
+      "grand_total": 11608.43,
+      "cogs": 4400,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-71",
+      "date": "20/09/2569",
+      "raw_date": "2026-09-20",
+      "customer_id": "C-10",
+      "customer_name": "คุณ J",
+      "items": [
+        {
+          "sku": "SK-51",
+          "name": "กันแดด Y2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 720,
+          "unit_cost": 290,
+          "total": 10800
+        },
+        {
+          "sku": "SK-53",
+          "name": "อายครีม A3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 480,
+          "unit_cost": 240,
+          "total": 6720
+        }
+      ],
+      "subtotal": 17520,
+      "discount": 876.0,
+      "net_before_vat": 16644.0,
+      "vat": 1165.08,
+      "grand_total": 17809.08,
+      "cogs": 7710,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-72",
+      "date": "20/09/2569",
+      "raw_date": "2026-09-20",
+      "customer_id": "C-03",
+      "customer_name": "คุณ C",
+      "items": [
+        {
+          "sku": "SK-80",
+          "name": "คลีนซิ่ง B4 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 600,
+          "unit_cost": 240,
+          "total": 5400
+        }
+      ],
+      "subtotal": 5400,
+      "discount": 270.0,
+      "net_before_vat": 5130.0,
+      "vat": 359.1,
+      "grand_total": 5489.1,
+      "cogs": 2160,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-73",
+      "date": "20/09/2569",
+      "raw_date": "2026-09-20",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-11",
+          "name": "เอสเซนส์ K1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 6720
+        },
+        {
+          "sku": "SK-08",
+          "name": "อายครีม H1 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 200,
+          "unit_cost": 100,
+          "total": 2200
+        },
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 2400
+        },
+        {
+          "sku": "SK-67",
+          "name": "มาส์กหน้า O3 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 4400
+        }
+      ],
+      "subtotal": 15720,
+      "discount": 786.0,
+      "net_before_vat": 14934.0,
+      "vat": 1045.38,
+      "grand_total": 15979.38,
+      "cogs": 6660,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-74",
+      "date": "21/09/2569",
+      "raw_date": "2026-09-21",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 440
+        },
+        {
+          "sku": "SK-31",
+          "name": "สกินแคร์ E2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 820,
+          "unit_cost": 330,
+          "total": 11480
+        }
+      ],
+      "subtotal": 11920,
+      "discount": 596.0,
+      "net_before_vat": 11324.0,
+      "vat": 792.68,
+      "grand_total": 12116.68,
+      "cogs": 4780,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-75",
+      "date": "21/09/2569",
+      "raw_date": "2026-09-21",
+      "customer_id": "C-26",
+      "customer_name": "ร้านสกินแคร์ Z",
+      "items": [
+        {
+          "sku": "SK-54",
+          "name": "โลชั่นผิว B3 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 1010,
+          "unit_cost": 360,
+          "total": 5050
+        }
+      ],
+      "subtotal": 5050,
+      "discount": 252.5,
+      "net_before_vat": 4797.5,
+      "vat": 335.83,
+      "grand_total": 5133.33,
+      "cogs": 1800,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-76",
+      "date": "21/09/2569",
+      "raw_date": "2026-09-21",
+      "customer_id": "C-18",
+      "customer_name": "บริษัท R บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 3220
+        }
+      ],
+      "subtotal": 3220,
+      "discount": 0,
+      "net_before_vat": 3220,
+      "vat": 225.4,
+      "grand_total": 3445.4,
+      "cogs": 1820,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-77",
+      "date": "22/09/2569",
+      "raw_date": "2026-09-22",
+      "customer_id": "C-02",
+      "customer_name": "คุณ B",
+      "items": [
+        {
+          "sku": "SK-88",
+          "name": "บาล์มบำรุง J4 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 1060,
+          "unit_cost": 380,
+          "total": 4240
+        },
+        {
+          "sku": "SK-20",
+          "name": "คลีนซิ่ง T1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 200,
+          "unit_cost": 80,
+          "total": 1000
+        }
+      ],
+      "subtotal": 5240,
+      "discount": 262.0,
+      "net_before_vat": 4978.0,
+      "vat": 348.46,
+      "grand_total": 5326.46,
+      "cogs": 1920,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-78",
+      "date": "23/09/2569",
+      "raw_date": "2026-09-23",
+      "customer_id": "C-27",
+      "customer_name": "คลินิกความงาม AA",
+      "items": [
+        {
+          "sku": "SK-63",
+          "name": "เซรั่มเข้มข้น K3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 820,
+          "unit_cost": 410,
+          "total": 1640
+        },
+        {
+          "sku": "SK-74",
+          "name": "สเปรย์แร่ V3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 140,
+          "unit_cost": 80,
+          "total": 280
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 7840
+        }
+      ],
+      "subtotal": 9760,
+      "discount": 488.0,
+      "net_before_vat": 9272.0,
+      "vat": 649.04,
+      "grand_total": 9921.04,
+      "cogs": 3780,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-79",
+      "date": "23/09/2569",
+      "raw_date": "2026-09-23",
+      "customer_id": "C-01",
+      "customer_name": "คุณ A",
+      "items": [
+        {
+          "sku": "SK-23",
+          "name": "อายครีม W1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 4440
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 4640
+        }
+      ],
+      "subtotal": 9080,
+      "discount": 454.0,
+      "net_before_vat": 8626.0,
+      "vat": 603.82,
+      "grand_total": 9229.82,
+      "cogs": 4540,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-80",
+      "date": "24/09/2569",
+      "raw_date": "2026-09-24",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-94",
+          "name": "โทนเนอร์ P4 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 2340
+        }
+      ],
+      "subtotal": 2340,
+      "discount": 0,
+      "net_before_vat": 2340,
+      "vat": 163.8,
+      "grand_total": 2503.8,
+      "cogs": 1080,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-81",
+      "date": "24/09/2569",
+      "raw_date": "2026-09-24",
+      "customer_id": "C-14",
+      "customer_name": "คุณ N",
+      "items": [
+        {
+          "sku": "SK-50",
+          "name": "คลีนซิ่ง X2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 380,
+          "unit_cost": 210,
+          "total": 380
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 1240
+        }
+      ],
+      "subtotal": 1620,
+      "discount": 0,
+      "net_before_vat": 1620,
+      "vat": 113.4,
+      "grand_total": 1733.4,
+      "cogs": 650,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-82",
+      "date": "24/09/2569",
+      "raw_date": "2026-09-24",
+      "customer_id": "C-06",
+      "customer_name": "คุณ F",
+      "items": [
+        {
+          "sku": "SK-87",
+          "name": "สครับผิว I4 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 600,
+          "unit_cost": 300,
+          "total": 6600
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 3480
+        }
+      ],
+      "subtotal": 10080,
+      "discount": 504.0,
+      "net_before_vat": 9576.0,
+      "vat": 670.32,
+      "grand_total": 10246.32,
+      "cogs": 5040,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-83",
+      "date": "24/09/2569",
+      "raw_date": "2026-09-24",
+      "customer_id": "C-15",
+      "customer_name": "คุณ O",
+      "items": [
+        {
+          "sku": "SK-75",
+          "name": "ออยล์บำรุง W3 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 6050
+        }
+      ],
+      "subtotal": 6050,
+      "discount": 302.5,
+      "net_before_vat": 5747.5,
+      "vat": 402.33,
+      "grand_total": 6149.83,
+      "cogs": 2750,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-84",
+      "date": "25/09/2569",
+      "raw_date": "2026-09-25",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-89",
+          "name": "สเปรย์แร่ K4 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 810,
+          "unit_cost": 290,
+          "total": 810
+        },
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 920,
+          "unit_cost": 420,
+          "total": 8280
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 5640
+        }
+      ],
+      "subtotal": 14730,
+      "discount": 736.5,
+      "net_before_vat": 13993.5,
+      "vat": 979.55,
+      "grand_total": 14973.05,
+      "cogs": 7190,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-85",
+      "date": "25/09/2569",
+      "raw_date": "2026-09-25",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-04",
+          "name": "โทนเนอร์ D1 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 1540
+        },
+        {
+          "sku": "SK-19",
+          "name": "โทนเนอร์ S1 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 270,
+          "unit_cost": 150,
+          "total": 3510
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 7440
+        },
+        {
+          "sku": "SK-18",
+          "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 270,
+          "unit_cost": 150,
+          "total": 3780
+        }
+      ],
+      "subtotal": 16270,
+      "discount": 813.5,
+      "net_before_vat": 15456.5,
+      "vat": 1081.96,
+      "grand_total": 16538.46,
+      "cogs": 7460,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-86",
+      "date": "26/09/2569",
+      "raw_date": "2026-09-26",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-14",
+          "name": "สเปรย์แร่ N1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 250,
+          "unit_cost": 100,
+          "total": 1250
+        },
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 660
+        },
+        {
+          "sku": "SK-65",
+          "name": "คลีนซิ่ง M3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 860,
+          "unit_cost": 390,
+          "total": 6020
+        },
+        {
+          "sku": "SK-07",
+          "name": "มาส์กหน้า G1 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 250,
+          "unit_cost": 90,
+          "total": 2000
+        }
+      ],
+      "subtotal": 9930,
+      "discount": 496.5,
+      "net_before_vat": 9433.5,
+      "vat": 660.35,
+      "grand_total": 10093.85,
+      "cogs": 4190,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-87",
+      "date": "26/09/2569",
+      "raw_date": "2026-09-26",
+      "customer_id": "C-13",
+      "customer_name": "คุณ M",
+      "items": [
+        {
+          "sku": "SK-72",
+          "name": "สครับผิว T3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 13200
+        },
+        {
+          "sku": "SK-98",
+          "name": "อายครีม T4 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 500,
+          "unit_cost": 200,
+          "total": 1000
+        },
+        {
+          "sku": "SK-58",
+          "name": "บาล์มบำรุง F3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 3120
+        },
+        {
+          "sku": "SK-37",
+          "name": "มาส์กหน้า K2 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 450,
+          "unit_cost": 160,
+          "total": 5850
+        }
+      ],
+      "subtotal": 23170,
+      "discount": 1158.5,
+      "net_before_vat": 22011.5,
+      "vat": 1540.81,
+      "grand_total": 23552.31,
+      "cogs": 10520,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-88",
+      "date": "26/09/2569",
+      "raw_date": "2026-09-26",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 2200
+        },
+        {
+          "sku": "SK-73",
+          "name": "บาล์มบำรุง U3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 180,
+          "unit_cost": 90,
+          "total": 360
+        }
+      ],
+      "subtotal": 2560,
+      "discount": 0,
+      "net_before_vat": 2560,
+      "vat": 179.2,
+      "grand_total": 2739.2,
+      "cogs": 980,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-89",
+      "date": "26/09/2569",
+      "raw_date": "2026-09-26",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-47",
+          "name": "ครีมบำรุง U2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 900,
+          "unit_cost": 360,
+          "total": 3600
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 6380
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 1680
+        },
+        {
+          "sku": "SK-34",
+          "name": "โทนเนอร์ H2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 980,
+          "unit_cost": 350,
+          "total": 5880
+        }
+      ],
+      "subtotal": 17540,
+      "discount": 877.0,
+      "net_before_vat": 16663.0,
+      "vat": 1166.41,
+      "grand_total": 17829.41,
+      "cogs": 7330,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-90",
+      "date": "27/09/2569",
+      "raw_date": "2026-09-27",
+      "customer_id": "C-05",
+      "customer_name": "คุณ E",
+      "items": [
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 3760
+        },
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 760,
+          "unit_cost": 420,
+          "total": 3040
+        },
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 2860
+        },
+        {
+          "sku": "SK-89",
+          "name": "สเปรย์แร่ K4 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 810,
+          "unit_cost": 290,
+          "total": 3240
+        }
+      ],
+      "subtotal": 12900,
+      "discount": 645.0,
+      "net_before_vat": 12255.0,
+      "vat": 857.85,
+      "grand_total": 13112.85,
+      "cogs": 5960,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-91",
+      "date": "27/09/2569",
+      "raw_date": "2026-09-27",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 920,
+          "unit_cost": 420,
+          "total": 1840
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 4960
+        },
+        {
+          "sku": "SK-60",
+          "name": "ออยล์บำรุง H3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 740,
+          "unit_cost": 410,
+          "total": 7400
+        },
+        {
+          "sku": "SK-25",
+          "name": "เจลแต้มสิว Y1 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 980,
+          "unit_cost": 390,
+          "total": 6860
+        }
+      ],
+      "subtotal": 21060,
+      "discount": 1053.0,
+      "net_before_vat": 20007.0,
+      "vat": 1400.49,
+      "grand_total": 21407.49,
+      "cogs": 9430,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-92",
+      "date": "27/09/2569",
+      "raw_date": "2026-09-27",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 1650
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 5800
+        },
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 360,
+          "unit_cost": 130,
+          "total": 3600
+        }
+      ],
+      "subtotal": 11050,
+      "discount": 552.5,
+      "net_before_vat": 10497.5,
+      "vat": 734.83,
+      "grand_total": 11232.33,
+      "cogs": 4970,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-93",
+      "date": "27/09/2569",
+      "raw_date": "2026-09-27",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-44",
+          "name": "สเปรย์แร่ R2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 320,
+          "unit_cost": 160,
+          "total": 1280
+        },
+        {
+          "sku": "SK-85",
+          "name": "เจลแต้มสิว G4 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 12980
+        },
+        {
+          "sku": "SK-52",
+          "name": "มาส์กหน้า Z2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 700,
+          "unit_cost": 350,
+          "total": 7700
+        },
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 570,
+          "unit_cost": 260,
+          "total": 5700
+        }
+      ],
+      "subtotal": 27660,
+      "discount": 1383.0,
+      "net_before_vat": 26277.0,
+      "vat": 1839.39,
+      "grand_total": 28116.39,
+      "cogs": 11710,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-94",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "customer_id": "C-06",
+      "customer_name": "คุณ F",
+      "items": [
+        {
+          "sku": "SK-44",
+          "name": "สเปรย์แร่ R2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 320,
+          "unit_cost": 160,
+          "total": 3840
+        },
+        {
+          "sku": "SK-08",
+          "name": "อายครีม H1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 200,
+          "unit_cost": 100,
+          "total": 2000
+        },
+        {
+          "sku": "SK-60",
+          "name": "ออยล์บำรุง H3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 740,
+          "unit_cost": 410,
+          "total": 7400
+        }
+      ],
+      "subtotal": 13240,
+      "discount": 662.0,
+      "net_before_vat": 12578.0,
+      "vat": 880.46,
+      "grand_total": 13458.46,
+      "cogs": 7020,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-95",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-21",
+          "name": "กันแดด U1 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 780,
+          "unit_cost": 310,
+          "total": 2340
+        }
+      ],
+      "subtotal": 2340,
+      "discount": 0,
+      "net_before_vat": 2340,
+      "vat": 163.8,
+      "grand_total": 2503.8,
+      "cogs": 930,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-96",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "customer_id": "C-28",
+      "customer_name": "หจก. เครื่องสำอาง BB",
+      "items": [
+        {
+          "sku": "SK-36",
+          "name": "กันแดด J2 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 160,
+          "unit_cost": 80,
+          "total": 1120
+        }
+      ],
+      "subtotal": 1120,
+      "discount": 0,
+      "net_before_vat": 1120,
+      "vat": 78.4,
+      "grand_total": 1198.4,
+      "cogs": 560,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-97",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-10",
+          "name": "เจลแต้มสิว J1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 200,
+          "unit_cost": 70,
+          "total": 1200
+        }
+      ],
+      "subtotal": 1200,
+      "discount": 0,
+      "net_before_vat": 1200,
+      "vat": 84.0,
+      "grand_total": 1284.0,
+      "cogs": 420,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-98",
+      "date": "29/09/2569",
+      "raw_date": "2026-09-29",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-72",
+          "name": "สครับผิว T3 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 5280
+        },
+        {
+          "sku": "SK-48",
+          "name": "เซรั่มเข้มข้น V2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 1600
+        }
+      ],
+      "subtotal": 6880,
+      "discount": 344.0,
+      "net_before_vat": 6536.0,
+      "vat": 457.52,
+      "grand_total": 6993.52,
+      "cogs": 3280,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-99",
+      "date": "29/09/2569",
+      "raw_date": "2026-09-29",
+      "customer_id": "C-14",
+      "customer_name": "คุณ N",
+      "items": [
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 360,
+          "unit_cost": 200,
+          "total": 3960
+        }
+      ],
+      "subtotal": 3960,
+      "discount": 0,
+      "net_before_vat": 3960,
+      "vat": 277.2,
+      "grand_total": 4237.2,
+      "cogs": 2200,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-100",
+      "date": "30/09/2569",
+      "raw_date": "2026-09-30",
+      "customer_id": "C-22",
+      "customer_name": "บริษัท V บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-03",
+          "name": "เซรั่มเข้มข้น C1 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 430,
+          "unit_cost": 240,
+          "total": 3010
+        }
+      ],
+      "subtotal": 3010,
+      "discount": 0,
+      "net_before_vat": 3010,
+      "vat": 210.7,
+      "grand_total": 3220.7,
+      "cogs": 1680,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-101",
+      "date": "01/10/2569",
+      "raw_date": "2026-10-01",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-01",
+          "name": "สกินแคร์ A1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 700,
+          "unit_cost": 320,
+          "total": 2800
+        },
+        {
+          "sku": "SK-67",
+          "name": "มาส์กหน้า O3 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 5280
+        },
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 760,
+          "unit_cost": 420,
+          "total": 9120
+        },
+        {
+          "sku": "SK-49",
+          "name": "โทนเนอร์ W2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 700,
+          "unit_cost": 280,
+          "total": 7000
+        }
+      ],
+      "subtotal": 24200,
+      "discount": 1210.0,
+      "net_before_vat": 22990.0,
+      "vat": 1609.3,
+      "grand_total": 24599.3,
+      "cogs": 11760,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-102",
+      "date": "02/10/2569",
+      "raw_date": "2026-10-02",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-83",
+          "name": "อายครีม E4 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 550,
+          "unit_cost": 220,
+          "total": 7700
+        },
+        {
+          "sku": "SK-57",
+          "name": "สครับผิว E3 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 420,
+          "unit_cost": 150,
+          "total": 2100
+        }
+      ],
+      "subtotal": 9800,
+      "discount": 490.0,
+      "net_before_vat": 9310.0,
+      "vat": 651.7,
+      "grand_total": 9961.7,
+      "cogs": 3830,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-103",
+      "date": "03/10/2569",
+      "raw_date": "2026-10-03",
+      "customer_id": "C-14",
+      "customer_name": "คุณ N",
+      "items": [
+        {
+          "sku": "SK-64",
+          "name": "โทนเนอร์ L3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 900,
+          "unit_cost": 320,
+          "total": 10800
+        },
+        {
+          "sku": "SK-93",
+          "name": "เซรั่มเข้มข้น O4 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 540,
+          "unit_cost": 270,
+          "total": 2700
+        },
+        {
+          "sku": "SK-88",
+          "name": "บาล์มบำรุง J4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 1060,
+          "unit_cost": 380,
+          "total": 12720
+        }
+      ],
+      "subtotal": 26220,
+      "discount": 1311.0,
+      "net_before_vat": 24909.0,
+      "vat": 1743.63,
+      "grand_total": 26652.63,
+      "cogs": 9750,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-104",
+      "date": "03/10/2569",
+      "raw_date": "2026-10-03",
+      "customer_id": "C-19",
+      "customer_name": "บริษัท S บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 760,
+          "unit_cost": 420,
+          "total": 1520
+        },
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 5600
+        },
+        {
+          "sku": "SK-78",
+          "name": "เซรั่มเข้มข้น Z3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 680,
+          "unit_cost": 380,
+          "total": 9520
+        }
+      ],
+      "subtotal": 16640,
+      "discount": 832.0,
+      "net_before_vat": 15808.0,
+      "vat": 1106.56,
+      "grand_total": 16914.56,
+      "cogs": 8160,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-105",
+      "date": "03/10/2569",
+      "raw_date": "2026-10-03",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-23",
+          "name": "อายครีม W1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 4440
+        },
+        {
+          "sku": "SK-67",
+          "name": "มาส์กหน้า O3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 3520
+        },
+        {
+          "sku": "SK-39",
+          "name": "โลชั่นผิว M2 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 790,
+          "unit_cost": 360,
+          "total": 2370
+        },
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 450,
+          "unit_cost": 180,
+          "total": 2700
+        }
+      ],
+      "subtotal": 13030,
+      "discount": 651.5,
+      "net_before_vat": 12378.5,
+      "vat": 866.5,
+      "grand_total": 13245.0,
+      "cogs": 6140,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-106",
+      "date": "03/10/2569",
+      "raw_date": "2026-10-03",
+      "customer_id": "C-27",
+      "customer_name": "คลินิกความงาม AA",
+      "items": [
+        {
+          "sku": "SK-100",
+          "name": "เจลแต้มสิว V4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 580,
+          "unit_cost": 320,
+          "total": 6960
+        },
+        {
+          "sku": "SK-10",
+          "name": "เจลแต้มสิว J1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 200,
+          "unit_cost": 70,
+          "total": 200
+        }
+      ],
+      "subtotal": 7160,
+      "discount": 358.0,
+      "net_before_vat": 6802.0,
+      "vat": 476.14,
+      "grand_total": 7278.14,
+      "cogs": 3910,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-107",
+      "date": "03/10/2569",
+      "raw_date": "2026-10-03",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 570,
+          "unit_cost": 260,
+          "total": 2850
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 9300
+        }
+      ],
+      "subtotal": 12150,
+      "discount": 607.5,
+      "net_before_vat": 11542.5,
+      "vat": 807.98,
+      "grand_total": 12350.48,
+      "cogs": 4600,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-108",
+      "date": "04/10/2569",
+      "raw_date": "2026-10-04",
+      "customer_id": "C-26",
+      "customer_name": "ร้านสกินแคร์ Z",
+      "items": [
+        {
+          "sku": "SK-35",
+          "name": "คลีนซิ่ง I2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 360,
+          "unit_cost": 180,
+          "total": 1800
+        },
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 360,
+          "unit_cost": 130,
+          "total": 5040
+        }
+      ],
+      "subtotal": 6840,
+      "discount": 342.0,
+      "net_before_vat": 6498.0,
+      "vat": 454.86,
+      "grand_total": 6952.86,
+      "cogs": 2720,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-109",
+      "date": "04/10/2569",
+      "raw_date": "2026-10-04",
+      "customer_id": "C-01",
+      "customer_name": "คุณ A",
+      "items": [
+        {
+          "sku": "SK-50",
+          "name": "คลีนซิ่ง X2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 380,
+          "unit_cost": 210,
+          "total": 1900
+        }
+      ],
+      "subtotal": 1900,
+      "discount": 0,
+      "net_before_vat": 1900,
+      "vat": 133.0,
+      "grand_total": 2033.0,
+      "cogs": 1050,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-110",
+      "date": "04/10/2569",
+      "raw_date": "2026-10-04",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 290,
+          "unit_cost": 130,
+          "total": 4350
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 6580
+        }
+      ],
+      "subtotal": 10930,
+      "discount": 546.5,
+      "net_before_vat": 10383.5,
+      "vat": 726.85,
+      "grand_total": 11110.35,
+      "cogs": 5590,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-111",
+      "date": "04/10/2569",
+      "raw_date": "2026-10-04",
+      "customer_id": "C-04",
+      "customer_name": "คุณ D",
+      "items": [
+        {
+          "sku": "SK-27",
+          "name": "สครับผิว A2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 600,
+          "unit_cost": 300,
+          "total": 6000
+        },
+        {
+          "sku": "SK-34",
+          "name": "โทนเนอร์ H2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 980,
+          "unit_cost": 350,
+          "total": 5880
+        },
+        {
+          "sku": "SK-31",
+          "name": "สกินแคร์ E2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 820,
+          "unit_cost": 330,
+          "total": 7380
+        }
+      ],
+      "subtotal": 19260,
+      "discount": 963.0,
+      "net_before_vat": 18297.0,
+      "vat": 1280.79,
+      "grand_total": 19577.79,
+      "cogs": 8070,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-112",
+      "date": "04/10/2569",
+      "raw_date": "2026-10-04",
+      "customer_id": "C-17",
+      "customer_name": "บริษัท Q บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-17",
+          "name": "ครีมบำรุง Q1 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 220,
+          "unit_cost": 120,
+          "total": 2200
+        },
+        {
+          "sku": "SK-80",
+          "name": "คลีนซิ่ง B4 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 600,
+          "unit_cost": 240,
+          "total": 4200
+        },
+        {
+          "sku": "SK-29",
+          "name": "สเปรย์แร่ C2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 630,
+          "unit_cost": 350,
+          "total": 7560
+        }
+      ],
+      "subtotal": 13960,
+      "discount": 698.0,
+      "net_before_vat": 13262.0,
+      "vat": 928.34,
+      "grand_total": 14190.34,
+      "cogs": 7080,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-113",
+      "date": "05/10/2569",
+      "raw_date": "2026-10-05",
+      "customer_id": "C-22",
+      "customer_name": "บริษัท V บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-55",
+          "name": "เจลแต้มสิว C3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 540,
+          "unit_cost": 270,
+          "total": 8100
+        },
+        {
+          "sku": "SK-41",
+          "name": "เอสเซนส์ O2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 950,
+          "unit_cost": 340,
+          "total": 3800
+        }
+      ],
+      "subtotal": 11900,
+      "discount": 595.0,
+      "net_before_vat": 11305.0,
+      "vat": 791.35,
+      "grand_total": 12096.35,
+      "cogs": 5410,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-114",
+      "date": "05/10/2569",
+      "raw_date": "2026-10-05",
+      "customer_id": "C-03",
+      "customer_name": "คุณ C",
+      "items": [
+        {
+          "sku": "SK-01",
+          "name": "สกินแคร์ A1 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 700,
+          "unit_cost": 320,
+          "total": 10500
+        },
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 7200
+        },
+        {
+          "sku": "SK-83",
+          "name": "อายครีม E4 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 550,
+          "unit_cost": 220,
+          "total": 1650
+        },
+        {
+          "sku": "SK-55",
+          "name": "เจลแต้มสิว C3 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 540,
+          "unit_cost": 270,
+          "total": 1620
+        }
+      ],
+      "subtotal": 20970,
+      "discount": 1048.5,
+      "net_before_vat": 19921.5,
+      "vat": 1394.51,
+      "grand_total": 21316.01,
+      "cogs": 9150,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-115",
+      "date": "05/10/2569",
+      "raw_date": "2026-10-05",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 450,
+          "unit_cost": 180,
+          "total": 6750
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 3920
+        },
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 360,
+          "unit_cost": 130,
+          "total": 360
+        }
+      ],
+      "subtotal": 11030,
+      "discount": 551.5,
+      "net_before_vat": 10478.5,
+      "vat": 733.5,
+      "grand_total": 11212.0,
+      "cogs": 4230,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-116",
+      "date": "05/10/2569",
+      "raw_date": "2026-10-05",
+      "customer_id": "C-05",
+      "customer_name": "คุณ E",
+      "items": [
+        {
+          "sku": "SK-10",
+          "name": "เจลแต้มสิว J1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 200,
+          "unit_cost": 70,
+          "total": 800
+        },
+        {
+          "sku": "SK-23",
+          "name": "อายครีม W1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 10360
+        },
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 450,
+          "unit_cost": 180,
+          "total": 4500
+        },
+        {
+          "sku": "SK-63",
+          "name": "เซรั่มเข้มข้น K3 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 820,
+          "unit_cost": 410,
+          "total": 7380
+        }
+      ],
+      "subtotal": 23040,
+      "discount": 1152.0,
+      "net_before_vat": 21888.0,
+      "vat": 1532.16,
+      "grand_total": 23420.16,
+      "cogs": 10950,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-117",
+      "date": "06/10/2569",
+      "raw_date": "2026-10-06",
+      "customer_id": "C-08",
+      "customer_name": "คุณ H",
+      "items": [
+        {
+          "sku": "SK-62",
+          "name": "ครีมบำรุง J3 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 180,
+          "unit_cost": 70,
+          "total": 2700
+        },
+        {
+          "sku": "SK-40",
+          "name": "เจลแต้มสิว N2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 4560
+        }
+      ],
+      "subtotal": 7260,
+      "discount": 363.0,
+      "net_before_vat": 6897.0,
+      "vat": 482.79,
+      "grand_total": 7379.79,
+      "cogs": 2850,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-118",
+      "date": "06/10/2569",
+      "raw_date": "2026-10-06",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-07",
+          "name": "มาส์กหน้า G1 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 250,
+          "unit_cost": 90,
+          "total": 2250
+        },
+        {
+          "sku": "SK-52",
+          "name": "มาส์กหน้า Z2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 700,
+          "unit_cost": 350,
+          "total": 7700
+        },
+        {
+          "sku": "SK-80",
+          "name": "คลีนซิ่ง B4 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 600,
+          "unit_cost": 240,
+          "total": 4200
+        }
+      ],
+      "subtotal": 14150,
+      "discount": 707.5,
+      "net_before_vat": 13442.5,
+      "vat": 940.98,
+      "grand_total": 14383.48,
+      "cogs": 6340,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-119",
+      "date": "06/10/2569",
+      "raw_date": "2026-10-06",
+      "customer_id": "C-14",
+      "customer_name": "คุณ N",
+      "items": [
+        {
+          "sku": "SK-14",
+          "name": "สเปรย์แร่ N1 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 250,
+          "unit_cost": 100,
+          "total": 2750
+        },
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 920,
+          "unit_cost": 420,
+          "total": 920
+        },
+        {
+          "sku": "SK-61",
+          "name": "สกินแคร์ I3 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 250,
+          "unit_cost": 140,
+          "total": 250
+        }
+      ],
+      "subtotal": 3920,
+      "discount": 0,
+      "net_before_vat": 3920,
+      "vat": 274.4,
+      "grand_total": 4194.4,
+      "cogs": 1660,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-120",
+      "date": "07/10/2569",
+      "raw_date": "2026-10-07",
+      "customer_id": "C-18",
+      "customer_name": "บริษัท R บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-14",
+          "name": "สเปรย์แร่ N1 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 250,
+          "unit_cost": 100,
+          "total": 2250
+        },
+        {
+          "sku": "SK-18",
+          "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 270,
+          "unit_cost": 150,
+          "total": 4050
+        }
+      ],
+      "subtotal": 6300,
+      "discount": 315.0,
+      "net_before_vat": 5985.0,
+      "vat": 418.95,
+      "grand_total": 6403.95,
+      "cogs": 3150,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-121",
+      "date": "07/10/2569",
+      "raw_date": "2026-10-07",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-15",
+          "name": "ออยล์บำรุง O1 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 1120,
+          "unit_cost": 450,
+          "total": 8960
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 5640
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 9300
+        }
+      ],
+      "subtotal": 23900,
+      "discount": 1195.0,
+      "net_before_vat": 22705.0,
+      "vat": 1589.35,
+      "grand_total": 24294.35,
+      "cogs": 10020,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-122",
+      "date": "08/10/2569",
+      "raw_date": "2026-10-08",
+      "customer_id": "C-18",
+      "customer_name": "บริษัท R บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 7290
+        },
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 360,
+          "unit_cost": 200,
+          "total": 2880
+        }
+      ],
+      "subtotal": 10170,
+      "discount": 508.5,
+      "net_before_vat": 9661.5,
+      "vat": 676.31,
+      "grand_total": 10337.81,
+      "cogs": 4930,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-123",
+      "date": "09/10/2569",
+      "raw_date": "2026-10-09",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-56",
+          "name": "เอสเซนส์ D3 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 950,
+          "unit_cost": 430,
+          "total": 10450
+        }
+      ],
+      "subtotal": 10450,
+      "discount": 522.5,
+      "net_before_vat": 9927.5,
+      "vat": 694.93,
+      "grand_total": 10622.43,
+      "cogs": 4730,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-124",
+      "date": "09/10/2569",
+      "raw_date": "2026-10-09",
+      "customer_id": "C-16",
+      "customer_name": "บริษัท P บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-55",
+          "name": "เจลแต้มสิว C3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 540,
+          "unit_cost": 270,
+          "total": 6480
+        },
+        {
+          "sku": "SK-04",
+          "name": "โทนเนอร์ D1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 140
+        },
+        {
+          "sku": "SK-32",
+          "name": "ครีมบำรุง F2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 200,
+          "unit_cost": 90,
+          "total": 1000
+        },
+        {
+          "sku": "SK-50",
+          "name": "คลีนซิ่ง X2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 380,
+          "unit_cost": 210,
+          "total": 760
+        }
+      ],
+      "subtotal": 8380,
+      "discount": 419.0,
+      "net_before_vat": 7961.0,
+      "vat": 557.27,
+      "grand_total": 8518.27,
+      "cogs": 4180,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-125",
+      "date": "10/10/2569",
+      "raw_date": "2026-10-10",
+      "customer_id": "C-13",
+      "customer_name": "คุณ M",
+      "items": [
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 7540
+        }
+      ],
+      "subtotal": 7540,
+      "discount": 377.0,
+      "net_before_vat": 7163.0,
+      "vat": 501.41,
+      "grand_total": 7664.41,
+      "cogs": 3770,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-126",
+      "date": "10/10/2569",
+      "raw_date": "2026-10-10",
+      "customer_id": "C-16",
+      "customer_name": "บริษัท P บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-45",
+          "name": "ออยล์บำรุง S2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 760,
+          "unit_cost": 380,
+          "total": 7600
+        },
+        {
+          "sku": "SK-73",
+          "name": "บาล์มบำรุง U3 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 180,
+          "unit_cost": 90,
+          "total": 1980
+        },
+        {
+          "sku": "SK-68",
+          "name": "อายครีม P3 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 1080
+        },
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 450,
+          "unit_cost": 180,
+          "total": 3150
+        }
+      ],
+      "subtotal": 13810,
+      "discount": 690.5,
+      "net_before_vat": 13119.5,
+      "vat": 918.37,
+      "grand_total": 14037.87,
+      "cogs": 6530,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-127",
+      "date": "10/10/2569",
+      "raw_date": "2026-10-10",
+      "customer_id": "C-13",
+      "customer_name": "คุณ M",
+      "items": [
+        {
+          "sku": "SK-64",
+          "name": "โทนเนอร์ L3 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 900,
+          "unit_cost": 320,
+          "total": 8100
+        }
+      ],
+      "subtotal": 8100,
+      "discount": 405.0,
+      "net_before_vat": 7695.0,
+      "vat": 538.65,
+      "grand_total": 8233.65,
+      "cogs": 2880,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-128",
+      "date": "11/10/2569",
+      "raw_date": "2026-10-11",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-03",
+          "name": "เซรั่มเข้มข้น C1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 430,
+          "unit_cost": 240,
+          "total": 6020
+        },
+        {
+          "sku": "SK-53",
+          "name": "อายครีม A3 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 480,
+          "unit_cost": 240,
+          "total": 5280
+        }
+      ],
+      "subtotal": 11300,
+      "discount": 565.0,
+      "net_before_vat": 10735.0,
+      "vat": 751.45,
+      "grand_total": 11486.45,
+      "cogs": 6000,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-129",
+      "date": "11/10/2569",
+      "raw_date": "2026-10-11",
+      "customer_id": "C-16",
+      "customer_name": "บริษัท P บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 2400
+        },
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 3200
+        },
+        {
+          "sku": "SK-55",
+          "name": "เจลแต้มสิว C3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 540,
+          "unit_cost": 270,
+          "total": 1080
+        },
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 360,
+          "unit_cost": 130,
+          "total": 360
+        }
+      ],
+      "subtotal": 7040,
+      "discount": 352.0,
+      "net_before_vat": 6688.0,
+      "vat": 468.16,
+      "grand_total": 7156.16,
+      "cogs": 2910,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-130",
+      "date": "11/10/2569",
+      "raw_date": "2026-10-11",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-90",
+          "name": "ออยล์บำรุง L4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 310,
+          "unit_cost": 110,
+          "total": 4650
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 1350
+        }
+      ],
+      "subtotal": 6000,
+      "discount": 300.0,
+      "net_before_vat": 5700.0,
+      "vat": 399.0,
+      "grand_total": 6099.0,
+      "cogs": 2280,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-131",
+      "date": "11/10/2569",
+      "raw_date": "2026-10-11",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-51",
+          "name": "กันแดด Y2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 720,
+          "unit_cost": 290,
+          "total": 2880
+        },
+        {
+          "sku": "SK-89",
+          "name": "สเปรย์แร่ K4 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 810,
+          "unit_cost": 290,
+          "total": 2430
+        }
+      ],
+      "subtotal": 5310,
+      "discount": 265.5,
+      "net_before_vat": 5044.5,
+      "vat": 353.12,
+      "grand_total": 5397.62,
+      "cogs": 2030,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-132",
+      "date": "11/10/2569",
+      "raw_date": "2026-10-11",
+      "customer_id": "C-26",
+      "customer_name": "ร้านสกินแคร์ Z",
+      "items": [
+        {
+          "sku": "SK-80",
+          "name": "คลีนซิ่ง B4 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 600,
+          "unit_cost": 240,
+          "total": 1200
+        }
+      ],
+      "subtotal": 1200,
+      "discount": 0,
+      "net_before_vat": 1200,
+      "vat": 84.0,
+      "grand_total": 1284.0,
+      "cogs": 480,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-133",
+      "date": "12/10/2569",
+      "raw_date": "2026-10-12",
+      "customer_id": "C-10",
+      "customer_name": "คุณ J",
+      "items": [
+        {
+          "sku": "SK-68",
+          "name": "อายครีม P3 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 1980
+        },
+        {
+          "sku": "SK-73",
+          "name": "บาล์มบำรุง U3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 180,
+          "unit_cost": 90,
+          "total": 1800
+        }
+      ],
+      "subtotal": 3780,
+      "discount": 0,
+      "net_before_vat": 3780,
+      "vat": 264.6,
+      "grand_total": 4044.6,
+      "cogs": 1780,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-134",
+      "date": "12/10/2569",
+      "raw_date": "2026-10-12",
+      "customer_id": "C-03",
+      "customer_name": "คุณ C",
+      "items": [
+        {
+          "sku": "SK-18",
+          "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 270,
+          "unit_cost": 150,
+          "total": 2430
+        },
+        {
+          "sku": "SK-84",
+          "name": "โลชั่นผิว F4 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 590,
+          "unit_cost": 330,
+          "total": 3540
+        },
+        {
+          "sku": "SK-62",
+          "name": "ครีมบำรุง J3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 180,
+          "unit_cost": 70,
+          "total": 2340
+        },
+        {
+          "sku": "SK-78",
+          "name": "เซรั่มเข้มข้น Z3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 680,
+          "unit_cost": 380,
+          "total": 9520
+        }
+      ],
+      "subtotal": 17830,
+      "discount": 891.5,
+      "net_before_vat": 16938.5,
+      "vat": 1185.7,
+      "grand_total": 18124.2,
+      "cogs": 9560,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-135",
+      "date": "13/10/2569",
+      "raw_date": "2026-10-13",
+      "customer_id": "C-23",
+      "customer_name": "ร้านสกินแคร์ W",
+      "items": [
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 4050
+        },
+        {
+          "sku": "SK-11",
+          "name": "เอสเซนส์ K1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 2800
+        },
+        {
+          "sku": "SK-21",
+          "name": "กันแดด U1 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 780,
+          "unit_cost": 310,
+          "total": 2340
+        },
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 450,
+          "unit_cost": 180,
+          "total": 4500
+        }
+      ],
+      "subtotal": 13690,
+      "discount": 684.5,
+      "net_before_vat": 13005.5,
+      "vat": 910.39,
+      "grand_total": 13915.89,
+      "cogs": 5580,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-136",
+      "date": "13/10/2569",
+      "raw_date": "2026-10-13",
+      "customer_id": "C-15",
+      "customer_name": "คุณ O",
+      "items": [
+        {
+          "sku": "SK-64",
+          "name": "โทนเนอร์ L3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 900,
+          "unit_cost": 320,
+          "total": 1800
+        },
+        {
+          "sku": "SK-47",
+          "name": "ครีมบำรุง U2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 900,
+          "unit_cost": 360,
+          "total": 3600
+        }
+      ],
+      "subtotal": 5400,
+      "discount": 270.0,
+      "net_before_vat": 5130.0,
+      "vat": 359.1,
+      "grand_total": 5489.1,
+      "cogs": 2080,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-137",
+      "date": "14/10/2569",
+      "raw_date": "2026-10-14",
+      "customer_id": "C-29",
+      "customer_name": "คุณ CC (ตัวแทนรายใหญ่)",
+      "items": [
+        {
+          "sku": "SK-58",
+          "name": "บาล์มบำรุง F3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 3120
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 6720
+        }
+      ],
+      "subtotal": 9840,
+      "discount": 492.0,
+      "net_before_vat": 9348.0,
+      "vat": 654.36,
+      "grand_total": 10002.36,
+      "cogs": 3840,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-138",
+      "date": "15/10/2569",
+      "raw_date": "2026-10-15",
+      "customer_id": "C-26",
+      "customer_name": "ร้านสกินแคร์ Z",
+      "items": [
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 360,
+          "unit_cost": 130,
+          "total": 2520
+        },
+        {
+          "sku": "SK-90",
+          "name": "ออยล์บำรุง L4 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 310,
+          "unit_cost": 110,
+          "total": 3720
+        },
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 2760
+        },
+        {
+          "sku": "SK-28",
+          "name": "บาล์มบำรุง B2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 1180
+        }
+      ],
+      "subtotal": 10180,
+      "discount": 509.0,
+      "net_before_vat": 9671.0,
+      "vat": 676.97,
+      "grand_total": 10347.97,
+      "cogs": 4210,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-139",
+      "date": "15/10/2569",
+      "raw_date": "2026-10-15",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-20",
+          "name": "คลีนซิ่ง T1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 200,
+          "unit_cost": 80,
+          "total": 2800
+        },
+        {
+          "sku": "SK-48",
+          "name": "เซรั่มเข้มข้น V2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 3200
+        }
+      ],
+      "subtotal": 6000,
+      "discount": 300.0,
+      "net_before_vat": 5700.0,
+      "vat": 399.0,
+      "grand_total": 6099.0,
+      "cogs": 2400,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-140",
+      "date": "15/10/2569",
+      "raw_date": "2026-10-15",
+      "customer_id": "C-17",
+      "customer_name": "บริษัท Q บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-48",
+          "name": "เซรั่มเข้มข้น V2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 8800
+        }
+      ],
+      "subtotal": 8800,
+      "discount": 440.0,
+      "net_before_vat": 8360.0,
+      "vat": 585.2,
+      "grand_total": 8945.2,
+      "cogs": 3520,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-141",
+      "date": "15/10/2569",
+      "raw_date": "2026-10-15",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-32",
+          "name": "ครีมบำรุง F2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 200,
+          "unit_cost": 90,
+          "total": 1000
+        },
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 6050
+        },
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 1380
+        }
+      ],
+      "subtotal": 8430,
+      "discount": 421.5,
+      "net_before_vat": 8008.5,
+      "vat": 560.6,
+      "grand_total": 8569.1,
+      "cogs": 3980,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-142",
+      "date": "16/10/2569",
+      "raw_date": "2026-10-16",
+      "customer_id": "C-28",
+      "customer_name": "หจก. เครื่องสำอาง BB",
+      "items": [
+        {
+          "sku": "SK-07",
+          "name": "มาส์กหน้า G1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 250,
+          "unit_cost": 90,
+          "total": 3500
+        }
+      ],
+      "subtotal": 3500,
+      "discount": 0,
+      "net_before_vat": 3500,
+      "vat": 245.0,
+      "grand_total": 3745.0,
+      "cogs": 1260,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-143",
+      "date": "16/10/2569",
+      "raw_date": "2026-10-16",
+      "customer_id": "C-01",
+      "customer_name": "คุณ A",
+      "items": [
+        {
+          "sku": "SK-58",
+          "name": "บาล์มบำรุง F3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 2600
+        },
+        {
+          "sku": "SK-17",
+          "name": "ครีมบำรุง Q1 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 220,
+          "unit_cost": 120,
+          "total": 1760
+        },
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 1600
+        },
+        {
+          "sku": "SK-44",
+          "name": "สเปรย์แร่ R2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 320,
+          "unit_cost": 160,
+          "total": 3840
+        }
+      ],
+      "subtotal": 9800,
+      "discount": 490.0,
+      "net_before_vat": 9310.0,
+      "vat": 651.7,
+      "grand_total": 9961.7,
+      "cogs": 4720,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-144",
+      "date": "16/10/2569",
+      "raw_date": "2026-10-16",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-85",
+          "name": "เจลแต้มสิว G4 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 9440
+        }
+      ],
+      "subtotal": 9440,
+      "discount": 472.0,
+      "net_before_vat": 8968.0,
+      "vat": 627.76,
+      "grand_total": 9595.76,
+      "cogs": 3360,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-145",
+      "date": "17/10/2569",
+      "raw_date": "2026-10-17",
+      "customer_id": "C-09",
+      "customer_name": "คุณ I",
+      "items": [
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 450,
+          "unit_cost": 180,
+          "total": 4050
+        },
+        {
+          "sku": "SK-55",
+          "name": "เจลแต้มสิว C3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 540,
+          "unit_cost": 270,
+          "total": 7020
+        }
+      ],
+      "subtotal": 11070,
+      "discount": 553.5,
+      "net_before_vat": 10516.5,
+      "vat": 736.16,
+      "grand_total": 11252.66,
+      "cogs": 5130,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-146",
+      "date": "17/10/2569",
+      "raw_date": "2026-10-17",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-17",
+          "name": "ครีมบำรุง Q1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 220,
+          "unit_cost": 120,
+          "total": 2640
+        },
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 6480
+        },
+        {
+          "sku": "SK-32",
+          "name": "ครีมบำรุง F2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 200,
+          "unit_cost": 90,
+          "total": 1200
+        },
+        {
+          "sku": "SK-48",
+          "name": "เซรั่มเข้มข้น V2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 8800
+        }
+      ],
+      "subtotal": 19120,
+      "discount": 956.0,
+      "net_before_vat": 18164.0,
+      "vat": 1271.48,
+      "grand_total": 19435.48,
+      "cogs": 8460,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-147",
+      "date": "17/10/2569",
+      "raw_date": "2026-10-17",
+      "customer_id": "C-08",
+      "customer_name": "คุณ H",
+      "items": [
+        {
+          "sku": "SK-88",
+          "name": "บาล์มบำรุง J4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 1060,
+          "unit_cost": 380,
+          "total": 10600
+        },
+        {
+          "sku": "SK-23",
+          "name": "อายครีม W1 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 2220
+        },
+        {
+          "sku": "SK-99",
+          "name": "โลชั่นผิว U4 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 4940
+        },
+        {
+          "sku": "SK-24",
+          "name": "โลชั่นผิว X1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 1320
+        }
+      ],
+      "subtotal": 19080,
+      "discount": 954.0,
+      "net_before_vat": 18126.0,
+      "vat": 1268.82,
+      "grand_total": 19394.82,
+      "cogs": 7340,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-148",
+      "date": "17/10/2569",
+      "raw_date": "2026-10-17",
+      "customer_id": "C-27",
+      "customer_name": "คลินิกความงาม AA",
+      "items": [
+        {
+          "sku": "SK-39",
+          "name": "โลชั่นผิว M2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 790,
+          "unit_cost": 360,
+          "total": 7900
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 620
+        }
+      ],
+      "subtotal": 8520,
+      "discount": 426.0,
+      "net_before_vat": 8094.0,
+      "vat": 566.58,
+      "grand_total": 8660.58,
+      "cogs": 3820,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-149",
+      "date": "18/10/2569",
+      "raw_date": "2026-10-18",
+      "customer_id": "C-27",
+      "customer_name": "คลินิกความงาม AA",
+      "items": [
+        {
+          "sku": "SK-54",
+          "name": "โลชั่นผิว B3 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 1010,
+          "unit_cost": 360,
+          "total": 11110
+        },
+        {
+          "sku": "SK-77",
+          "name": "ครีมบำรุง Y3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 480,
+          "unit_cost": 240,
+          "total": 960
+        }
+      ],
+      "subtotal": 12070,
+      "discount": 603.5,
+      "net_before_vat": 11466.5,
+      "vat": 802.66,
+      "grand_total": 12269.16,
+      "cogs": 4440,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-150",
+      "date": "18/10/2569",
+      "raw_date": "2026-10-18",
+      "customer_id": "C-06",
+      "customer_name": "คุณ F",
+      "items": [
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 3450
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 450
+        },
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 3240
+        }
+      ],
+      "subtotal": 7140,
+      "discount": 357.0,
+      "net_before_vat": 6783.0,
+      "vat": 474.81,
+      "grand_total": 7257.81,
+      "cogs": 3640,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-151",
+      "date": "18/10/2569",
+      "raw_date": "2026-10-18",
+      "customer_id": "C-15",
+      "customer_name": "คุณ O",
+      "items": [
+        {
+          "sku": "SK-39",
+          "name": "โลชั่นผิว M2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 790,
+          "unit_cost": 360,
+          "total": 11060
+        }
+      ],
+      "subtotal": 11060,
+      "discount": 553.0,
+      "net_before_vat": 10507.0,
+      "vat": 735.49,
+      "grand_total": 11242.49,
+      "cogs": 5040,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-152",
+      "date": "18/10/2569",
+      "raw_date": "2026-10-18",
+      "customer_id": "C-25",
+      "customer_name": "ร้านสกินแคร์ Y",
+      "items": [
+        {
+          "sku": "SK-28",
+          "name": "บาล์มบำรุง B2 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 10620
+        }
+      ],
+      "subtotal": 10620,
+      "discount": 531.0,
+      "net_before_vat": 10089.0,
+      "vat": 706.23,
+      "grand_total": 10795.23,
+      "cogs": 3780,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-153",
+      "date": "18/10/2569",
+      "raw_date": "2026-10-18",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-47",
+          "name": "ครีมบำรุง U2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 900,
+          "unit_cost": 360,
+          "total": 900
+        },
+        {
+          "sku": "SK-84",
+          "name": "โลชั่นผิว F4 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 590,
+          "unit_cost": 330,
+          "total": 2950
+        }
+      ],
+      "subtotal": 3850,
+      "discount": 0,
+      "net_before_vat": 3850,
+      "vat": 269.5,
+      "grand_total": 4119.5,
+      "cogs": 2010,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-154",
+      "date": "19/10/2569",
+      "raw_date": "2026-10-19",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-07",
+          "name": "มาส์กหน้า G1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 250,
+          "unit_cost": 90,
+          "total": 1500
+        },
+        {
+          "sku": "SK-24",
+          "name": "โลชั่นผิว X1 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 2860
+        },
+        {
+          "sku": "SK-73",
+          "name": "บาล์มบำรุง U3 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 180,
+          "unit_cost": 90,
+          "total": 540
+        }
+      ],
+      "subtotal": 4900,
+      "discount": 0,
+      "net_before_vat": 4900,
+      "vat": 343.0,
+      "grand_total": 5243.0,
+      "cogs": 1850,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-155",
+      "date": "19/10/2569",
+      "raw_date": "2026-10-19",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-99",
+          "name": "โลชั่นผิว U4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 3800
+        },
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 290,
+          "unit_cost": 130,
+          "total": 1160
+        }
+      ],
+      "subtotal": 4960,
+      "discount": 0,
+      "net_before_vat": 4960,
+      "vat": 347.2,
+      "grand_total": 5307.2,
+      "cogs": 2020,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-156",
+      "date": "19/10/2569",
+      "raw_date": "2026-10-19",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-89",
+          "name": "สเปรย์แร่ K4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 810,
+          "unit_cost": 290,
+          "total": 8100
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 5040
+        },
+        {
+          "sku": "SK-56",
+          "name": "เอสเซนส์ D3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 950,
+          "unit_cost": 430,
+          "total": 3800
+        }
+      ],
+      "subtotal": 16940,
+      "discount": 847.0,
+      "net_before_vat": 16093.0,
+      "vat": 1126.51,
+      "grand_total": 17219.51,
+      "cogs": 6420,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-157",
+      "date": "20/10/2569",
+      "raw_date": "2026-10-20",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-67",
+          "name": "มาส์กหน้า O3 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 7040
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 1410
+        }
+      ],
+      "subtotal": 8450,
+      "discount": 422.5,
+      "net_before_vat": 8027.5,
+      "vat": 561.93,
+      "grand_total": 8589.43,
+      "cogs": 4300,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-158",
+      "date": "20/10/2569",
+      "raw_date": "2026-10-20",
+      "customer_id": "C-30",
+      "customer_name": "บริษัท สกินแคร์ดีดี จำกัด",
+      "items": [
+        {
+          "sku": "SK-19",
+          "name": "โทนเนอร์ S1 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 270,
+          "unit_cost": 150,
+          "total": 3510
+        },
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 760,
+          "unit_cost": 420,
+          "total": 1520
+        }
+      ],
+      "subtotal": 5030,
+      "discount": 251.5,
+      "net_before_vat": 4778.5,
+      "vat": 334.5,
+      "grand_total": 5113.0,
+      "cogs": 2790,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-159",
+      "date": "20/10/2569",
+      "raw_date": "2026-10-20",
+      "customer_id": "C-13",
+      "customer_name": "คุณ M",
+      "items": [
+        {
+          "sku": "SK-59",
+          "name": "สเปรย์แร่ G3 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 580,
+          "unit_cost": 320,
+          "total": 3480
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 150
+        }
+      ],
+      "subtotal": 3630,
+      "discount": 0,
+      "net_before_vat": 3630,
+      "vat": 254.1,
+      "grand_total": 3884.1,
+      "cogs": 1990,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-160",
+      "date": "21/10/2569",
+      "raw_date": "2026-10-21",
+      "customer_id": "C-01",
+      "customer_name": "คุณ A",
+      "items": [
+        {
+          "sku": "SK-64",
+          "name": "โทนเนอร์ L3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 900,
+          "unit_cost": 320,
+          "total": 6300
+        },
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 9,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 5040
+        },
+        {
+          "sku": "SK-09",
+          "name": "โลชั่นผิว I1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 740,
+          "unit_cost": 370,
+          "total": 8880
+        },
+        {
+          "sku": "SK-03",
+          "name": "เซรั่มเข้มข้น C1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 430,
+          "unit_cost": 240,
+          "total": 860
+        }
+      ],
+      "subtotal": 21080,
+      "discount": 1054.0,
+      "net_before_vat": 20026.0,
+      "vat": 1401.82,
+      "grand_total": 21427.82,
+      "cogs": 8960,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-161",
+      "date": "21/10/2569",
+      "raw_date": "2026-10-21",
+      "customer_id": "C-28",
+      "customer_name": "หจก. เครื่องสำอาง BB",
+      "items": [
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 360,
+          "unit_cost": 200,
+          "total": 4320
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 1160
+        }
+      ],
+      "subtotal": 5480,
+      "discount": 274.0,
+      "net_before_vat": 5206.0,
+      "vat": 364.42,
+      "grand_total": 5570.42,
+      "cogs": 2980,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-162",
+      "date": "21/10/2569",
+      "raw_date": "2026-10-21",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 7700
+        }
+      ],
+      "subtotal": 7700,
+      "discount": 385.0,
+      "net_before_vat": 7315.0,
+      "vat": 512.05,
+      "grand_total": 7827.05,
+      "cogs": 3500,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-163",
+      "date": "21/10/2569",
+      "raw_date": "2026-10-21",
+      "customer_id": "C-14",
+      "customer_name": "คุณ N",
+      "items": [
+        {
+          "sku": "SK-08",
+          "name": "อายครีม H1 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 200,
+          "unit_cost": 100,
+          "total": 2800
+        },
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 290,
+          "unit_cost": 130,
+          "total": 3190
+        },
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 220,
+          "unit_cost": 80,
+          "total": 2860
+        }
+      ],
+      "subtotal": 8850,
+      "discount": 442.5,
+      "net_before_vat": 8407.5,
+      "vat": 588.53,
+      "grand_total": 8996.03,
+      "cogs": 3870,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-164",
+      "date": "22/10/2569",
+      "raw_date": "2026-10-22",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-39",
+          "name": "โลชั่นผิว M2 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 790,
+          "unit_cost": 360,
+          "total": 11060
+        },
+        {
+          "sku": "SK-73",
+          "name": "บาล์มบำรุง U3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 180,
+          "unit_cost": 90,
+          "total": 720
+        }
+      ],
+      "subtotal": 11780,
+      "discount": 589.0,
+      "net_before_vat": 11191.0,
+      "vat": 783.37,
+      "grand_total": 11974.37,
+      "cogs": 5400,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-165",
+      "date": "23/10/2569",
+      "raw_date": "2026-10-23",
+      "customer_id": "C-05",
+      "customer_name": "คุณ E",
+      "items": [
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 6160
+        }
+      ],
+      "subtotal": 6160,
+      "discount": 308.0,
+      "net_before_vat": 5852.0,
+      "vat": 409.64,
+      "grand_total": 6261.64,
+      "cogs": 2200,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-166",
+      "date": "23/10/2569",
+      "raw_date": "2026-10-23",
+      "customer_id": "C-17",
+      "customer_name": "บริษัท Q บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-34",
+          "name": "โทนเนอร์ H2 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 980,
+          "unit_cost": 350,
+          "total": 12740
+        },
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 1860
+        }
+      ],
+      "subtotal": 14600,
+      "discount": 730.0,
+      "net_before_vat": 13870.0,
+      "vat": 970.9,
+      "grand_total": 14840.9,
+      "cogs": 5210,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-167",
+      "date": "23/10/2569",
+      "raw_date": "2026-10-23",
+      "customer_id": "C-04",
+      "customer_name": "คุณ D",
+      "items": [
+        {
+          "sku": "SK-28",
+          "name": "บาล์มบำรุง B2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 1180,
+          "unit_cost": 420,
+          "total": 1180
+        },
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 12150
+        }
+      ],
+      "subtotal": 13330,
+      "discount": 666.5,
+      "net_before_vat": 12663.5,
+      "vat": 886.45,
+      "grand_total": 13549.95,
+      "cogs": 5970,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-168",
+      "date": "23/10/2569",
+      "raw_date": "2026-10-23",
+      "customer_id": "C-14",
+      "customer_name": "คุณ N",
+      "items": [
+        {
+          "sku": "SK-96",
+          "name": "กันแดด R4 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 720
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 1500
+        },
+        {
+          "sku": "SK-51",
+          "name": "กันแดด Y2 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 720,
+          "unit_cost": 290,
+          "total": 7200
+        }
+      ],
+      "subtotal": 9420,
+      "discount": 471.0,
+      "net_before_vat": 8949.0,
+      "vat": 626.43,
+      "grand_total": 9575.43,
+      "cogs": 3920,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-169",
+      "date": "24/10/2569",
+      "raw_date": "2026-10-24",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-22",
+          "name": "มาส์กหน้า V1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 340,
+          "unit_cost": 120,
+          "total": 1700
+        }
+      ],
+      "subtotal": 1700,
+      "discount": 0,
+      "net_before_vat": 1700,
+      "vat": 119.0,
+      "grand_total": 1819.0,
+      "cogs": 600,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-170",
+      "date": "24/10/2569",
+      "raw_date": "2026-10-24",
+      "customer_id": "C-27",
+      "customer_name": "คลินิกความงาม AA",
+      "items": [
+        {
+          "sku": "SK-44",
+          "name": "สเปรย์แร่ R2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 320,
+          "unit_cost": 160,
+          "total": 1920
+        },
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 800,
+          "unit_cost": 320,
+          "total": 12000
+        },
+        {
+          "sku": "SK-68",
+          "name": "อายครีม P3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 2340
+        },
+        {
+          "sku": "SK-99",
+          "name": "โลชั่นผิว U4 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 5320
+        }
+      ],
+      "subtotal": 21580,
+      "discount": 1079.0,
+      "net_before_vat": 20501.0,
+      "vat": 1435.07,
+      "grand_total": 21936.07,
+      "cogs": 8900,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-171",
+      "date": "25/10/2569",
+      "raw_date": "2026-10-25",
+      "customer_id": "C-27",
+      "customer_name": "คลินิกความงาม AA",
+      "items": [
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 570,
+          "unit_cost": 260,
+          "total": 1710
+        },
+        {
+          "sku": "SK-60",
+          "name": "ออยล์บำรุง H3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 740,
+          "unit_cost": 410,
+          "total": 10360
+        },
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 450,
+          "unit_cost": 180,
+          "total": 450
+        }
+      ],
+      "subtotal": 12520,
+      "discount": 626.0,
+      "net_before_vat": 11894.0,
+      "vat": 832.58,
+      "grand_total": 12726.58,
+      "cogs": 6700,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-172",
+      "date": "25/10/2569",
+      "raw_date": "2026-10-25",
+      "customer_id": "C-20",
+      "customer_name": "บริษัท T บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-45",
+          "name": "ออยล์บำรุง S2 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 760,
+          "unit_cost": 380,
+          "total": 4560
+        }
+      ],
+      "subtotal": 4560,
+      "discount": 0,
+      "net_before_vat": 4560,
+      "vat": 319.2,
+      "grand_total": 4879.2,
+      "cogs": 2280,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-173",
+      "date": "25/10/2569",
+      "raw_date": "2026-10-25",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 300
+        },
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 570,
+          "unit_cost": 260,
+          "total": 2850
+        }
+      ],
+      "subtotal": 3150,
+      "discount": 0,
+      "net_before_vat": 3150,
+      "vat": 220.5,
+      "grand_total": 3370.5,
+      "cogs": 1440,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-174",
+      "date": "25/10/2569",
+      "raw_date": "2026-10-25",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-04",
+          "name": "โทนเนอร์ D1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 840
+        },
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 920,
+          "unit_cost": 420,
+          "total": 9200
+        }
+      ],
+      "subtotal": 10040,
+      "discount": 502.0,
+      "net_before_vat": 9538.0,
+      "vat": 667.66,
+      "grand_total": 10205.66,
+      "cogs": 4620,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-175",
+      "date": "26/10/2569",
+      "raw_date": "2026-10-26",
+      "customer_id": "C-05",
+      "customer_name": "คุณ E",
+      "items": [
+        {
+          "sku": "SK-65",
+          "name": "คลีนซิ่ง M3 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 860,
+          "unit_cost": 390,
+          "total": 2580
+        },
+        {
+          "sku": "SK-78",
+          "name": "เซรั่มเข้มข้น Z3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 680,
+          "unit_cost": 380,
+          "total": 2720
+        }
+      ],
+      "subtotal": 5300,
+      "discount": 265.0,
+      "net_before_vat": 5035.0,
+      "vat": 352.45,
+      "grand_total": 5387.45,
+      "cogs": 2690,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-176",
+      "date": "26/10/2569",
+      "raw_date": "2026-10-26",
+      "customer_id": "C-03",
+      "customer_name": "คุณ C",
+      "items": [
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 620,
+          "unit_cost": 220,
+          "total": 620
+        },
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 920,
+          "unit_cost": 420,
+          "total": 1840
+        }
+      ],
+      "subtotal": 2460,
+      "discount": 0,
+      "net_before_vat": 2460,
+      "vat": 172.2,
+      "grand_total": 2632.2,
+      "cogs": 1060,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-177",
+      "date": "27/10/2569",
+      "raw_date": "2026-10-27",
+      "customer_id": "C-26",
+      "customer_name": "ร้านสกินแคร์ Z",
+      "items": [
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 580,
+          "unit_cost": 290,
+          "total": 4060
+        },
+        {
+          "sku": "SK-58",
+          "name": "บาล์มบำรุง F3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 260,
+          "unit_cost": 120,
+          "total": 3120
+        },
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 810,
+          "unit_cost": 370,
+          "total": 9720
+        },
+        {
+          "sku": "SK-66",
+          "name": "กันแดด N3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 400,
+          "unit_cost": 200,
+          "total": 4800
+        }
+      ],
+      "subtotal": 21700,
+      "discount": 1085.0,
+      "net_before_vat": 20615.0,
+      "vat": 1443.05,
+      "grand_total": 22058.05,
+      "cogs": 10310,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "inv_no": "INV-178",
+      "date": "27/10/2569",
+      "raw_date": "2026-10-27",
+      "customer_id": "C-21",
+      "customer_name": "บริษัท U บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-51",
+          "name": "กันแดด Y2 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 720,
+          "unit_cost": 290,
+          "total": 720
+        },
+        {
+          "sku": "SK-21",
+          "name": "กันแดด U1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 780,
+          "unit_cost": 310,
+          "total": 1560
+        },
+        {
+          "sku": "SK-01",
+          "name": "สกินแคร์ A1 สูตรโบวี่",
+          "qty": 6,
+          "unit_price": 700,
+          "unit_cost": 320,
+          "total": 4200
+        }
+      ],
+      "subtotal": 6480,
+      "discount": 324.0,
+      "net_before_vat": 6156.0,
+      "vat": 430.92,
+      "grand_total": 6586.92,
+      "cogs": 2830,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-179",
+      "date": "28/10/2569",
+      "raw_date": "2026-10-28",
+      "customer_id": "C-24",
+      "customer_name": "ร้านสกินแคร์ X",
+      "items": [
+        {
+          "sku": "SK-63",
+          "name": "เซรั่มเข้มข้น K3 สูตรโบวี่",
+          "qty": 4,
+          "unit_price": 820,
+          "unit_cost": 410,
+          "total": 3280
+        },
+        {
+          "sku": "SK-15",
+          "name": "ออยล์บำรุง O1 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 1120,
+          "unit_cost": 450,
+          "total": 16800
+        },
+        {
+          "sku": "SK-29",
+          "name": "สเปรย์แร่ C2 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 630,
+          "unit_cost": 350,
+          "total": 9450
+        }
+      ],
+      "subtotal": 29530,
+      "discount": 1476.5,
+      "net_before_vat": 28053.5,
+      "vat": 1963.75,
+      "grand_total": 30017.25,
+      "cogs": 13640,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-180",
+      "date": "28/10/2569",
+      "raw_date": "2026-10-28",
+      "customer_id": "C-17",
+      "customer_name": "บริษัท Q บิวตี้เทรดดิ้ง จำกัด",
+      "items": [
+        {
+          "sku": "SK-22",
+          "name": "มาส์กหน้า V1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 340,
+          "unit_cost": 120,
+          "total": 340
+        }
+      ],
+      "subtotal": 340,
+      "discount": 0,
+      "net_before_vat": 340,
+      "vat": 23.8,
+      "grand_total": 363.8,
+      "cogs": 120,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-181",
+      "date": "28/10/2569",
+      "raw_date": "2026-10-28",
+      "customer_id": "C-07",
+      "customer_name": "คุณ G",
+      "items": [
+        {
+          "sku": "SK-66",
+          "name": "กันแดด N3 สูตรโบวี่",
+          "qty": 14,
+          "unit_price": 400,
+          "unit_cost": 200,
+          "total": 5600
+        },
+        {
+          "sku": "SK-100",
+          "name": "เจลแต้มสิว V4 สูตรโบวี่",
+          "qty": 3,
+          "unit_price": 580,
+          "unit_cost": 320,
+          "total": 1740
+        },
+        {
+          "sku": "SK-83",
+          "name": "อายครีม E4 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 550,
+          "unit_cost": 220,
+          "total": 1100
+        }
+      ],
+      "subtotal": 8440,
+      "discount": 422.0,
+      "net_before_vat": 8018.0,
+      "vat": 561.26,
+      "grand_total": 8579.26,
+      "cogs": 4200,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-182",
+      "date": "28/10/2569",
+      "raw_date": "2026-10-28",
+      "customer_id": "C-11",
+      "customer_name": "คุณ K",
+      "items": [
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 470,
+          "unit_cost": 260,
+          "total": 940
+        },
+        {
+          "sku": "SK-22",
+          "name": "มาส์กหน้า V1 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 340,
+          "unit_cost": 120,
+          "total": 5100
+        },
+        {
+          "sku": "SK-87",
+          "name": "สครับผิว I4 สูตรโบวี่",
+          "qty": 10,
+          "unit_price": 600,
+          "unit_cost": 300,
+          "total": 6000
+        },
+        {
+          "sku": "SK-47",
+          "name": "ครีมบำรุง U2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 900,
+          "unit_cost": 360,
+          "total": 1800
+        }
+      ],
+      "subtotal": 13840,
+      "discount": 692.0,
+      "net_before_vat": 13148.0,
+      "vat": 920.36,
+      "grand_total": 14068.36,
+      "cogs": 6040,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 30 วัน"
+    },
+    {
+      "inv_no": "INV-183",
+      "date": "29/10/2569",
+      "raw_date": "2026-10-29",
+      "customer_id": "C-24",
+      "customer_name": "ร้านสกินแคร์ X",
+      "items": [
+        {
+          "sku": "SK-67",
+          "name": "มาส์กหน้า O3 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 880,
+          "unit_cost": 440,
+          "total": 11440
+        },
+        {
+          "sku": "SK-60",
+          "name": "ออยล์บำรุง H3 สูตรโบวี่",
+          "qty": 12,
+          "unit_price": 740,
+          "unit_cost": 410,
+          "total": 8880
+        },
+        {
+          "sku": "SK-36",
+          "name": "กันแดด J2 สูตรโบวี่",
+          "qty": 11,
+          "unit_price": 160,
+          "unit_cost": 80,
+          "total": 1760
+        },
+        {
+          "sku": "SK-100",
+          "name": "เจลแต้มสิว V4 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 580,
+          "unit_cost": 320,
+          "total": 7540
+        }
+      ],
+      "subtotal": 29620,
+      "discount": 1481.0,
+      "net_before_vat": 28139.0,
+      "vat": 1969.73,
+      "grand_total": 30108.73,
+      "cogs": 15680,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "inv_no": "INV-184",
+      "date": "29/10/2569",
+      "raw_date": "2026-10-29",
+      "customer_id": "C-10",
+      "customer_name": "คุณ J",
+      "items": [
+        {
+          "sku": "SK-11",
+          "name": "เอสเซนส์ K1 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 560,
+          "unit_cost": 200,
+          "total": 4480
+        },
+        {
+          "sku": "SK-18",
+          "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+          "qty": 5,
+          "unit_price": 270,
+          "unit_cost": 150,
+          "total": 1350
+        },
+        {
+          "sku": "SK-75",
+          "name": "ออยล์บำรุง W3 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 550,
+          "unit_cost": 250,
+          "total": 3850
+        }
+      ],
+      "subtotal": 9680,
+      "discount": 484.0,
+      "net_before_vat": 9196.0,
+      "vat": 643.72,
+      "grand_total": 9839.72,
+      "cogs": 4100,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-185",
+      "date": "29/10/2569",
+      "raw_date": "2026-10-29",
+      "customer_id": "C-12",
+      "customer_name": "คุณ L",
+      "items": [
+        {
+          "sku": "SK-81",
+          "name": "กันแดด C4 สูตรโบวี่",
+          "qty": 8,
+          "unit_price": 380,
+          "unit_cost": 150,
+          "total": 3040
+        },
+        {
+          "sku": "SK-91",
+          "name": "สกินแคร์ M4 สูตรโบวี่",
+          "qty": 15,
+          "unit_price": 140,
+          "unit_cost": 70,
+          "total": 2100
+        },
+        {
+          "sku": "SK-96",
+          "name": "กันแดด R4 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 180,
+          "unit_cost": 80,
+          "total": 1260
+        },
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 360,
+          "unit_cost": 200,
+          "total": 360
+        }
+      ],
+      "subtotal": 6760,
+      "discount": 338.0,
+      "net_before_vat": 6422.0,
+      "vat": 449.54,
+      "grand_total": 6871.54,
+      "cogs": 3010,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    },
+    {
+      "inv_no": "INV-186",
+      "date": "30/10/2569",
+      "raw_date": "2026-10-30",
+      "customer_id": "C-24",
+      "customer_name": "ร้านสกินแคร์ X",
+      "items": [
+        {
+          "sku": "SK-51",
+          "name": "กันแดด Y2 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 720,
+          "unit_cost": 290,
+          "total": 9360
+        },
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 7,
+          "unit_price": 230,
+          "unit_cost": 130,
+          "total": 1610
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 13,
+          "unit_price": 150,
+          "unit_cost": 70,
+          "total": 1950
+        }
+      ],
+      "subtotal": 12920,
+      "discount": 646.0,
+      "net_before_vat": 12274.0,
+      "vat": 859.18,
+      "grand_total": 13133.18,
+      "cogs": 5590,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "เงินสดหน้าร้าน"
+    },
+    {
+      "inv_no": "INV-187",
+      "date": "30/10/2569",
+      "raw_date": "2026-10-30",
+      "customer_id": "C-25",
+      "customer_name": "ร้านสกินแคร์ Y",
+      "items": [
+        {
+          "sku": "SK-37",
+          "name": "มาส์กหน้า K2 สูตรโบวี่",
+          "qty": 2,
+          "unit_price": 450,
+          "unit_cost": 160,
+          "total": 900
+        },
+        {
+          "sku": "SK-22",
+          "name": "มาส์กหน้า V1 สูตรโบวี่",
+          "qty": 1,
+          "unit_price": 340,
+          "unit_cost": 120,
+          "total": 340
+        }
+      ],
+      "subtotal": 1240,
+      "discount": 0,
+      "net_before_vat": 1240,
+      "vat": 86.8,
+      "grand_total": 1326.8,
+      "cogs": 440,
+      "status": "ยังไม่ชำระ (ลูกหนี้)",
+      "payment_method": "เครดิต 15 วัน"
+    }
+  ],
+  "purchases": [
+    {
+      "po_no": "PO-01",
+      "date": "24/08/2569",
+      "raw_date": "2026-08-24",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 180,
+          "total": 5400
+        },
+        {
+          "sku": "SK-17",
+          "name": "ครีมบำรุง Q1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 120,
+          "total": 9600
+        },
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 250,
+          "total": 7500
+        },
+        {
+          "sku": "SK-63",
+          "name": "เซรั่มเข้มข้น K3 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 410,
+          "total": 32800
+        }
+      ],
+      "subtotal": 55300,
+      "vat": 3871.0,
+      "grand_total": 59171.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-02",
+      "date": "25/08/2569",
+      "raw_date": "2026-08-25",
+      "supplier_id": "S-06",
+      "supplier_name": "บริษัท สมุนไพรและสกินแล็บ F จำกัด",
+      "items": [
+        {
+          "sku": "SK-68",
+          "name": "อายครีม P3 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 80,
+          "total": 8000
+        },
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 130,
+          "total": 2600
+        },
+        {
+          "sku": "SK-23",
+          "name": "อายครีม W1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 370,
+          "total": 18500
+        },
+        {
+          "sku": "SK-91",
+          "name": "สกินแคร์ M4 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 70,
+          "total": 5600
+        }
+      ],
+      "subtotal": 34700,
+      "vat": 2429.0,
+      "grand_total": 37129.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-03",
+      "date": "29/08/2569",
+      "raw_date": "2026-08-29",
+      "supplier_id": "S-04",
+      "supplier_name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "items": [
+        {
+          "sku": "SK-73",
+          "name": "บาล์มบำรุง U3 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 90,
+          "total": 9000
+        },
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 180,
+          "total": 5400
+        },
+        {
+          "sku": "SK-87",
+          "name": "สครับผิว I4 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 300,
+          "total": 9000
+        }
+      ],
+      "subtotal": 23400,
+      "vat": 1638.0,
+      "grand_total": 25038.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-04",
+      "date": "30/08/2569",
+      "raw_date": "2026-08-30",
+      "supplier_id": "S-04",
+      "supplier_name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "items": [
+        {
+          "sku": "SK-45",
+          "name": "ออยล์บำรุง S2 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 380,
+          "total": 7600
+        },
+        {
+          "sku": "SK-81",
+          "name": "กันแดด C4 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 150,
+          "total": 12000
+        }
+      ],
+      "subtotal": 19600,
+      "vat": 1372.0,
+      "grand_total": 20972.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-05",
+      "date": "31/08/2569",
+      "raw_date": "2026-08-31",
+      "supplier_id": "S-05",
+      "supplier_name": "บริษัท เคมีคอลไทย E จำกัด",
+      "items": [
+        {
+          "sku": "SK-65",
+          "name": "คลีนซิ่ง M3 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 390,
+          "total": 11700
+        },
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 260,
+          "total": 7800
+        },
+        {
+          "sku": "SK-39",
+          "name": "โลชั่นผิว M2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 360,
+          "total": 10800
+        }
+      ],
+      "subtotal": 30300,
+      "vat": 2121.0,
+      "grand_total": 32421.0,
+      "status": "ค้างชำระ (เจ้าหนี้)",
+      "payment_method": "รอครบกำหนดชำระ 30 วัน"
+    },
+    {
+      "po_no": "PO-06",
+      "date": "03/09/2569",
+      "raw_date": "2026-09-03",
+      "supplier_id": "S-06",
+      "supplier_name": "บริษัท สมุนไพรและสกินแล็บ F จำกัด",
+      "items": [
+        {
+          "sku": "SK-59",
+          "name": "สเปรย์แร่ G3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 320,
+          "total": 6400
+        },
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 420,
+          "total": 33600
+        }
+      ],
+      "subtotal": 40000,
+      "vat": 2800.0,
+      "grand_total": 42800.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-07",
+      "date": "04/09/2569",
+      "raw_date": "2026-09-04",
+      "supplier_id": "S-05",
+      "supplier_name": "บริษัท เคมีคอลไทย E จำกัด",
+      "items": [
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 420,
+          "total": 8400
+        },
+        {
+          "sku": "SK-88",
+          "name": "บาล์มบำรุง J4 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 380,
+          "total": 19000
+        },
+        {
+          "sku": "SK-69",
+          "name": "โลชั่นผิว Q3 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 80,
+          "total": 2400
+        }
+      ],
+      "subtotal": 29800,
+      "vat": 2086.0,
+      "grand_total": 31886.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-08",
+      "date": "05/09/2569",
+      "raw_date": "2026-09-05",
+      "supplier_id": "S-05",
+      "supplier_name": "บริษัท เคมีคอลไทย E จำกัด",
+      "items": [
+        {
+          "sku": "SK-35",
+          "name": "คลีนซิ่ง I2 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 180,
+          "total": 18000
+        },
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 420,
+          "total": 12600
+        }
+      ],
+      "subtotal": 30600,
+      "vat": 2142.0,
+      "grand_total": 32742.0,
+      "status": "ค้างชำระ (เจ้าหนี้)",
+      "payment_method": "รอครบกำหนดชำระ 30 วัน"
+    },
+    {
+      "po_no": "PO-09",
+      "date": "06/09/2569",
+      "raw_date": "2026-09-06",
+      "supplier_id": "S-06",
+      "supplier_name": "บริษัท สมุนไพรและสกินแล็บ F จำกัด",
+      "items": [
+        {
+          "sku": "SK-56",
+          "name": "เอสเซนส์ D3 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 430,
+          "total": 34400
+        },
+        {
+          "sku": "SK-34",
+          "name": "โทนเนอร์ H2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 350,
+          "total": 10500
+        },
+        {
+          "sku": "SK-18",
+          "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 150,
+          "total": 7500
+        },
+        {
+          "sku": "SK-74",
+          "name": "สเปรย์แร่ V3 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 80,
+          "total": 2400
+        },
+        {
+          "sku": "SK-62",
+          "name": "ครีมบำรุง J3 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 70,
+          "total": 3500
+        }
+      ],
+      "subtotal": 58300,
+      "vat": 4081.0,
+      "grand_total": 62381.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-10",
+      "date": "10/09/2569",
+      "raw_date": "2026-09-10",
+      "supplier_id": "S-05",
+      "supplier_name": "บริษัท เคมีคอลไทย E จำกัด",
+      "items": [
+        {
+          "sku": "SK-83",
+          "name": "อายครีม E4 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 220,
+          "total": 22000
+        },
+        {
+          "sku": "SK-74",
+          "name": "สเปรย์แร่ V3 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 80,
+          "total": 6400
+        },
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 370,
+          "total": 11100
+        }
+      ],
+      "subtotal": 39500,
+      "vat": 2765.0,
+      "grand_total": 42265.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-11",
+      "date": "11/09/2569",
+      "raw_date": "2026-09-11",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-67",
+          "name": "มาส์กหน้า O3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 440,
+          "total": 8800
+        },
+        {
+          "sku": "SK-34",
+          "name": "โทนเนอร์ H2 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 350,
+          "total": 28000
+        },
+        {
+          "sku": "SK-89",
+          "name": "สเปรย์แร่ K4 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 290,
+          "total": 5800
+        }
+      ],
+      "subtotal": 42600,
+      "vat": 2982.0,
+      "grand_total": 45582.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-12",
+      "date": "12/09/2569",
+      "raw_date": "2026-09-12",
+      "supplier_id": "S-04",
+      "supplier_name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "items": [
+        {
+          "sku": "SK-20",
+          "name": "คลีนซิ่ง T1 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 80,
+          "total": 8000
+        },
+        {
+          "sku": "SK-18",
+          "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 150,
+          "total": 12000
+        },
+        {
+          "sku": "SK-52",
+          "name": "มาส์กหน้า Z2 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 350,
+          "total": 17500
+        }
+      ],
+      "subtotal": 37500,
+      "vat": 2625.0,
+      "grand_total": 40125.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-13",
+      "date": "13/09/2569",
+      "raw_date": "2026-09-13",
+      "supplier_id": "S-01",
+      "supplier_name": "บริษัท วัตถุดิบสกินแคร์ A จำกัด",
+      "items": [
+        {
+          "sku": "SK-92",
+          "name": "ครีมบำรุง N4 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 420,
+          "total": 21000
+        },
+        {
+          "sku": "SK-25",
+          "name": "เจลแต้มสิว Y1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 390,
+          "total": 31200
+        },
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 250,
+          "total": 5000
+        }
+      ],
+      "subtotal": 57200,
+      "vat": 4004.0,
+      "grand_total": 61204.0,
+      "status": "ค้างชำระ (เจ้าหนี้)",
+      "payment_method": "รอครบกำหนดชำระ 30 วัน"
+    },
+    {
+      "po_no": "PO-14",
+      "date": "14/09/2569",
+      "raw_date": "2026-09-14",
+      "supplier_id": "S-04",
+      "supplier_name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "items": [
+        {
+          "sku": "SK-11",
+          "name": "เอสเซนส์ K1 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 200,
+          "total": 4000
+        },
+        {
+          "sku": "SK-43",
+          "name": "บาล์มบำรุง Q2 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 370,
+          "total": 18500
+        },
+        {
+          "sku": "SK-18",
+          "name": "เซรั่มเข้มข้น R1 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 150,
+          "total": 3000
+        }
+      ],
+      "subtotal": 25500,
+      "vat": 1785.0,
+      "grand_total": 27285.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-15",
+      "date": "16/09/2569",
+      "raw_date": "2026-09-16",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 70,
+          "total": 3500
+        },
+        {
+          "sku": "SK-57",
+          "name": "สครับผิว E3 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 150,
+          "total": 7500
+        },
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 420,
+          "total": 42000
+        }
+      ],
+      "subtotal": 53000,
+      "vat": 3710.0,
+      "grand_total": 56710.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-16",
+      "date": "17/09/2569",
+      "raw_date": "2026-09-17",
+      "supplier_id": "S-02",
+      "supplier_name": "โรงงานแล็บเครื่องสำอาง B จำกัด",
+      "items": [
+        {
+          "sku": "SK-24",
+          "name": "โลชั่นผิว X1 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 80,
+          "total": 2400
+        },
+        {
+          "sku": "SK-33",
+          "name": "เซรั่มเข้มข้น G2 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 130,
+          "total": 10400
+        },
+        {
+          "sku": "SK-11",
+          "name": "เอสเซนส์ K1 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 200,
+          "total": 6000
+        }
+      ],
+      "subtotal": 18800,
+      "vat": 1316.0,
+      "grand_total": 20116.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-17",
+      "date": "19/09/2569",
+      "raw_date": "2026-09-19",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-95",
+          "name": "คลีนซิ่ง Q4 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 250,
+          "total": 5000
+        },
+        {
+          "sku": "SK-17",
+          "name": "ครีมบำรุง Q1 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 120,
+          "total": 2400
+        },
+        {
+          "sku": "SK-37",
+          "name": "มาส์กหน้า K2 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 160,
+          "total": 3200
+        }
+      ],
+      "subtotal": 10600,
+      "vat": 742.0,
+      "grand_total": 11342.0,
+      "status": "ค้างชำระ (เจ้าหนี้)",
+      "payment_method": "รอครบกำหนดชำระ 30 วัน"
+    },
+    {
+      "po_no": "PO-18",
+      "date": "21/09/2569",
+      "raw_date": "2026-09-21",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-86",
+          "name": "เอสเซนส์ H4 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 220,
+          "total": 11000
+        },
+        {
+          "sku": "SK-58",
+          "name": "บาล์มบำรุง F3 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 120,
+          "total": 12000
+        },
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 260,
+          "total": 26000
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 260,
+          "total": 13000
+        }
+      ],
+      "subtotal": 62000,
+      "vat": 4340.0,
+      "grand_total": 66340.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-19",
+      "date": "24/09/2569",
+      "raw_date": "2026-09-24",
+      "supplier_id": "S-04",
+      "supplier_name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "items": [
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 200,
+          "total": 6000
+        },
+        {
+          "sku": "SK-58",
+          "name": "บาล์มบำรุง F3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 120,
+          "total": 2400
+        }
+      ],
+      "subtotal": 8400,
+      "vat": 588.0,
+      "grand_total": 8988.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-20",
+      "date": "26/09/2569",
+      "raw_date": "2026-09-26",
+      "supplier_id": "S-02",
+      "supplier_name": "โรงงานแล็บเครื่องสำอาง B จำกัด",
+      "items": [
+        {
+          "sku": "SK-49",
+          "name": "โทนเนอร์ W2 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 280,
+          "total": 14000
+        },
+        {
+          "sku": "SK-08",
+          "name": "อายครีม H1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 100,
+          "total": 8000
+        },
+        {
+          "sku": "SK-25",
+          "name": "เจลแต้มสิว Y1 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 390,
+          "total": 39000
+        },
+        {
+          "sku": "SK-71",
+          "name": "เอสเซนส์ S3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 200,
+          "total": 4000
+        }
+      ],
+      "subtotal": 65000,
+      "vat": 4550.0,
+      "grand_total": 69550.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-21",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "supplier_id": "S-04",
+      "supplier_name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "items": [
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 130,
+          "total": 6500
+        },
+        {
+          "sku": "SK-76",
+          "name": "สกินแคร์ X3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 420,
+          "total": 8400
+        },
+        {
+          "sku": "SK-65",
+          "name": "คลีนซิ่ง M3 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 390,
+          "total": 39000
+        },
+        {
+          "sku": "SK-42",
+          "name": "สครับผิว P2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 260,
+          "total": 7800
+        },
+        {
+          "sku": "SK-74",
+          "name": "สเปรย์แร่ V3 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 80,
+          "total": 4000
+        }
+      ],
+      "subtotal": 65700,
+      "vat": 4599.0,
+      "grand_total": 70299.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-22",
+      "date": "29/09/2569",
+      "raw_date": "2026-09-29",
+      "supplier_id": "S-06",
+      "supplier_name": "บริษัท สมุนไพรและสกินแล็บ F จำกัด",
+      "items": [
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 70,
+          "total": 7000
+        },
+        {
+          "sku": "SK-12",
+          "name": "สครับผิว L1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 320,
+          "total": 16000
+        },
+        {
+          "sku": "SK-79",
+          "name": "โทนเนอร์ A4 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 350,
+          "total": 35000
+        },
+        {
+          "sku": "SK-05",
+          "name": "คลีนซิ่ง E1 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 320,
+          "total": 9600
+        },
+        {
+          "sku": "SK-82",
+          "name": "มาส์กหน้า D4 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 130,
+          "total": 13000
+        }
+      ],
+      "subtotal": 80600,
+      "vat": 5642.0,
+      "grand_total": 86242.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-23",
+      "date": "04/10/2569",
+      "raw_date": "2026-10-04",
+      "supplier_id": "S-02",
+      "supplier_name": "โรงงานแล็บเครื่องสำอาง B จำกัด",
+      "items": [
+        {
+          "sku": "SK-19",
+          "name": "โทนเนอร์ S1 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 150,
+          "total": 3000
+        },
+        {
+          "sku": "SK-14",
+          "name": "สเปรย์แร่ N1 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 100,
+          "total": 10000
+        },
+        {
+          "sku": "SK-73",
+          "name": "บาล์มบำรุง U3 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 90,
+          "total": 2700
+        },
+        {
+          "sku": "SK-11",
+          "name": "เอสเซนส์ K1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 200,
+          "total": 16000
+        },
+        {
+          "sku": "SK-32",
+          "name": "ครีมบำรุง F2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 90,
+          "total": 2700
+        }
+      ],
+      "subtotal": 34400,
+      "vat": 2408.0,
+      "grand_total": 36808.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-24",
+      "date": "10/10/2569",
+      "raw_date": "2026-10-10",
+      "supplier_id": "S-04",
+      "supplier_name": "หจก. ฉลากและกล่องพิมพ์ D",
+      "items": [
+        {
+          "sku": "SK-59",
+          "name": "สเปรย์แร่ G3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 320,
+          "total": 6400
+        },
+        {
+          "sku": "SK-84",
+          "name": "โลชั่นผิว F4 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 330,
+          "total": 9900
+        },
+        {
+          "sku": "SK-93",
+          "name": "เซรั่มเข้มข้น O4 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 270,
+          "total": 8100
+        },
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 200,
+          "total": 16000
+        },
+        {
+          "sku": "SK-26",
+          "name": "เอสเซนส์ Z1 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 260,
+          "total": 26000
+        }
+      ],
+      "subtotal": 66400,
+      "vat": 4648.0,
+      "grand_total": 71048.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-25",
+      "date": "11/10/2569",
+      "raw_date": "2026-10-11",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-39",
+          "name": "โลชั่นผิว M2 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 360,
+          "total": 36000
+        },
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 200,
+          "total": 10000
+        }
+      ],
+      "subtotal": 46000,
+      "vat": 3220.0,
+      "grand_total": 49220.0,
+      "status": "ค้างชำระ (เจ้าหนี้)",
+      "payment_method": "รอครบกำหนดชำระ 30 วัน"
+    },
+    {
+      "po_no": "PO-26",
+      "date": "12/10/2569",
+      "raw_date": "2026-10-12",
+      "supplier_id": "S-01",
+      "supplier_name": "บริษัท วัตถุดิบสกินแคร์ A จำกัด",
+      "items": [
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 70,
+          "total": 3500
+        },
+        {
+          "sku": "SK-15",
+          "name": "ออยล์บำรุง O1 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 450,
+          "total": 45000
+        },
+        {
+          "sku": "SK-45",
+          "name": "ออยล์บำรุง S2 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 380,
+          "total": 38000
+        },
+        {
+          "sku": "SK-41",
+          "name": "เอสเซนส์ O2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 340,
+          "total": 10200
+        }
+      ],
+      "subtotal": 96700,
+      "vat": 6769.0,
+      "grand_total": 103469.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-27",
+      "date": "13/10/2569",
+      "raw_date": "2026-10-13",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-46",
+          "name": "สกินแคร์ T2 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 320,
+          "total": 6400
+        },
+        {
+          "sku": "SK-75",
+          "name": "ออยล์บำรุง W3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 250,
+          "total": 5000
+        }
+      ],
+      "subtotal": 11400,
+      "vat": 798.0,
+      "grand_total": 12198.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-28",
+      "date": "15/10/2569",
+      "raw_date": "2026-10-15",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-85",
+          "name": "เจลแต้มสิว G4 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 420,
+          "total": 42000
+        },
+        {
+          "sku": "SK-45",
+          "name": "ออยล์บำรุง S2 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 380,
+          "total": 11400
+        },
+        {
+          "sku": "SK-07",
+          "name": "มาส์กหน้า G1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 90,
+          "total": 4500
+        }
+      ],
+      "subtotal": 57900,
+      "vat": 4053.0,
+      "grand_total": 61953.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-29",
+      "date": "17/10/2569",
+      "raw_date": "2026-10-17",
+      "supplier_id": "S-06",
+      "supplier_name": "บริษัท สมุนไพรและสกินแล็บ F จำกัด",
+      "items": [
+        {
+          "sku": "SK-92",
+          "name": "ครีมบำรุง N4 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 420,
+          "total": 21000
+        },
+        {
+          "sku": "SK-38",
+          "name": "อายครีม L2 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 70,
+          "total": 7000
+        },
+        {
+          "sku": "SK-70",
+          "name": "เจลแต้มสิว R3 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 290,
+          "total": 14500
+        },
+        {
+          "sku": "SK-06",
+          "name": "กันแดด F1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 130,
+          "total": 10400
+        },
+        {
+          "sku": "SK-60",
+          "name": "ออยล์บำรุง H3 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 410,
+          "total": 20500
+        }
+      ],
+      "subtotal": 73400,
+      "vat": 5138.0,
+      "grand_total": 78538.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-30",
+      "date": "19/10/2569",
+      "raw_date": "2026-10-19",
+      "supplier_id": "S-03",
+      "supplier_name": "บริษัท บรรจุภัณฑ์ขวดและกระปุก C จำกัด",
+      "items": [
+        {
+          "sku": "SK-05",
+          "name": "คลีนซิ่ง E1 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 320,
+          "total": 9600
+        },
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 200,
+          "total": 4000
+        },
+        {
+          "sku": "SK-16",
+          "name": "สกินแคร์ P1 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 200,
+          "total": 20000
+        },
+        {
+          "sku": "SK-48",
+          "name": "เซรั่มเข้มข้น V2 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 320,
+          "total": 25600
+        }
+      ],
+      "subtotal": 59200,
+      "vat": 4144.0,
+      "grand_total": 63344.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-31",
+      "date": "23/10/2569",
+      "raw_date": "2026-10-23",
+      "supplier_id": "S-06",
+      "supplier_name": "บริษัท สมุนไพรและสกินแล็บ F จำกัด",
+      "items": [
+        {
+          "sku": "SK-24",
+          "name": "โลชั่นผิว X1 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 80,
+          "total": 6400
+        },
+        {
+          "sku": "SK-13",
+          "name": "บาล์มบำรุง M1 สูตรโบวี่",
+          "qty": 50,
+          "unit_cost": 200,
+          "total": 10000
+        },
+        {
+          "sku": "SK-29",
+          "name": "สเปรย์แร่ C2 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 350,
+          "total": 7000
+        },
+        {
+          "sku": "SK-77",
+          "name": "ครีมบำรุง Y3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 240,
+          "total": 4800
+        }
+      ],
+      "subtotal": 28200,
+      "vat": 1974.0,
+      "grand_total": 30174.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "po_no": "PO-32",
+      "date": "24/10/2569",
+      "raw_date": "2026-10-24",
+      "supplier_id": "S-01",
+      "supplier_name": "บริษัท วัตถุดิบสกินแคร์ A จำกัด",
+      "items": [
+        {
+          "sku": "SK-94",
+          "name": "โทนเนอร์ P4 สูตรโบวี่",
+          "qty": 30,
+          "unit_cost": 120,
+          "total": 3600
+        },
+        {
+          "sku": "SK-54",
+          "name": "โลชั่นผิว B3 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 360,
+          "total": 7200
+        },
+        {
+          "sku": "SK-20",
+          "name": "คลีนซิ่ง T1 สูตรโบวี่",
+          "qty": 20,
+          "unit_cost": 80,
+          "total": 1600
+        },
+        {
+          "sku": "SK-97",
+          "name": "มาส์กหน้า S4 สูตรโบวี่",
+          "qty": 80,
+          "unit_cost": 180,
+          "total": 14400
+        },
+        {
+          "sku": "SK-02",
+          "name": "ครีมบำรุง B1 สูตรโบวี่",
+          "qty": 100,
+          "unit_cost": 420,
+          "total": 42000
+        }
+      ],
+      "subtotal": 68800,
+      "vat": 4816.0,
+      "grand_total": 73616.0,
+      "status": "ชำระเงินแล้ว",
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    }
+  ],
+  "expenses": [
+    {
+      "pv_no": "PV-01",
+      "date": "25/08/2569",
+      "raw_date": "2026-08-25",
+      "account_code": "52101",
+      "category": "ค่าเช่าอาคารสำนักงานและคลังสินค้า",
+      "description": "จ่ายค่าเช่าอาคารสำนักงานและคลังสินค้า ประจำเดือนสิงหาคม 2569",
+      "payee": "เจ้าของอาคาร (คุณ A)",
+      "amount": 35000,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-02",
+      "date": "26/08/2569",
+      "raw_date": "2026-08-26",
+      "account_code": "52102",
+      "category": "ค่าไฟฟ้าสำนักงานและคลัง",
+      "description": "จ่ายค่าไฟฟ้าสำนักงานและคลัง งวดประจำวันที่ 26/08",
+      "payee": "การไฟฟ้านครหลวง",
+      "amount": 7700,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-03",
+      "date": "28/08/2569",
+      "raw_date": "2026-08-28",
+      "account_code": "52105",
+      "category": "เงินเดือนพนักงานฝ่ายจัดส่งและคลังสินค้า",
+      "description": "จ่ายเงินเดือนพนักงานฝ่ายคลังสินค้าและแพ็ค ประจำเดือนสิงหาคม 2569",
+      "payee": "พนักงานฝ่ายคลัง (3 ท่าน)",
+      "amount": 15000,
+      "payment_method": "โอนเข้าบัญชีพนักงาน (กสิกรไทย)"
+    },
+    {
+      "pv_no": "PV-04",
+      "date": "28/08/2569",
+      "raw_date": "2026-08-28",
+      "account_code": "52106",
+      "category": "เงินเดือนพนักงานบัญชีและการเงิน",
+      "description": "จ่ายเงินเดือนพนักงานแผนกบัญชีและการเงิน ประจำเดือนสิงหาคม 2569",
+      "payee": "พนักงานฝ่ายบัญชี (2 ท่าน)",
+      "amount": 10500,
+      "payment_method": "โอนเข้าบัญชีพนักงาน (กสิกรไทย)"
+    },
+    {
+      "pv_no": "PV-05",
+      "date": "28/08/2569",
+      "raw_date": "2026-08-28",
+      "account_code": "52112",
+      "category": "ค่าเบี้ยประกันอัคคีภัยคลังสินค้า",
+      "description": "จ่ายค่าเบี้ยประกันอัคคีภัยคลังสินค้า งวดประจำวันที่ 28/08",
+      "payee": "บริษัท ทิพยประกันภัย จำกัด (มหาชน)",
+      "amount": 12500,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-06",
+      "date": "30/08/2569",
+      "raw_date": "2026-08-30",
+      "account_code": "52104",
+      "category": "ค่าบริการอินเทอร์เน็ตความเร็วสูงและโทรศัพท์",
+      "description": "จ่ายค่าบริการอินเทอร์เน็ตความเร็วสูงและโทรศัพท์ งวดประจำวันที่ 30/08",
+      "payee": "บมจ. โทรคมนาคมแห่งชาติ (NT)",
+      "amount": 2400,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-07",
+      "date": "01/09/2569",
+      "raw_date": "2026-09-01",
+      "account_code": "52108",
+      "category": "ค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว",
+      "description": "จ่ายค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว งวดประจำวันที่ 01/09",
+      "payee": "ร้านบรรจุภัณฑ์ มีสุข",
+      "amount": 4950,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-08",
+      "date": "05/09/2569",
+      "raw_date": "2026-09-05",
+      "account_code": "52101",
+      "category": "ค่าเช่าอาคารสำนักงานและคลังสินค้า",
+      "description": "จ่ายค่าเช่าอาคารสำนักงานและคลังสินค้า ประจำเดือนกันยายน 2569",
+      "payee": "เจ้าของอาคาร (คุณ A)",
+      "amount": 35000,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-09",
+      "date": "05/09/2569",
+      "raw_date": "2026-09-05",
+      "account_code": "52102",
+      "category": "ค่าไฟฟ้าสำนักงานและคลัง",
+      "description": "จ่ายค่าไฟฟ้าสำนักงานและคลัง งวดประจำวันที่ 05/09",
+      "payee": "การไฟฟ้านครหลวง",
+      "amount": 6550,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-10",
+      "date": "08/09/2569",
+      "raw_date": "2026-09-08",
+      "account_code": "52111",
+      "category": "ค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน",
+      "description": "จ่ายค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน งวดประจำวันที่ 08/09",
+      "payee": "บมจ. ซีพี แอ็กซ์ตร้า (แม็คโคร)",
+      "amount": 1600,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-11",
+      "date": "10/09/2569",
+      "raw_date": "2026-09-10",
+      "account_code": "52111",
+      "category": "ค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน",
+      "description": "จ่ายค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน งวดประจำวันที่ 10/09",
+      "payee": "บมจ. ซีพี แอ็กซ์ตร้า (แม็คโคร)",
+      "amount": 2650,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-12",
+      "date": "12/09/2569",
+      "raw_date": "2026-09-12",
+      "account_code": "52109",
+      "category": "ค่าขนส่งพัสดุส่งด่วนให้ลูกค้า",
+      "description": "จ่ายค่าขนส่งพัสดุส่งด่วนให้ลูกค้า งวดประจำวันที่ 12/09",
+      "payee": "บริษัท แฟลช เอ็กซ์เพรส จำกัด",
+      "amount": 9300,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-13",
+      "date": "13/09/2569",
+      "raw_date": "2026-09-13",
+      "account_code": "52108",
+      "category": "ค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว",
+      "description": "จ่ายค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว งวดประจำวันที่ 13/09",
+      "payee": "ร้านบรรจุภัณฑ์ มีสุข",
+      "amount": 3800,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-14",
+      "date": "17/09/2569",
+      "raw_date": "2026-09-17",
+      "account_code": "52108",
+      "category": "ค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว",
+      "description": "จ่ายค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว งวดประจำวันที่ 17/09",
+      "payee": "ร้านบรรจุภัณฑ์ มีสุข",
+      "amount": 6600,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-15",
+      "date": "22/09/2569",
+      "raw_date": "2026-09-22",
+      "account_code": "52109",
+      "category": "ค่าขนส่งพัสดุส่งด่วนให้ลูกค้า",
+      "description": "จ่ายค่าขนส่งพัสดุส่งด่วนให้ลูกค้า งวดประจำวันที่ 22/09",
+      "payee": "บริษัท แฟลช เอ็กซ์เพรส จำกัด",
+      "amount": 8450,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-16",
+      "date": "25/09/2569",
+      "raw_date": "2026-09-25",
+      "account_code": "52109",
+      "category": "ค่าขนส่งพัสดุส่งด่วนให้ลูกค้า",
+      "description": "จ่ายค่าขนส่งพัสดุส่งด่วนให้ลูกค้า งวดประจำวันที่ 25/09",
+      "payee": "บริษัท แฟลช เอ็กซ์เพรส จำกัด",
+      "amount": 6650,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-17",
+      "date": "26/09/2569",
+      "raw_date": "2026-09-26",
+      "account_code": "52110",
+      "category": "ค่าธรรมเนียมธนาคารและระบบชำระเงิน",
+      "description": "จ่ายค่าธรรมเนียมธนาคารและระบบชำระเงิน งวดประจำวันที่ 26/09",
+      "payee": "ธนาคารกสิกรไทย / ไทยพาณิชย์",
+      "amount": 1700,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-18",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "account_code": "52105",
+      "category": "เงินเดือนพนักงานฝ่ายจัดส่งและคลังสินค้า",
+      "description": "จ่ายเงินเดือนพนักงานฝ่ายคลังสินค้าและแพ็ค ประจำเดือนกันยายน 2569",
+      "payee": "พนักงานฝ่ายคลัง (3 ท่าน)",
+      "amount": 45000,
+      "payment_method": "โอนเข้าบัญชีพนักงาน (กสิกรไทย)"
+    },
+    {
+      "pv_no": "PV-19",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "account_code": "52106",
+      "category": "เงินเดือนพนักงานบัญชีและการเงิน",
+      "description": "จ่ายเงินเดือนพนักงานแผนกบัญชีและการเงิน ประจำเดือนกันยายน 2569",
+      "payee": "พนักงานฝ่ายบัญชี (2 ท่าน)",
+      "amount": 32000,
+      "payment_method": "โอนเข้าบัญชีพนักงาน (กสิกรไทย)"
+    },
+    {
+      "pv_no": "PV-20",
+      "date": "28/09/2569",
+      "raw_date": "2026-09-28",
+      "account_code": "52109",
+      "category": "ค่าขนส่งพัสดุส่งด่วนให้ลูกค้า",
+      "description": "จ่ายค่าขนส่งพัสดุส่งด่วนให้ลูกค้า งวดประจำวันที่ 28/09",
+      "payee": "บริษัท แฟลช เอ็กซ์เพรส จำกัด",
+      "amount": 5500,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-21",
+      "date": "01/10/2569",
+      "raw_date": "2026-10-01",
+      "account_code": "52111",
+      "category": "ค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน",
+      "description": "จ่ายค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน งวดประจำวันที่ 01/10",
+      "payee": "บมจ. ซีพี แอ็กซ์ตร้า (แม็คโคร)",
+      "amount": 1300,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-22",
+      "date": "03/10/2569",
+      "raw_date": "2026-10-03",
+      "account_code": "52111",
+      "category": "ค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน",
+      "description": "จ่ายค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน งวดประจำวันที่ 03/10",
+      "payee": "บมจ. ซีพี แอ็กซ์ตร้า (แม็คโคร)",
+      "amount": 2900,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-23",
+      "date": "04/10/2569",
+      "raw_date": "2026-10-04",
+      "account_code": "52112",
+      "category": "ค่าเบี้ยประกันอัคคีภัยคลังสินค้า",
+      "description": "จ่ายค่าเบี้ยประกันอัคคีภัยคลังสินค้า งวดประจำวันที่ 04/10",
+      "payee": "บริษัท ทิพยประกันภัย จำกัด (มหาชน)",
+      "amount": 12500,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-24",
+      "date": "05/10/2569",
+      "raw_date": "2026-10-05",
+      "account_code": "52101",
+      "category": "ค่าเช่าอาคารสำนักงานและคลังสินค้า",
+      "description": "จ่ายค่าเช่าอาคารสำนักงานและคลังสินค้า ประจำเดือนตุลาคม 2569",
+      "payee": "เจ้าของอาคาร (คุณ A)",
+      "amount": 35000,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-25",
+      "date": "06/10/2569",
+      "raw_date": "2026-10-06",
+      "account_code": "52107",
+      "category": "ค่าโฆษณาและการตลาดออนไลน์",
+      "description": "จ่ายค่าโฆษณาและการตลาดออนไลน์ งวดประจำวันที่ 06/10",
+      "payee": "บริษัท ดิจิทัลมาร์เก็ตติ้ง เอเจนซี่ จำกัด",
+      "amount": 23900,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-26",
+      "date": "07/10/2569",
+      "raw_date": "2026-10-07",
+      "account_code": "52112",
+      "category": "ค่าเบี้ยประกันอัคคีภัยคลังสินค้า",
+      "description": "จ่ายค่าเบี้ยประกันอัคคีภัยคลังสินค้า งวดประจำวันที่ 07/10",
+      "payee": "บริษัท ทิพยประกันภัย จำกัด (มหาชน)",
+      "amount": 12500,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-27",
+      "date": "09/10/2569",
+      "raw_date": "2026-10-09",
+      "account_code": "52111",
+      "category": "ค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน",
+      "description": "จ่ายค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน งวดประจำวันที่ 09/10",
+      "payee": "บมจ. ซีพี แอ็กซ์ตร้า (แม็คโคร)",
+      "amount": 2200,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-28",
+      "date": "10/10/2569",
+      "raw_date": "2026-10-10",
+      "account_code": "52102",
+      "category": "ค่าไฟฟ้าสำนักงานและคลัง",
+      "description": "จ่ายค่าไฟฟ้าสำนักงานและคลัง งวดประจำวันที่ 10/10",
+      "payee": "การไฟฟ้านครหลวง",
+      "amount": 6050,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-29",
+      "date": "12/10/2569",
+      "raw_date": "2026-10-12",
+      "account_code": "52108",
+      "category": "ค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว",
+      "description": "จ่ายค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว งวดประจำวันที่ 12/10",
+      "payee": "ร้านบรรจุภัณฑ์ มีสุข",
+      "amount": 4650,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-30",
+      "date": "13/10/2569",
+      "raw_date": "2026-10-13",
+      "account_code": "52111",
+      "category": "ค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน",
+      "description": "จ่ายค่าเครื่องเขียนและวัสดุสิ้นเปลืองสำนักงาน งวดประจำวันที่ 13/10",
+      "payee": "บมจ. ซีพี แอ็กซ์ตร้า (แม็คโคร)",
+      "amount": 1400,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-31",
+      "date": "14/10/2569",
+      "raw_date": "2026-10-14",
+      "account_code": "52109",
+      "category": "ค่าขนส่งพัสดุส่งด่วนให้ลูกค้า",
+      "description": "จ่ายค่าขนส่งพัสดุส่งด่วนให้ลูกค้า งวดประจำวันที่ 14/10",
+      "payee": "บริษัท แฟลช เอ็กซ์เพรส จำกัด",
+      "amount": 8100,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-32",
+      "date": "19/10/2569",
+      "raw_date": "2026-10-19",
+      "account_code": "52102",
+      "category": "ค่าไฟฟ้าสำนักงานและคลัง",
+      "description": "จ่ายค่าไฟฟ้าสำนักงานและคลัง งวดประจำวันที่ 19/10",
+      "payee": "การไฟฟ้านครหลวง",
+      "amount": 7200,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-33",
+      "date": "20/10/2569",
+      "raw_date": "2026-10-20",
+      "account_code": "52109",
+      "category": "ค่าขนส่งพัสดุส่งด่วนให้ลูกค้า",
+      "description": "จ่ายค่าขนส่งพัสดุส่งด่วนให้ลูกค้า งวดประจำวันที่ 20/10",
+      "payee": "บริษัท แฟลช เอ็กซ์เพรส จำกัด",
+      "amount": 7300,
+      "payment_method": "โอนผ่าน บช. ไทยพาณิชย์"
+    },
+    {
+      "pv_no": "PV-34",
+      "date": "24/10/2569",
+      "raw_date": "2026-10-24",
+      "account_code": "52110",
+      "category": "ค่าธรรมเนียมธนาคารและระบบชำระเงิน",
+      "description": "จ่ายค่าธรรมเนียมธนาคารและระบบชำระเงิน งวดประจำวันที่ 24/10",
+      "payee": "ธนาคารกสิกรไทย / ไทยพาณิชย์",
+      "amount": 1050,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-35",
+      "date": "25/10/2569",
+      "raw_date": "2026-10-25",
+      "account_code": "52104",
+      "category": "ค่าบริการอินเทอร์เน็ตความเร็วสูงและโทรศัพท์",
+      "description": "จ่ายค่าบริการอินเทอร์เน็ตความเร็วสูงและโทรศัพท์ งวดประจำวันที่ 25/10",
+      "payee": "บมจ. โทรคมนาคมแห่งชาติ (NT)",
+      "amount": 2100,
+      "payment_method": "เงินสดย่อย"
+    },
+    {
+      "pv_no": "PV-36",
+      "date": "26/10/2569",
+      "raw_date": "2026-10-26",
+      "account_code": "52108",
+      "category": "ค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว",
+      "description": "จ่ายค่ากล่องพัสดุ ซองบับเบิ้ล และเทปกาว งวดประจำวันที่ 26/10",
+      "payee": "ร้านบรรจุภัณฑ์ มีสุข",
+      "amount": 7450,
+      "payment_method": "โอนผ่าน บช. กสิกรไทย"
+    },
+    {
+      "pv_no": "PV-37",
+      "date": "30/10/2569",
+      "raw_date": "2026-10-30",
+      "account_code": "52105",
+      "category": "เงินเดือนพนักงานฝ่ายจัดส่งและคลังสินค้า",
+      "description": "จ่ายเงินเดือนพนักงานฝ่ายคลังสินค้าและแพ็ค ประจำเดือนตุลาคม 2569",
+      "payee": "พนักงานฝ่ายคลัง (3 ท่าน)",
+      "amount": 45000,
+      "payment_method": "โอนเข้าบัญชีพนักงาน (กสิกรไทย)"
+    },
+    {
+      "pv_no": "PV-38",
+      "date": "30/10/2569",
+      "raw_date": "2026-10-30",
+      "account_code": "52106",
+      "category": "เงินเดือนพนักงานบัญชีและการเงิน",
+      "description": "จ่ายเงินเดือนพนักงานแผนกบัญชีและการเงิน ประจำเดือนตุลาคม 2569",
+      "payee": "พนักงานฝ่ายบัญชี (2 ท่าน)",
+      "amount": 32000,
+      "payment_method": "โอนเข้าบัญชีพนักงาน (กสิกรไทย)"
+    }
+  ]
+};
