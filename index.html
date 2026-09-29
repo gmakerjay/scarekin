@@ -33,14 +33,15 @@
       <div class="xp-menu-item" onclick="switchTab('project-info')">ข้อมูลโครงงาน/ผังบัญชี(H)</div>
     </div>
 
-    <!-- 3. แถบเครื่องมือทางลัด (Toolbar) -->
+    <!-- 3. แถบเครื่องมือและปุ่มเปิดเมนูด้านข้าง -->
     <div class="xp-toolbar">
-      <div style="display: flex; gap: 4px; align-items: center; flex-wrap: wrap;">
+      <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+        <button class="xp-btn mobile-menu-btn" id="btn-toggle-sidebar">[ เมนูระบบบัญชี (Sidebar) ]</button>
         <button class="xp-btn" id="btn-print-report" title="พิมพ์รายงานหน้านี้">[ สั่งพิมพ์รายงาน (Print) ]</button>
-        <button class="xp-btn" id="btn-export-csv" title="ดาวน์โหลดเป็นไฟล์ Excel CSV">[ ส่งออกไฟล์ CSV สำหรับ Excel ]</button>
+        <button class="xp-btn" id="btn-export-csv" title="ดาวน์โหลดเป็นไฟล์ Excel CSV">[ ส่งออกไฟล์ CSV ]</button>
       </div>
       <div class="toolbar-status-text">
-        สถานะ: ฐานข้อมูลสมบูรณ์ | 24 ส.ค. 2569 - 30 ต.ค. 2569
+        บริษัท โบวี่สแคร์กิน จำกัด | 24 ส.ค. 2569 - 30 ต.ค. 2569
       </div>
     </div>
 
@@ -49,23 +50,45 @@
       <strong>[ ข้อความชี้แจง ]</strong> โปรเจคนี้เป็นโปรเจคเพื่อนำส่ง / พรีเซ้นต์ในภาควิชาการบัญชีเท่านั้น ข้อมูลทุกอย่างคือการสมมติขึ้นมา (จำลองข้อมูล บริษัท โบวี่สแคร์กิน จำกัด ระหว่างวันที่ 24 สิงหาคม 2569 ถึง 30 ตุลาคม 2569)
     </div>
 
-    <!-- 5. แถบแท็บควบคุม (Property Sheet Tabs) -->
-    <div class="xp-tabs-container">
-      <div class="xp-tabs">
-        <button class="xp-tab active" data-tab="dashboard">[1. แดชบอร์ดและกราฟ]</button>
-        <button class="xp-tab" data-tab="products">[2. ทะเบียนสินค้า (100 รายการ)]</button>
-        <button class="xp-tab" data-tab="sales">[3. สมุดรายวันขาย (รายรับ)]</button>
-        <button class="xp-tab" data-tab="purchases">[4. สมุดรายวันซื้อสินค้า]</button>
-        <button class="xp-tab" data-tab="expenses">[5. ทะเบียนค่าใช้จ่าย (รายจ่าย)]</button>
-        <button class="xp-tab" data-tab="customers">[6. ทะเบียนลูกค้าและลูกหนี้]</button>
-        <button class="xp-tab" data-tab="suppliers">[7. ทะเบียนผู้ผลิต/เจ้าหนี้]</button>
-        <button class="xp-tab" data-tab="financial">[8. รายงานงบการเงินฉบับสมบูรณ์]</button>
-        <button class="xp-tab" data-tab="project-info">[9. ข้อมูลโครงงาน/ผังบัญชี]</button>
-      </div>
-    </div>
+    <!-- โครงสร้างหลัก: แถบไซด์บาร์ด้านข้าง + พื้นที่เนื้อหาหลัก (แทนที่ปุ่มสไลด์) -->
+    <div class="app-layout">
 
-    <!-- 6. กล่องเนื้อหาของแต่ละแท็บ -->
-    <div class="xp-tab-content-panel">
+      <!-- แถบเมนูไซด์บาร์ด้านข้าง (Sidebar Navigation) -->
+      <aside class="app-sidebar" id="app-sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-header-title">[ เมนูระบบบัญชี ]</span>
+          <button class="xp-btn sidebar-close-btn" id="btn-close-sidebar" title="ปิดเมนู">[X ปิด]</button>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <button class="sidebar-nav-item active" data-tab="dashboard">[1. แดชบอร์ดและกราฟ]</button>
+          <button class="sidebar-nav-item" data-tab="products">[2. ทะเบียนสินค้า 100 รายการ]</button>
+          <button class="sidebar-nav-item" data-tab="sales">[3. สมุดรายวันขาย (รายรับ)]</button>
+          <button class="sidebar-nav-item" data-tab="purchases">[4. สมุดรายวันซื้อสินค้า]</button>
+          <button class="sidebar-nav-item" data-tab="expenses">[5. ทะเบียนค่าใช้จ่าย (รายจ่าย)]</button>
+          <button class="sidebar-nav-item" data-tab="customers">[6. ทะเบียนลูกค้าและลูกหนี้]</button>
+          <button class="sidebar-nav-item" data-tab="suppliers">[7. ทะเบียนผู้ผลิต/เจ้าหนี้]</button>
+          <button class="sidebar-nav-item" data-tab="financial">[8. รายงานงบการเงินฉบับสมบูรณ์]</button>
+          <button class="sidebar-nav-item" data-tab="project-info">[9. ข้อมูลโครงงาน/ผังบัญชี]</button>
+        </nav>
+
+        <div class="sidebar-info-box">
+          <div style="font-weight: bold; border-bottom: 1px solid #808080; padding-bottom: 2px; margin-bottom: 4px;">
+            [ สรุปข้อมูลกิจการ ]
+          </div>
+          - สินค้า: 100 รายการ<br>
+          - บิลขาย: 187 รายการ<br>
+          - ใบสั่งซื้อ: 32 รายการ<br>
+          - ค่าใช้จ่าย: 38 รายการ<br>
+          - ดุลบัญชี: 0.00 บาท (สมบูรณ์)
+        </div>
+      </aside>
+
+      <!-- พื้นหลัง Overlay เมื่อเปิดเมนูไซด์บาร์บนมือถือ -->
+      <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+      <!-- พื้นที่เนื้อหาหลัก (Main Content Panel) -->
+      <main class="app-main-content">
 
       <!-- ==================== TAB 1: แดชบอร์ดและกราฟ ==================== -->
       <div class="tab-pane active" id="tab-dashboard">
@@ -738,9 +761,9 @@
             </tbody>
           </table>
         </fieldset>
-      </div>
-
-    </div><!-- สิ้นสุด xp-tab-content-panel -->
+      </div><!-- สิ้นสุด tab-project-info -->
+    </main><!-- สิ้นสุด app-main-content -->
+  </div><!-- สิ้นสุด app-layout -->
 
     <!-- 7. แถบสถานะด้านล่างสุด (Status Bar) -->
     <div class="xp-status-bar">

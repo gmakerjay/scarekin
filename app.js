@@ -67,16 +67,31 @@ function formatInt(num) {
   return Number(num).toLocaleString('th-TH');
 }
 
-// การเปลี่ยนแท็บ
+// ฟังก์ชันควบคุมเปิด-ปิดไซด์บาร์บนมือถือ
+function openSidebar() {
+  const sidebar = document.getElementById('app-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  if (sidebar) sidebar.classList.add('open');
+  if (backdrop) backdrop.classList.add('active');
+}
+
+function closeSidebar() {
+  const sidebar = document.getElementById('app-sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  if (sidebar) sidebar.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('active');
+}
+
+// การเปลี่ยนแท็บหน้าจอ
 function switchTab(tabId) {
   state.currentTab = tabId;
   
-  // อัปเดตคลาสแท็บ
-  document.querySelectorAll('.xp-tab').forEach(tab => {
-    if (tab.getAttribute('data-tab') === tabId) {
-      tab.classList.add('active');
+  // อัปเดตคลาสปุ่มเมนูในไซด์บาร์
+  document.querySelectorAll('.sidebar-nav-item').forEach(item => {
+    if (item.getAttribute('data-tab') === tabId) {
+      item.classList.add('active');
     } else {
-      tab.classList.remove('active');
+      item.classList.remove('active');
     }
   });
 
@@ -88,6 +103,9 @@ function switchTab(tabId) {
       pane.classList.remove('active');
     }
   });
+
+  // ปิดไซด์บาร์บนมือถือเมื่อเลือกเมนูแล้ว
+  closeSidebar();
 
   // วาดกราฟใหม่หากอยู่หน้าแดชบอร์ด
   if (tabId === 'dashboard') {
@@ -1130,17 +1148,23 @@ function exportCurrentTableCSV() {
 // เริ่มต้นการทำงานเมื่อโหลดหน้าเว็บ
 // -------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-  // ผูกการคลิกแท็บ
-  document.querySelectorAll('.xp-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const tabId = tab.getAttribute('data-tab');
+  // ผูกการคลิกเมนูในไซด์บาร์
+  document.querySelectorAll('.sidebar-nav-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.getAttribute('data-tab');
       switchTab(tabId);
     });
   });
 
-  // ผูกปุ่มสลับธีม
-  const themeBtn = document.getElementById('btn-toggle-theme');
-  if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+  // ผูกปุ่มเปิด-ปิดไซด์บาร์บนมือถือ
+  const openSidebarBtn = document.getElementById('btn-toggle-sidebar');
+  if (openSidebarBtn) openSidebarBtn.addEventListener('click', openSidebar);
+
+  const closeSidebarBtn = document.getElementById('btn-close-sidebar');
+  if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+
+  const backdrop = document.getElementById('sidebar-backdrop');
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
 
   // ผูกปุ่มพิมพ์
   const printBtn = document.getElementById('btn-print-report');
